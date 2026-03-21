@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Dance — Chiara Laurenza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --black:   #0A0A0A;
+    --white:   #FFFFFF;
+    --grey-1:  #F4F4F2;
+    --grey-2:  #E8E8E4;
+    --grey-3:  #AAAAAA;
+    --red:     #C8102E;
+    --teal:    #006D6D;
+    --amber:   #C47A0A;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; font-size:16px; }
+  body { font-family:'Manrope', sans-serif; background:var(--white); color:var(--black); -webkit-font-smoothing:antialiased; }
+
+  /* ── NAV ── */
+  nav {
+    position:fixed; top:0; width:100%; z-index:300;
+    height:72px; padding:0 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.96); backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--grey-2);
+  }
+  .nav-logo {
+    font-family:'Playfair Display', serif; font-weight:500;
+    font-size:1.1rem; letter-spacing:0.5px; color:var(--black);
+    text-decoration:none;
+  }
+  .nav-center {
+    position:absolute; left:50%; transform:translateX(-50%);
+    display:flex; gap:40px; list-style:none;
+  }
+  .nav-center a {
+    font-size:0.72rem; font-weight:500; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--black);
+    text-decoration:none; transition:color 0.2s;
+  }
+  .nav-center a:hover, .nav-center a.active { color:var(--red); }
+  .nav-right { font-size:0.72rem; font-weight:500; letter-spacing:1.8px; text-transform:uppercase; }
+  .nav-right a { text-decoration:none; color:var(--black); transition:color 0.2s; }
+  .nav-right a:hover { color:var(--red); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+  .nav-burger span { display:block; width:22px; height:1px; background:var(--black); }
+  .mobile-menu {
+    display:none; position:fixed; top:72px; left:0; right:0;
+    background:var(--white); border-bottom:1px solid var(--grey-2);
+    flex-direction:column; z-index:299; padding:20px 48px 32px;
+    gap:4px;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:500; color:var(--black); text-decoration:none;
+    padding:13px 0; border-bottom:1px solid var(--grey-2);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.from-left { transform:translateX(-36px); }
+  .reveal.from-right { transform:translateX(36px); }
+  .reveal.visible { opacity:1 !important; transform:none !important; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top:1px solid var(--grey-2);
+    padding:48px 48px;
+    display:grid; grid-template-columns:1fr auto 1fr;
+    align-items:center; gap:24px;
+  }
+  .site-footer-logo { font-family:'Playfair Display', serif; font-size:1rem; font-weight:500; letter-spacing:0.5px; }
+  .site-footer-links { display:flex; gap:28px; justify-content:center; }
+  .site-footer-links a { font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--grey-3); text-decoration:none; transition:color 0.2s; }
+  .site-footer-links a:hover { color:var(--black); }
+  .site-footer-copy { font-size:0.68rem; color:var(--grey-3); letter-spacing:1px; text-align:right; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display:none; position:fixed; inset:0; z-index:1000;
+    background:rgba(10,10,10,0.6); backdrop-filter:blur(8px);
+    align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-overlay.active { display:flex; }
+  .modal {
+    background:var(--white); width:100%; max-width:560px;
+    padding:56px 52px; position:relative; max-height:90vh; overflow-y:auto;
+    animation:mIn 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  @keyframes mIn { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+  .modal-close {
+    position:absolute; top:20px; right:24px; background:none; border:none;
+    font-size:0.65rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:600; color:var(--grey-3); cursor:pointer; transition:color 0.2s;
+  }
+  .modal-close:hover { color:var(--black); }
+  .modal-tag { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:var(--red); margin-bottom:12px; }
+  .modal h2 { font-family:'Playfair Display', serif; font-size:2rem; font-weight:400; margin-bottom:36px; line-height:1.2; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .fg { margin-bottom:20px; }
+  .fg label { display:block; font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--grey-3); margin-bottom:8px; }
+  .fg input, .fg select, .fg textarea {
+    width:100%; padding:13px 0; border:none; border-bottom:1px solid var(--grey-2);
+    background:transparent; font-family:'Manrope', sans-serif; font-size:0.88rem;
+    color:var(--black); outline:none; transition:border-color 0.2s;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-bottom-color:var(--black); }
+  .fg input::placeholder, .fg textarea::placeholder { color:var(--grey-3); }
+  .fg textarea { height:80px; resize:none; }
+  .fg select option { background:white; }
+  .modal-submit {
+    margin-top:16px; background:var(--black); color:white;
+    padding:16px 40px; border:none; font-family:'Manrope', sans-serif;
+    font-size:0.7rem; font-weight:600; letter-spacing:2.5px;
+    text-transform:uppercase; cursor:pointer; transition:background 0.25s;
+  }
+  .modal-submit:hover { background:#333; }
+  .modal-success { display:none; margin-top:16px; font-size:0.75rem; letter-spacing:1px; text-transform:uppercase; color:var(--red); }
+
+  @media(max-width:900px){
+    nav { padding:0 24px; }
+    .nav-center { display:none; }
+    .nav-right { display:none; }
+    .nav-burger { display:flex; }
+    .mobile-menu { padding:20px 24px 28px; }
+    .site-footer { grid-template-columns:1fr; text-align:center; padding:40px 24px; }
+    .site-footer-copy { text-align:center; }
+    .modal { padding:40px 24px; }
+    .form-row { grid-template-columns:1fr; }
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding:160px 48px 80px;
+    border-bottom:1px solid var(--grey-2);
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:flex-end;
+  }
+  .page-hero-left {}
+  .page-hero-eyebrow { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:var(--grey-3); margin-bottom:20px; }
+  .page-hero h1 {
+    font-family:'Playfair Display', serif; font-weight:400;
+    font-size:clamp(3rem,7vw,7rem); line-height:0.95; letter-spacing:-2px;
+  }
+  .page-hero h1 em { font-style:italic; color:var(--grey-3); }
+  .page-hero-right { padding-bottom:6px; }
+  .page-hero-desc { font-size:0.92rem; line-height:1.85; color:#555; font-weight:300; max-width:400px; margin-bottom:32px; }
+  .page-hero-cta { display:inline-block; }
+
+  /* OFFER LIST */
+  .offer-section { padding:80px 48px; border-bottom:1px solid var(--grey-2); }
+  .offer-grid { display:grid; grid-template-columns:repeat(3,1fr); border-left:1px solid var(--grey-2); }
+  .offer-item {
+    padding:44px 36px; border-right:1px solid var(--grey-2);
+    border-top:1px solid var(--grey-2);
+    position:relative; overflow:hidden;
+  }
+  .offer-num { font-family:'Playfair Display', serif; font-size:3.5rem; font-weight:400; color:var(--grey-2); line-height:1; margin-bottom:20px; }
+  .offer-item h3 { font-family:'Playfair Display', serif; font-size:1.35rem; font-weight:500; margin-bottom:12px; line-height:1.2; }
+  .offer-item p { font-size:0.82rem; line-height:1.85; color:#666; margin-bottom:24px; font-weight:300; }
+  .offer-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:28px; }
+  .otag { font-size:0.62rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; padding:4px 10px; border:1px solid; }
+  .book-link {
+    font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; font-weight:600;
+    background:none; border:none; cursor:pointer; color:var(--black);
+    display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s, color 0.2s;
+    font-family:'Manrope',sans-serif;
+  }
+  .book-link::after { content:'→'; }
+  .book-link:hover { gap:14px; }
+
+  /* STYLE LIST */
+  .styles-section { padding:80px 48px; background:var(--grey-1); }
+  .styles-section h2 { font-family:'Playfair Display', serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:400; margin-bottom:40px; border-bottom:1px solid var(--grey-2); padding-bottom:20px; }
+  .styles-list {}
+  .style-row {
+    display:grid; grid-template-columns:200px 1fr;
+    padding:32px 0; border-bottom:1px solid var(--grey-2);
+    gap:40px; align-items:start;
+  }
+  .style-row:last-child { border-bottom:none; }
+  .style-name { font-family:'Playfair Display', serif; font-size:1.25rem; font-weight:400; line-height:1.2; }
+  .style-name em { font-style:italic; color:var(--grey-3); display:block; font-size:0.8rem; }
+  .style-desc { font-size:0.85rem; line-height:1.9; color:#555; font-weight:300; }
+
+  @media(max-width:900px){
+    .page-hero { grid-template-columns:1fr; padding:130px 24px 64px; gap:36px; }
+    .offer-section { padding:60px 24px; }
+    .offer-grid { grid-template-columns:1fr; }
+    .styles-section { padding:60px 24px; }
+    .style-row { grid-template-columns:1fr; gap:10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Chiara Laurenza</a>
+  <ul class="nav-center"><li><a href="dance.html" class="active">Dance</a></li><li><a href="yoga.html" class="">Yoga</a></li><li><a href="art.html" class="">Art</a></li></ul>
+  <div class="nav-right"><a href="index.html#contact">Contact</a></div>
+  <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="dance.html">Dance</a><a href="yoga.html">Yoga</a><a href="art.html">Art</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-left reveal from-left">
+    <p class="page-hero-eyebrow">Discipline &mdash; 01</p>
+    <h1>Dance</h1>
+  </div>
+  <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
+    <p class="page-hero-desc">From the fluid lines of contemporary to the raw power of hip hop and the theatrical precision of jazz &mdash; find your vocabulary of motion.</p>
+    <button class="btn btn-fill page-hero-cta" onclick="openModal('Dance','Book a Workshop or Session')">Book Now</button>
+  </div>
+</section>
+
+<section class="offer-section">
+  <div class="offer-grid">
+    <div class="offer-item reveal" style="transition-delay:0ms">
+      <div class="offer-num">01</div>
+      <h3>Group Workshops</h3>
+      <p>Immersive multi-style sessions for small groups. Explore technique, improvisation, and choreographic process in a focused, collaborative space.</p>
+      <div class="offer-tags">
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Contemporary</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Hip Hop</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Jazz</span>
+      </div>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Group Workshop')">Book Workshop</button>
+    </div>
+    <div class="offer-item reveal" style="transition-delay:120ms">
+      <div class="offer-num">02</div>
+      <h3>Private Sessions</h3>
+      <p>One-on-one coaching built entirely around your goals &mdash; from technique refinement and solo development to audition preparation and freestyle exploration.</p>
+      <div class="offer-tags">
+        <span class="otag" style="border-color:var(--red);color:var(--red)">1-on-1</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">60 / 90 min</span>
+      </div>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Private Session')">Book Session</button>
+    </div>
+    <div class="offer-item reveal" style="transition-delay:240ms">
+      <div class="offer-num">03</div>
+      <h3>Choreography</h3>
+      <p>Commission a bespoke choreography for performances, music videos, events, or personal projects. From concept through rehearsal to final piece.</p>
+      <div class="offer-tags">
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Bespoke</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Performances</span>
+      </div>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Choreography Commission')">Request Quote</button>
+    </div>
+  </div>
+</section>
+
+<section class="styles-section">
+  <h2 class="reveal">Styles &amp; Approach</h2>
+  <div class="styles-list">
+    <div class="style-row reveal">
+      <div class="style-name">Contemporary<em>Movement</em></div>
+      <div class="style-desc">A fluid, enquiring form drawing from ballet, modern, and release technique. We work with weight, momentum, floor work, and spatial awareness to develop a deeply personal movement language.</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:80ms">
+      <div class="style-name">Hip Hop<em>Street Dance</em></div>
+      <div class="style-desc">Rooted in the social and cultural history of street dance. Sessions cover foundational grooves, freestyling, and current styles &mdash; from popping and locking to new school choreography.</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:160ms">
+      <div class="style-name">Jazz<em>Theatre &amp; Commercial</em></div>
+      <div class="style-desc">High energy, rhythmically complex, and theatrically expressive. Jazz technique forms the backbone of commercial, musical theatre, and performance work, with an emphasis on showmanship and precision.</div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer reveal">
+  <span class="site-footer-logo">Chiara Laurenza</span>
+  <div class="site-footer-links">
+    <a href="dance.html">Dance</a>
+    <a href="yoga.html">Yoga</a>
+    <a href="art.html">Art</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <span class="site-footer-copy">Munich &middot; 2026</span>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeOut(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">Close ×</button>
+    <p class="modal-tag" id="m-tag">Booking</p>
+    <h2 id="m-title">Book a Session</h2>
+    <form onsubmit="submitModal(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Your surname" required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+      <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+49..."></div>
+      <div class="fg"><label>Preferred Date</label><input type="date" required></div>
+      <div class="fg"><label>Level</label>
+        <select><option>Beginner</option><option>Some Experience</option><option>Intermediate</option><option>Advanced</option></select>
+      </div>
+      <div class="fg"><label>Message</label><textarea placeholder="Tell me about your goals..."></textarea></div>
+      <button class="modal-submit" type="submit">Send Request</button>
+      <p class="modal-success" id="m-success">Received — I will be in touch shortly.</p>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
+  function openModal(tag, title){
+    document.getElementById('m-tag').textContent = tag;
+    document.getElementById('m-title').textContent = title;
+    document.getElementById('m-success').style.display='none';
+    document.getElementById('modal-overlay').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){ document.getElementById('modal-overlay').classList.remove('active'); document.body.style.overflow=''; }
+  function closeOut(e){ if(e.target===document.getElementById('modal-overlay')) closeModal(); }
+  function submitModal(e){ e.preventDefault(); document.getElementById('m-success').style.display='block'; setTimeout(closeModal,3000); }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } });
+  },{ threshold:0.08, rootMargin:'0px 0px -32px 0px' });
+  // Small delay ensures layout is complete before observing
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // If already in viewport on load, show immediately
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        obs.observe(el);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

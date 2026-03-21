@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Chiara Laurenza — Chiara Laurenza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --black:   #0A0A0A;
+    --white:   #FFFFFF;
+    --grey-1:  #F4F4F2;
+    --grey-2:  #E8E8E4;
+    --grey-3:  #AAAAAA;
+    --red:     #C8102E;
+    --teal:    #006D6D;
+    --amber:   #C47A0A;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; font-size:16px; }
+  body { font-family:'Manrope', sans-serif; background:var(--white); color:var(--black); -webkit-font-smoothing:antialiased; }
+
+  /* ── NAV ── */
+  nav {
+    position:fixed; top:0; width:100%; z-index:300;
+    height:72px; padding:0 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.96); backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--grey-2);
+  }
+  .nav-logo {
+    font-family:'Playfair Display', serif; font-weight:500;
+    font-size:1.1rem; letter-spacing:0.5px; color:var(--black);
+    text-decoration:none;
+  }
+  .nav-center {
+    position:absolute; left:50%; transform:translateX(-50%);
+    display:flex; gap:40px; list-style:none;
+  }
+  .nav-center a {
+    font-size:0.72rem; font-weight:500; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--black);
+    text-decoration:none; transition:color 0.2s;
+  }
+  .nav-center a:hover, .nav-center a.active { color:var(--red); }
+  .nav-right { font-size:0.72rem; font-weight:500; letter-spacing:1.8px; text-transform:uppercase; }
+  .nav-right a { text-decoration:none; color:var(--black); transition:color 0.2s; }
+  .nav-right a:hover { color:var(--red); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+  .nav-burger span { display:block; width:22px; height:1px; background:var(--black); }
+  .mobile-menu {
+    display:none; position:fixed; top:72px; left:0; right:0;
+    background:var(--white); border-bottom:1px solid var(--grey-2);
+    flex-direction:column; z-index:299; padding:20px 48px 32px;
+    gap:4px;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:500; color:var(--black); text-decoration:none;
+    padding:13px 0; border-bottom:1px solid var(--grey-2);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.from-left { transform:translateX(-36px); }
+  .reveal.from-right { transform:translateX(36px); }
+  .reveal.visible { opacity:1 !important; transform:none !important; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top:1px solid var(--grey-2);
+    padding:48px 48px;
+    display:grid; grid-template-columns:1fr auto 1fr;
+    align-items:center; gap:24px;
+  }
+  .site-footer-logo { font-family:'Playfair Display', serif; font-size:1rem; font-weight:500; letter-spacing:0.5px; }
+  .site-footer-links { display:flex; gap:28px; justify-content:center; }
+  .site-footer-links a { font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--grey-3); text-decoration:none; transition:color 0.2s; }
+  .site-footer-links a:hover { color:var(--black); }
+  .site-footer-copy { font-size:0.68rem; color:var(--grey-3); letter-spacing:1px; text-align:right; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display:none; position:fixed; inset:0; z-index:1000;
+    background:rgba(10,10,10,0.6); backdrop-filter:blur(8px);
+    align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-overlay.active { display:flex; }
+  .modal {
+    background:var(--white); width:100%; max-width:560px;
+    padding:56px 52px; position:relative; max-height:90vh; overflow-y:auto;
+    animation:mIn 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  @keyframes mIn { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+  .modal-close {
+    position:absolute; top:20px; right:24px; background:none; border:none;
+    font-size:0.65rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:600; color:var(--grey-3); cursor:pointer; transition:color 0.2s;
+  }
+  .modal-close:hover { color:var(--black); }
+  .modal-tag { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:var(--red); margin-bottom:12px; }
+  .modal h2 { font-family:'Playfair Display', serif; font-size:2rem; font-weight:400; margin-bottom:36px; line-height:1.2; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .fg { margin-bottom:20px; }
+  .fg label { display:block; font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--grey-3); margin-bottom:8px; }
+  .fg input, .fg select, .fg textarea {
+    width:100%; padding:13px 0; border:none; border-bottom:1px solid var(--grey-2);
+    background:transparent; font-family:'Manrope', sans-serif; font-size:0.88rem;
+    color:var(--black); outline:none; transition:border-color 0.2s;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-bottom-color:var(--black); }
+  .fg input::placeholder, .fg textarea::placeholder { color:var(--grey-3); }
+  .fg textarea { height:80px; resize:none; }
+  .fg select option { background:white; }
+  .modal-submit {
+    margin-top:16px; background:var(--black); color:white;
+    padding:16px 40px; border:none; font-family:'Manrope', sans-serif;
+    font-size:0.7rem; font-weight:600; letter-spacing:2.5px;
+    text-transform:uppercase; cursor:pointer; transition:background 0.25s;
+  }
+  .modal-submit:hover { background:#333; }
+  .modal-success { display:none; margin-top:16px; font-size:0.75rem; letter-spacing:1px; text-transform:uppercase; color:var(--red); }
+
+  @media(max-width:900px){
+    nav { padding:0 24px; }
+    .nav-center { display:none; }
+    .nav-right { display:none; }
+    .nav-burger { display:flex; }
+    .mobile-menu { padding:20px 24px 28px; }
+    .site-footer { grid-template-columns:1fr; text-align:center; padding:40px 24px; }
+    .site-footer-copy { text-align:center; }
+    .modal { padding:40px 24px; }
+    .form-row { grid-template-columns:1fr; }
+  }
+
+  /* HERO */
+
+  /* HERO BACKGROUND */
+  .hero { color:white; border-bottom-color:rgba(255,255,255,0.15); }
+  .hero-bg {
+    position:absolute; top:0; left:0; right:0; bottom:0; z-index:0;
+    background:#0A0A0A; /* fallback */
+    overflow:hidden;
+  }
+  /* IMAGE MODE: set --hero-image to use a photo */
+  .hero-bg.has-image {
+    background-image:var(--hero-image);
+    background-size:cover; background-position:center;
+  }
+  /* VIDEO CAROUSEL */
+  .hero-bg video {
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; opacity:0;
+    transition:opacity 1.2s ease;
+  }
+  .hero-bg video.active { opacity:1; }
+  /* OVERLAY — keeps text readable */
+  .hero-bg-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3) 0%,
+      rgba(0,0,0,0.55) 100%
+    );
+    z-index:1;
+  }
+  /* All hero content above bg */
+  .hero-top-row { position:relative; z-index:2; }
+  .hero-main { position:relative; z-index:2; text-align:center; }
+  .hero-top-row { color:rgba(255,255,255,0.6); }
+  .hero-label, .hero-counter { color:rgba(255,255,255,0.55); }
+  .hero h1 { color:white; }
+  .hero h1 em { color:rgba(255,255,255,0.45); }
+  .hero-desc { color:#555; }
+  .hero-bottom { border-top-color:rgba(255,255,255,0.15); }
+  .btn-fill { background:var(--black); color:white; border-color:var(--black); }
+  .btn-fill:hover { background:#333; }
+  .btn-outline { border-color:var(--black); color:var(--black); }
+  .btn-outline:hover { background:var(--black); color:white; }
+
+  /* VIDEO CONTROLS (bottom right) */
+  .hero-controls {
+    position:absolute; bottom:32px; right:48px;
+    z-index:3; display:flex; align-items:center; gap:12px;
+  }
+  .hero-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:rgba(255,255,255,0.3); cursor:pointer;
+    transition:background 0.3s, transform 0.3s; border:none; padding:0;
+  }
+  .hero-dot.active { background:white; transform:scale(1.3); }
+  .hero-pause {
+    font-size:0.6rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:600; color:rgba(255,255,255,0.4); background:none;
+    border:none; cursor:pointer; transition:color 0.2s; font-family:'Manrope',sans-serif;
+  }
+  .hero-pause:hover { color:white; }
+
+  .hero {
+    height:100vh; padding:0 48px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    position:relative;
+  }
+  .hero-top-row {
+    display:flex; justify-content:space-between; align-items:center;
+    position:absolute; top:100px; left:48px; right:48px;
+  }
+  .hero-label {
+    font-size:0.65rem; letter-spacing:3px; text-transform:uppercase;
+    font-weight:600; color:var(--grey-3);
+  }
+  .hero-counter {
+    font-size:0.65rem; letter-spacing:2px; color:var(--grey-3); font-weight:500;
+  }
+  .hero h1 {
+    font-family:'Playfair Display', serif; font-weight:400;
+    font-size:clamp(3.8rem, 8.5vw, 9rem); line-height:0.95;
+    letter-spacing:-2px; max-width:1000px; text-align:center;
+  }
+  .hero h1 em { font-style:italic; color:var(--grey-3); }
+  .hero-bottom {
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top:64px; padding-top:40px; border-top:1px solid var(--grey-2);
+    background:var(--white); padding-bottom:0;
+  }
+  .hero-desc { font-size:0.92rem; line-height:1.8; color:#555; max-width:380px; font-weight:300; }
+  .hero-ctas { display:flex; gap:16px; flex-shrink:0; }
+  .btn {
+    font-size:0.7rem; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; padding:14px 32px;
+    text-decoration:none; cursor:pointer; border:1px solid var(--black);
+    font-family:'Manrope',sans-serif; transition:background 0.25s, color 0.25s;
+    display:inline-block;
+  }
+  .btn-fill { background:var(--black); color:var(--white); border-color:var(--black); }
+  .btn-fill:hover { background:#333; }
+  .btn-outline { background:transparent; color:var(--black); }
+  .btn-outline:hover { background:var(--black); color:var(--white); }
+
+
+  /* INTRO STRIP */
+  .intro-strip {
+    padding:56px 48px;
+    display:flex; justify-content:space-between; align-items:center;
+    gap:40px; border-bottom:1px solid var(--grey-2);
+    background:var(--white); margin-top:0;
+  }
+  .intro-strip-text {
+    font-size:1rem; line-height:1.8; color:#444;
+    font-weight:300; max-width:600px;
+    font-family:'Playfair Display', serif; font-style:italic;
+  }
+  .intro-strip-ctas { display:flex; gap:14px; flex-shrink:0; }
+  @media(max-width:900px){
+    .intro-strip { flex-direction:column; align-items:flex-start; padding:40px 24px; }
+  }
+
+  /* WORK GRID */
+  .work-section { padding:72px 48px 100px; }
+  .section-header-row {
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom:1px solid var(--grey-2); padding-bottom:16px; margin-bottom:32px;
+  }
+  .section-header-row h2 {
+    font-family:'Playfair Display', serif; font-size:clamp(1.2rem,2vw,1.6rem);
+    font-weight:400; letter-spacing:-0.3px;
+  }
+  .section-header-row a {
+    font-size:0.65rem; letter-spacing:2px; text-transform:uppercase;
+    font-weight:600; color:var(--black); text-decoration:none; transition:color 0.2s;
+  }
+  .section-header-row a:hover { color:var(--red); }
+
+  /* Simple 3x2 grid */
+  .work-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:3px;
+  }
+  .work-item {
+    display:block; text-decoration:none; color:var(--black);
+    position:relative; overflow:hidden; aspect-ratio:3/2;
+  }
+  .work-item-bg {
+    position:absolute; inset:0;
+    transition:transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .work-item:hover .work-item-bg { transform:scale(1.05); }
+  .work-item-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:20px;
+    transition:background 0.4s;
+  }
+  .work-item:hover .work-item-overlay {
+    background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+  }
+  .work-item-label {
+    font-size:0.58rem; letter-spacing:3px; text-transform:uppercase;
+    font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:4px;
+  }
+  .work-item-title {
+    font-family:'Playfair Display', serif; font-size:1rem; font-weight:400;
+    color:white; line-height:1.2;
+  }
+  .work-item-arrow {
+    position:absolute; top:16px; right:16px;
+    font-size:0.62rem; letter-spacing:1.5px; text-transform:uppercase;
+    font-weight:600; color:white; opacity:0; transition:opacity 0.3s;
+  }
+  .work-item:hover .work-item-arrow { opacity:1; }
+
+  /* BG colours for work items */
+  .bg-dance-1 { background:linear-gradient(140deg,#1a0a0a,var(--red)); }
+  .bg-dance-2 { background:linear-gradient(140deg,#2a0000,#8B0000); }
+  .bg-yoga-1  { background:linear-gradient(140deg,#001a1a,var(--teal)); }
+  .bg-yoga-2  { background:linear-gradient(140deg,#003030,#004545); }
+  .bg-art-1   { background:linear-gradient(140deg,#1a0d00,var(--amber)); }
+  .bg-art-2   { background:linear-gradient(140deg,#2a1800,#7a4500); }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    padding:100px 48px; background:var(--black); color:white;
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+  }
+  .about-strip-left h2 {
+    font-family:'Playfair Display', serif; font-size:clamp(2.2rem,4vw,3.8rem);
+    font-weight:400; line-height:1.1; letter-spacing:-1px;
+  }
+  .about-strip-left h2 em { font-style:italic; color:var(--grey-3); }
+  .about-strip-divider { width:40px; height:1px; background:var(--red); margin:36px 0; }
+  .about-strip-right p { font-size:0.9rem; line-height:1.9; color:rgba(255,255,255,0.55); font-weight:300; margin-bottom:14px; }
+  .about-stats { display:flex; gap:48px; margin-top:40px; }
+  .stat-n { font-family:'Playfair Display', serif; font-size:2.6rem; font-weight:400; color:white; line-height:1; }
+  .stat-l { font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; color:var(--grey-3); margin-top:4px; }
+
+  /* CONTACT */
+  .contact-section { padding:100px 48px; border-top:1px solid var(--grey-2); }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+  .contact-left h2 { font-family:'Playfair Display', serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:400; line-height:1.1; margin-bottom:24px; letter-spacing:-0.5px; }
+  .contact-left p { font-size:0.88rem; line-height:1.9; color:#666; margin-bottom:36px; font-weight:300; }
+  .contact-meta { margin-bottom:12px; }
+  .contact-meta-label { font-size:0.6rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:600; color:var(--grey-3); margin-bottom:4px; }
+  .contact-meta-val { font-size:0.88rem; color:var(--black); font-weight:400; }
+  .cform { display:flex; flex-direction:column; padding-top:8px; }
+
+  @media(max-width:900px){
+    .hero { padding:100px 24px 0; }
+    .hero-top-row { top:88px; left:24px; right:24px; }
+    .hero-bottom { flex-direction:column; align-items:flex-start; gap:32px; }
+    .work-section { padding:48px 24px 64px; }
+    .work-grid-top, .work-grid-bottom { grid-template-columns:1fr; }
+    .about-strip { grid-template-columns:1fr; gap:40px; padding:64px 24px; }
+    .contact-section { padding:64px 24px; }
+    .contact-grid { grid-template-columns:1fr; gap:48px; }
+  }
+  @media(max-width:600px){ .work-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Chiara Laurenza</a>
+  <ul class="nav-center"><li><a href="dance.html" class="">Dance</a></li><li><a href="yoga.html" class="">Yoga</a></li><li><a href="art.html" class="">Art</a></li></ul>
+  <div class="nav-right"><a href="index.html#contact">Contact</a></div>
+  <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="dance.html">Dance</a><a href="yoga.html">Yoga</a><a href="art.html">Art</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- ═══ BACKGROUND ═══════════════════════════════════════════════════════
+       HOW TO USE:
+       A) VIDEO CAROUSEL — replace src="video1.mp4", "video2.mp4", "video3.mp4"
+          with your actual video file paths (upload them to the same GitHub folder).
+          Videos autoplay, loop through one by one, and crossfade every 6 seconds.
+       B) SINGLE IMAGE — remove all <video> tags and add this to .hero-bg in CSS:
+          background-image: url('your-photo.jpg');
+          background-size: cover; background-position: center;
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="hero-bg" id="hero-bg">
+    <video class="active" src="video1.mp4" autoplay muted loop playsinline></video>
+    <video src="video2.mp4" muted loop playsinline></video>
+    <video src="video3.mp4" muted loop playsinline></video>
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="hero-top-row">
+    <span class="hero-label">Creative Artist &mdash; Munich</span>
+    <span class="hero-counter">2026</span>
+  </div>
+  <div class="hero-main">
+    <h1>
+      Breathe.<br/><em>Flow.</em><br/>Create.
+    </h1>
+
+  </div>
+
+  <!-- Carousel dots + pause -->
+  <div class="hero-controls" id="hero-controls"></div>
+
+</section>
+
+<!-- INTRO STRIP -->
+<section class="intro-strip reveal">
+  <p class="intro-strip-text">Dance, yoga, and terracotta art &mdash; three disciplines, one language of the body. Workshops, private sessions, and bespoke creative experiences in Munich.</p>
+  <div class="intro-strip-ctas">
+    <a href="#work" class="btn btn-fill">View Work</a>
+    <button class="btn btn-outline" onclick="openModal('General','Book a Session')">Book a Session</button>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work-section" id="work">
+  <div class="section-header-row reveal">
+    <h2>Selected Work</h2>
+    <a href="dance.html">View All &rarr;</a>
+  </div>
+
+  <div class="work-grid">
+    <a href="dance.html" class="work-item reveal" style="transition-delay:0ms">
+      <div class="work-item-bg bg-dance-1"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Dance &mdash; 01</span>
+        <span class="work-item-title">Contemporary &amp; Jazz</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+    <a href="yoga.html" class="work-item reveal" style="transition-delay:100ms">
+      <div class="work-item-bg bg-yoga-1"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Yoga &mdash; 02</span>
+        <span class="work-item-title">Vinyasa &amp; Somatic</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+    <a href="art.html" class="work-item reveal" style="transition-delay:200ms">
+      <div class="work-item-bg bg-art-1"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Art &mdash; 03</span>
+        <span class="work-item-title">Terracotta Sculpture</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+    <a href="dance.html" class="work-item reveal" style="transition-delay:0ms">
+      <div class="work-item-bg bg-dance-2"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Dance &mdash; 04</span>
+        <span class="work-item-title">Hip Hop &amp; Freestyle</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+    <a href="art.html" class="work-item reveal" style="transition-delay:100ms">
+      <div class="work-item-bg bg-art-2"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Art &mdash; 05</span>
+        <span class="work-item-title">Clay &amp; Mixed Media</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+    <a href="yoga.html" class="work-item reveal" style="transition-delay:200ms">
+      <div class="work-item-bg bg-yoga-2"></div>
+      <div class="work-item-overlay">
+        <span class="work-item-label">Yoga &mdash; 06</span>
+        <span class="work-item-title">Retreats &amp; Events</span>
+      </div>
+      <span class="work-item-arrow">Explore &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-strip-left reveal from-left">
+    <h2>Three disciplines.<br/><em>One voice.</em></h2>
+    <div class="about-strip-divider"></div>
+    <div class="about-stats">
+      <div><div class="stat-n">3</div><div class="stat-l">Disciplines</div></div>
+      <div><div class="stat-n">7+</div><div class="stat-l">Years Teaching</div></div>
+      <div><div class="stat-n">Munich</div><div class="stat-l">Based</div></div>
+    </div>
+  </div>
+  <div class="about-strip-right reveal from-right">
+    <p>I am Chiara &mdash; a dancer, yoga practitioner, and terracotta artist. My work lives at the intersection of the physical and the poetic, where body knowledge becomes creative form.</p>
+    <p>Trained in contemporary, hip hop, and jazz, I bring a somatic sensibility to everything I do. Whether on a dance floor, a yoga mat, or beside a clay workbench, each session is a conversation between movement, breath, and material.</p>
+    <p>I work with individuals, small groups, and organisations seeking workshops, performances, and commissions that carry genuine depth.</p>
+    <a href="index.html#contact" class="btn btn-outline" style="margin-top:36px;border-color:rgba(255,255,255,0.25);color:white;display:inline-block">Get in Touch</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="reveal from-left">
+      <h2>Let&rsquo;s create<br/><em style="font-style:italic;font-family:'Playfair Display',serif">together.</em></h2>
+      <p>Questions about workshops, sessions, commissions, or retreats &mdash; I would love to hear from you.</p>
+      <div class="contact-meta"><div class="contact-meta-label">Location</div><div class="contact-meta-val">Munich, Bavaria, Germany</div></div>
+      <div class="contact-meta"><div class="contact-meta-label">Email</div><div class="contact-meta-val">hello@chiaralaurenza.com</div></div>
+      <div class="contact-meta"><div class="contact-meta-label">Instagram</div><div class="contact-meta-val">@chiaralaurenza</div></div>
+    </div>
+    <form class="cform reveal from-right" onsubmit="handleContact(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Chiara" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Laurenza" required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+      <div class="fg"><label>Topic</label>
+        <select>
+          <option>Dance &mdash; Workshop or Session</option>
+          <option>Yoga &mdash; Workshop or Session</option>
+          <option>Terracotta Art &mdash; Workshop</option>
+          <option>Commission or Choreography</option>
+          <option>Retreat or Fusion Event</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message</label><textarea placeholder="Tell me what you have in mind..."></textarea></div>
+      <button class="btn btn-fill" type="submit" style="margin-top:8px">Send Message</button>
+      <p style="display:none;margin-top:16px;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--red)" id="cs">Message received &mdash; I will be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+<script>function handleContact(e){e.preventDefault();document.getElementById('cs').style.display='block';}</script>
+
+
+<footer class="site-footer reveal">
+  <span class="site-footer-logo">Chiara Laurenza</span>
+  <div class="site-footer-links">
+    <a href="dance.html">Dance</a>
+    <a href="yoga.html">Yoga</a>
+    <a href="art.html">Art</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <span class="site-footer-copy">Munich &middot; 2026</span>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeOut(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">Close ×</button>
+    <p class="modal-tag" id="m-tag">Booking</p>
+    <h2 id="m-title">Book a Session</h2>
+    <form onsubmit="submitModal(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Your surname" required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+      <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+49..."></div>
+      <div class="fg"><label>Preferred Date</label><input type="date" required></div>
+      <div class="fg"><label>Level</label>
+        <select><option>Beginner</option><option>Some Experience</option><option>Intermediate</option><option>Advanced</option></select>
+      </div>
+      <div class="fg"><label>Message</label><textarea placeholder="Tell me about your goals..."></textarea></div>
+      <button class="modal-submit" type="submit">Send Request</button>
+      <p class="modal-success" id="m-success">Received — I will be in touch shortly.</p>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
+  function openModal(tag, title){
+    document.getElementById('m-tag').textContent = tag;
+    document.getElementById('m-title').textContent = title;
+    document.getElementById('m-success').style.display='none';
+    document.getElementById('modal-overlay').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){ document.getElementById('modal-overlay').classList.remove('active'); document.body.style.overflow=''; }
+  function closeOut(e){ if(e.target===document.getElementById('modal-overlay')) closeModal(); }
+  function submitModal(e){ e.preventDefault(); document.getElementById('m-success').style.display='block'; setTimeout(closeModal,3000); }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } });
+  },{ threshold:0.08, rootMargin:'0px 0px -32px 0px' });
+  // Small delay ensures layout is complete before observing
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // If already in viewport on load, show immediately
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        obs.observe(el);
+      }
+    });
+  });
+</script>
+
+
+<script>
+  // ── HERO VIDEO CAROUSEL ──────────────────────────────────────────────────
+  (function(){
+    const videos = Array.from(document.querySelectorAll('.hero-bg video'));
+    const ctrl   = document.getElementById('hero-controls');
+    if (!videos.length) return;
+
+    let current = 0, paused = false, timer;
+
+    // Build dots
+    videos.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      d.onclick = () => goTo(i);
+      ctrl.appendChild(d);
+    });
+
+    // Pause button
+    const pb = document.createElement('button');
+    pb.className = 'hero-pause'; pb.textContent = 'Pause';
+    pb.onclick = () => {
+      paused = !paused;
+      pb.textContent = paused ? 'Play' : 'Pause';
+      if (!paused) { videos[current].play(); startTimer(); }
+      else { clearTimeout(timer); videos[current].pause(); }
+    };
+    ctrl.appendChild(pb);
+
+    function goTo(n) {
+      videos[current].classList.remove('active');
+      document.querySelectorAll('.hero-dot')[current].classList.remove('active');
+      current = (n + videos.length) % videos.length;
+      videos[current].classList.add('active');
+      videos[current].currentTime = 0;
+      videos[current].play();
+      document.querySelectorAll('.hero-dot')[current].classList.add('active');
+    }
+
+    function startTimer() {
+      clearTimeout(timer);
+      timer = setTimeout(() => { if (!paused) goTo(current + 1); startTimer(); }, 6000);
+    }
+
+    startTimer();
+  })();
+</script>
+
+</body>
+</html>
