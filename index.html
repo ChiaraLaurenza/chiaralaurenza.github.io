@@ -140,22 +140,19 @@
   .hero { color:white; border-bottom-color:rgba(255,255,255,0.15); }
   .hero-bg {
     position:absolute; top:0; left:0; right:0; bottom:0; z-index:0;
-    background:#0A0A0A; /* fallback */
+    background:#0A0A0A;
     overflow:hidden;
   }
-  /* IMAGE MODE: set --hero-image to use a photo */
   .hero-bg.has-image {
     background-image:var(--hero-image);
     background-size:cover; background-position:center;
   }
-  /* VIDEO CAROUSEL */
   .hero-bg video {
     position:absolute; inset:0; width:100%; height:100%;
     object-fit:cover; opacity:0;
     transition:opacity 1.2s ease;
   }
   .hero-bg video.active { opacity:1; }
-  /* OVERLAY — keeps text readable */
   .hero-bg-overlay {
     position:absolute; inset:0;
     background:linear-gradient(
@@ -165,7 +162,6 @@
     );
     z-index:1;
   }
-  /* All hero content above bg */
   .hero-top-row { position:relative; z-index:2; }
   .hero-main { position:relative; z-index:2; text-align:center; }
   .hero-top-row { color:rgba(255,255,255,0.6); }
@@ -272,7 +268,6 @@
   }
   .section-header-row a:hover { color:var(--red); }
 
-  /* Simple 3x2 grid */
   .work-grid {
     display:grid; grid-template-columns:repeat(3,1fr); gap:3px;
   }
@@ -309,7 +304,6 @@
   }
   .work-item:hover .work-item-arrow { opacity:1; }
 
-  /* BG colours for work items */
   .bg-dance-1 { background:linear-gradient(140deg,#1a0a0a,var(--red)); }
   .bg-dance-2 { background:linear-gradient(140deg,#2a0000,#8B0000); }
   .bg-yoga-1  { background:linear-gradient(140deg,#001a1a,var(--teal)); }
@@ -371,20 +365,10 @@
 
 <!-- HERO -->
 <section class="hero">
-
-  <!-- ═══ BACKGROUND ═══════════════════════════════════════════════════════
-       HOW TO USE:
-       A) VIDEO CAROUSEL — replace src="video1.mp4", "video2.mp4", "video3.mp4"
-          with your actual video file paths (upload them to the same GitHub folder).
-          Videos autoplay, loop through one by one, and crossfade every 6 seconds.
-       B) SINGLE IMAGE — remove all <video> tags and add this to .hero-bg in CSS:
-          background-image: url('your-photo.jpg');
-          background-size: cover; background-position: center;
-  ════════════════════════════════════════════════════════════════════════ -->
   <div class="hero-bg" id="hero-bg">
-    <video class="active" src="video1.mp4" autoplay muted loop playsinline></video>
-    <video src="video2.mp4" muted loop playsinline></video>
-    <video src="video3.mp4" muted loop playsinline></video>
+    <video class="active" src="videos/dance_website.mov" autoplay muted loop playsinline></video>
+    <video src="videos/art_website-2.mov" muted loop playsinline></video>
+    <video src="videos/danceperformace_website-3.mov" muted loop playsinline></video>
     <div class="hero-bg-overlay"></div>
   </div>
 
@@ -396,10 +380,8 @@
     <h1>
       Breathe.<br/><em>Flow.</em><br/>Create.
     </h1>
-
   </div>
 
-  <!-- Carousel dots + pause -->
   <div class="hero-controls" id="hero-controls"></div>
 
 </section>
@@ -577,11 +559,9 @@
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } });
   },{ threshold:0.08, rootMargin:'0px 0px -32px 0px' });
-  // Small delay ensures layout is complete before observing
   requestAnimationFrame(() => {
     document.querySelectorAll('.reveal').forEach(el => {
       const rect = el.getBoundingClientRect();
-      // If already in viewport on load, show immediately
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add('visible');
       } else {
