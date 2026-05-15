@@ -194,6 +194,18 @@
     .styles-section { padding:60px 24px; }
     .style-row { grid-template-columns:1fr; gap:10px; }
   }
+
+  .btn {
+    font-size:0.7rem; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; padding:14px 32px;
+    text-decoration:none; cursor:pointer; border:1px solid var(--black);
+    font-family:'Manrope',sans-serif; transition:background 0.25s, color 0.25s;
+    display:inline-block; background:transparent; color:var(--black);
+  }
+  .btn-outline { background:transparent; color:var(--black); }
+  .btn-outline:hover { background:var(--black); color:var(--white); }
+  .btn-fill { background:var(--black); color:var(--white); }
+  .btn-fill:hover { background:#333; }
 </style>
 </head>
 <body>
@@ -216,7 +228,7 @@
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
     <p class="page-hero-desc">A somatic, body-led approach to practice &mdash; connecting movement, breath, and awareness for transformation that reaches beyond the mat.</p>
-    <button class="btn btn-fill page-hero-cta" onclick="openModal('Yoga','Book a Workshop or Session')">Book Now</button>
+    <button class="btn btn-outline page-hero-cta" onclick="openModal('Yoga','Book a Workshop or Session')">Book Now</button>
   </div>
 </section>
 

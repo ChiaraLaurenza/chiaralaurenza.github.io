@@ -194,6 +194,18 @@
     .styles-section { padding:60px 24px; }
     .style-row { grid-template-columns:1fr; gap:10px; }
   }
+
+  .btn {
+    font-size:0.7rem; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; padding:14px 32px;
+    text-decoration:none; cursor:pointer; border:1px solid var(--black);
+    font-family:'Manrope',sans-serif; transition:background 0.25s, color 0.25s;
+    display:inline-block; background:transparent; color:var(--black);
+  }
+  .btn-outline { background:transparent; color:var(--black); }
+  .btn-outline:hover { background:var(--black); color:var(--white); }
+  .btn-fill { background:var(--black); color:var(--white); }
+  .btn-fill:hover { background:#333; }
 </style>
 </head>
 <body>
@@ -212,11 +224,11 @@
 <section class="page-hero">
   <div class="page-hero-left reveal from-left">
     <p class="page-hero-eyebrow">Discipline &mdash; 03</p>
-    <h1>Terracotta<br/><em>Art</em></h1>
+    <h1>Painting</h1>
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
-    <p class="page-hero-desc">Sculpting with terracotta clay &mdash; an ancient practice connecting hands, earth, and imagination into tangible, enduring form.</p>
-    <button class="btn btn-fill page-hero-cta" onclick="openModal('Art','Book a Workshop or Commission')">Book Now</button>
+    <p class="page-hero-desc">Painting as a practice of presence &mdash; on textiles, candles, and canvas. House workshops for small groups, guided from first brushstroke to finished piece.</p>
+    <button class="btn btn-outline page-hero-cta" onclick="openModal('Art','Book a Workshop or Commission')">Book Now</button>
   </div>
 </section>
 
@@ -224,29 +236,31 @@
   <div class="offer-grid">
     <div class="offer-item reveal" style="transition-delay:0ms">
       <div class="offer-num">01</div>
-      <h3>Clay Workshops</h3>
-      <p>Hands-on group sessions where participants learn to sculpt with terracotta. No prior experience required. Small group sizes ensure individual attention throughout.</p>
+      <h3>House Painting Workshops</h3>
+      <p>Group painting sessions hosted at home &mdash; learn to paint on textiles, candles, and canvas in a relaxed, convivial setting. No prior experience needed, just curiosity.</p>
       <div class="offer-tags">
-        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Terracotta</span>
+        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Textiles</span>
+        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Candles</span>
+        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Canvas</span>
         <span class="otag" style="border-color:var(--amber);color:var(--amber)">Small Groups</span>
       </div>
-      <button class="book-link" style="color:var(--amber)" onclick="openModal('Art','Clay Workshop')">Book Workshop</button>
+      <button class="book-link" style="color:var(--amber)" onclick="openModal('Art','House Painting Workshop')">Book Workshop</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:120ms">
       <div class="offer-num">02</div>
       <h3>Commission a Piece</h3>
-      <p>Order a custom terracotta sculpture or mixed-media painting for your home, studio, or as a considered, deeply personal gift. Each piece is unique and made by hand.</p>
+      <p>Order a custom painting for your home, studio, or as a considered, deeply personal gift. Each piece is unique and made by hand &mdash; on canvas, textile, or any surface you choose.</p>
       <div class="offer-tags">
         <span class="otag" style="border-color:var(--amber);color:var(--amber)">Custom</span>
-        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Sculpture</span>
-        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Mixed Media</span>
+        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Canvas</span>
+        <span class="otag" style="border-color:var(--amber);color:var(--amber)">Textiles</span>
       </div>
       <button class="book-link" style="color:var(--amber)" onclick="openModal('Art','Commission a Piece')">Request Commission</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:240ms">
       <div class="offer-num">03</div>
       <h3>Art &amp; Movement</h3>
-      <p>A unique fusion experience: a morning yoga or dance session followed by a terracotta sculpting workshop. The body moves first; the hands remember what was felt.</p>
+      <p>A unique fusion experience: a morning yoga or dance session followed by a painting workshop. The body moves first; the hands remember what was felt.</p>
       <div class="offer-tags">
         <span class="otag" style="border-color:var(--amber);color:var(--amber)">Fusion</span>
         <span class="otag" style="border-color:var(--amber);color:var(--amber)">Yoga + Art</span>
@@ -258,19 +272,19 @@
 </section>
 
 <section class="styles-section">
-  <h2 class="reveal">Material &amp; Method</h2>
+  <h2 class="reveal">Surface &amp; Medium</h2>
   <div class="styles-list">
     <div class="style-row reveal">
-      <div class="style-name">Terracotta<em>The Material</em></div>
-      <div class="style-desc">An earthen, iron-rich clay fired at low temperatures to produce warm ochre and red tones. One of humanity&rsquo;s oldest sculptural materials, it carries both fragility and permanence in the same form.</div>
+      <div class="style-name">Textiles<em>The Surface</em></div>
+      <div class="style-desc">Fabric becomes a living canvas &mdash; painting on cloth brings colour into everyday objects, from clothing to home pieces. Each piece absorbs the paint differently, making every result one of a kind.</div>
     </div>
     <div class="style-row reveal" style="transition-delay:80ms">
-      <div class="style-name">Hand-building<em>The Method</em></div>
-      <div class="style-desc">All work begins by hand &mdash; coiling, pinching, and slab-building without a wheel. This slow, tactile process prioritises feeling over perfection and presence over precision. The body leads the work.</div>
+      <div class="style-name">Candles<em>The Object</em></div>
+      <div class="style-desc">Painting directly onto candles transforms a simple object into something decorative and personal. Delicate brushwork, botanical motifs, and layered colour sit beautifully on wax surfaces.</div>
     </div>
     <div class="style-row reveal" style="transition-delay:160ms">
-      <div class="style-name">Mixed Media<em>Surface &amp; Finish</em></div>
-      <div class="style-desc">Terracotta surfaces become canvases for natural pigments, oxides, and applied texture. Finished pieces carry the marks of making &mdash; nothing is hidden, everything is revealed.</div>
+      <div class="style-name">Canvas<em>The Classic</em></div>
+      <div class="style-desc">The canvas is where painting finds its full freedom &mdash; colour, composition, and gesture with no constraints. Sessions range from guided studies to open, expressive painting for all levels.</div>
     </div>
   </div>
 </section>
