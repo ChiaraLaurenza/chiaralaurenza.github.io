@@ -348,37 +348,45 @@
     .contact-grid { grid-template-columns:1fr; gap:48px; }
   }
   @media(max-width:600px){ .work-grid { grid-template-columns:1fr; } }
+  .nav-right { display:flex; align-items:center; gap:28px; }
+  .lang-switch { display:flex; gap:2px; }
+  .lang-switch button { background:none; border:none; cursor:pointer; font-family:'Manrope',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:1.5px; color:var(--grey-3); padding:4px 6px; transition:color 0.2s; }
+  .lang-switch button:hover, .lang-switch button.active { color:var(--black); }
+  .lang-switch button.active { text-decoration:underline; text-underline-offset:4px; }
+  .mobile-menu .lang-switch { padding:13px 0 0; }
+  .mobile-menu .lang-switch button { font-size:0.78rem; padding:4px 12px 4px 0; }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Chiara Laurenza</a>
-  <ul class="nav-center"><li><a href="dance.html" class="">Dance</a></li><li><a href="yoga.html" class="">Yoga</a></li><li><a href="art.html" class="">Art</a></li></ul>
-  <div class="nav-right"><a href="index.html#contact">Contact</a></div>
+  <ul class="nav-center"><li><a href="dance-art.html" class="">Dance &amp; Art</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="blog.html" class="">Blog</a></li></ul>
+  <div class="nav-right"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div><a href="index.html#contact">Contact</a></div>
   <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="dance.html">Dance</a><a href="yoga.html">Yoga</a><a href="art.html">Art</a>
+  <a href="dance-art.html">Dance &amp; Art</a><a href="art.html">Paintings</a><a href="blog.html">Blog</a>
   <a href="index.html#contact">Contact</a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="hero-bg">
-    <video class="active" src="videos/dance_website.mov" autoplay muted loop playsinline></video>
-    <video src="videos/art_website-2.mov" muted loop playsinline></video>
-    <video src="videos/danceperformace_website-3.mov" muted loop playsinline></video>
+    <video class="active" src="videos/dance.mp4" autoplay muted loop playsinline></video>
+    <video src="videos/art.mp4" muted loop playsinline></video>
+    <video src="videos/performance.mp4" muted loop playsinline></video>
     <div class="hero-bg-overlay"></div>
   </div>
 
   <div class="hero-top-row">
-    <span class="hero-label">Creative Artist &mdash; Munich</span>
+    <span class="hero-label">Dancer &amp; Painter &mdash; Munich</span>
     <span class="hero-counter">2026</span>
   </div>
   <div class="hero-main">
     <h1>
-      Breathe.<br/><em>Flow.</em><br/>Create.
+      Dance.<br/><em>Feel.</em><br/>Paint.
     </h1>
   </div>
 
@@ -388,88 +396,44 @@
 
 <!-- INTRO STRIP -->
 <section class="intro-strip reveal">
-  <p class="intro-strip-text">This is a place for body movement, deep breath, and paint brushing on many surfaces. In my intimate workshops and one‑to‑one sessions in Munich, we do simple rituals of care for body and soul.</p>
+  <p class="intro-strip-text">We dance a feeling, pause to listen, and translate what the body holds into colour on canvas.</p>
   <div class="intro-strip-ctas">
-    <a href="#work" class="btn btn-fill">View Work</a>
-    <button class="btn btn-outline" onclick="openModal('General','Book a Session')">Book a Session</button>
+    <a href="dance-art.html" class="btn btn-fill">See Workshops</a>
+    <button class="btn btn-outline" onclick="openModal('Dance &amp; Art','Book a Workshop')">Book a Workshop</button>
   </div>
 </section>
 
 <!-- WORK -->
 <section class="work-section" id="work">
   <div class="section-header-row reveal">
-    <h2>Selected Work</h2>
-    <a href="dance.html">View All &rarr;</a>
+    <h2>What I Offer</h2>
   </div>
 
   <div class="work-grid">
-    <a href="dance.html" class="work-item reveal" style="transition-delay:0ms">
+    <a href="dance-art.html" class="work-item reveal" style="transition-delay:0ms">
       <div class="work-item-bg bg-dance-1"></div>
       <div class="work-item-overlay">
-        <span class="work-item-label">Dance &mdash; 01</span>
-        <span class="work-item-title">Contemporary &amp; Jazz</span>
-      </div>
-      <span class="work-item-arrow">Explore &rarr;</span>
-    </a>
-    <a href="yoga.html" class="work-item reveal" style="transition-delay:100ms">
-      <div class="work-item-bg bg-yoga-1"></div>
-      <div class="work-item-overlay">
-        <span class="work-item-label">Yoga &mdash; 02</span>
-        <span class="work-item-title">Vinyasa &amp; Somatic</span>
-      </div>
-      <span class="work-item-arrow">Explore &rarr;</span>
-    </a>
-    <a href="art.html" class="work-item reveal" style="transition-delay:200ms">
-      <div class="work-item-bg bg-art-1"></div>
-      <div class="work-item-overlay">
-        <span class="work-item-label">Art &mdash; 03</span>
-        <span class="work-item-title">Painting Workshops</span>
-      </div>
-      <span class="work-item-arrow">Explore &rarr;</span>
-    </a>
-    <a href="dance.html" class="work-item reveal" style="transition-delay:0ms">
-      <div class="work-item-bg bg-dance-2"></div>
-      <div class="work-item-overlay">
-        <span class="work-item-label">Dance &mdash; 04</span>
-        <span class="work-item-title">Hip Hop &amp; Freestyle</span>
+        <span class="work-item-label">Workshops &mdash; 01</span>
+        <span class="work-item-title">Dance &amp; Art Workshops</span>
       </div>
       <span class="work-item-arrow">Explore &rarr;</span>
     </a>
     <a href="art.html" class="work-item reveal" style="transition-delay:100ms">
-      <div class="work-item-bg bg-art-2"></div>
+      <div class="work-item-bg bg-art-1"></div>
       <div class="work-item-overlay">
-        <span class="work-item-label">Art &mdash; 05</span>
-        <span class="work-item-title">Textiles, Candles &amp; Canvas</span>
+        <span class="work-item-label">Paintings &mdash; 02</span>
+        <span class="work-item-title">Originals &amp; Commissions</span>
       </div>
       <span class="work-item-arrow">Explore &rarr;</span>
     </a>
-    <a href="yoga.html" class="work-item reveal" style="transition-delay:200ms">
-      <div class="work-item-bg bg-yoga-2"></div>
+    <a href="blog.html" class="work-item reveal" style="transition-delay:200ms">
+      <div class="work-item-bg bg-yoga-1"></div>
       <div class="work-item-overlay">
-        <span class="work-item-label">Yoga &mdash; 06</span>
-        <span class="work-item-title">Retreats &amp; Events</span>
+        <span class="work-item-label">Blog &mdash; 03</span>
+        <span class="work-item-title">Notes from the Studio</span>
       </div>
-      <span class="work-item-arrow">Explore &rarr;</span>
+      <span class="work-item-arrow">Read &rarr;</span>
     </a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-strip" id="about">
-  <div class="about-strip-left reveal from-left">
-    <h2>Three disciplines.<br/><em>One voice.</em></h2>
-    <div class="about-strip-divider"></div>
-    <div class="about-stats">
-      <div><div class="stat-n">3</div><div class="stat-l">Disciplines</div></div>
-      <div><div class="stat-n">7+</div><div class="stat-l">Years Teaching</div></div>
-      <div><div class="stat-n">Munich</div><div class="stat-l">Based</div></div>
-    </div>
-  </div>
-  <div class="about-strip-right reveal from-right">
-    <p>I am Chiara &mdash; a dancer, yoga practitioner, and painter. My work lives at the intersection of the physical and the poetic, where body knowledge becomes creative form.</p>
-    <p>Trained in contemporary, hip hop, and jazz, I bring a somatic sensibility to everything I do. Whether on a dance floor, a yoga mat, or in front of a canvas, each session is a conversation between movement, breath, and colour.</p>
-    <p>I work with individuals, small groups, and organisations seeking workshops, performances, and commissions that carry genuine depth.</p>
-    <a href="index.html#contact" class="btn btn-outline" style="margin-top:36px;border-color:rgba(255,255,255,0.25);color:white;display:inline-block">Get in Touch</a>
   </div>
 </section>
 
@@ -478,10 +442,8 @@
   <div class="contact-grid">
     <div class="reveal from-left">
       <h2>Let&rsquo;s create<br/><em style="font-style:italic;font-family:'Playfair Display',serif">together.</em></h2>
-      <p>Questions about workshops, sessions, commissions, or retreats &mdash; I would love to hear from you.</p>
+      <p>Questions about workshops, paintings or commissions &mdash; I would love to hear from you.</p>
       <div class="contact-meta"><div class="contact-meta-label">Location</div><div class="contact-meta-val">Munich, Bavaria, Germany</div></div>
-      <div class="contact-meta"><div class="contact-meta-label">Email</div><div class="contact-meta-val">hello@chiaralaurenza.com</div></div>
-      <div class="contact-meta"><div class="contact-meta-label">Instagram</div><div class="contact-meta-val">@chiaralaurenza</div></div>
     </div>
     <form class="cform reveal from-right" onsubmit="handleContact(event)">
       <div class="form-row">
@@ -491,11 +453,9 @@
       <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
       <div class="fg"><label>Topic</label>
         <select>
-          <option>Dance &mdash; Workshop or Session</option>
-          <option>Yoga &mdash; Workshop or Session</option>
-          <option>Painting &mdash; Workshop</option>
-          <option>Commission or Choreography</option>
-          <option>Retreat or Fusion Event</option>
+          <option>Dance &amp; Art &mdash; Workshop</option>
+          <option>Dance &amp; Art &mdash; Teams &amp; Events</option>
+          <option>Painting &mdash; Buy or Commission</option>
           <option>General Enquiry</option>
         </select>
       </div>
@@ -511,9 +471,9 @@
 <footer class="site-footer reveal">
   <span class="site-footer-logo">Chiara Laurenza</span>
   <div class="site-footer-links">
-    <a href="dance.html">Dance</a>
-    <a href="yoga.html">Yoga</a>
-    <a href="art.html">Art</a>
+    <a href="dance-art.html">Dance &amp; Art</a>
+    <a href="art.html">Paintings</a>
+    <a href="blog.html">Blog</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <span class="site-footer-copy">Munich &middot; 2026</span>
@@ -546,8 +506,8 @@
 <script>
   function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
   function openModal(tag, title){
-    document.getElementById('m-tag').textContent = tag;
-    document.getElementById('m-title').textContent = title;
+    document.getElementById('m-tag').textContent = window.t ? t(tag) : tag;
+    document.getElementById('m-title').textContent = window.t ? t(title) : title;
     document.getElementById('m-success').style.display='none';
     document.getElementById('modal-overlay').classList.add('active');
     document.body.style.overflow='hidden';
@@ -620,5 +580,7 @@
   })();
 </script>
 
+<script src="i18n.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>

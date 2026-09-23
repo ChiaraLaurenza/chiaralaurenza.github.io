@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Chiara Laurenza — Blog</title>
+    <link>https://chiaralaurenza.github.io/blog.html</link>
+    <description>Notes from the studio: dance, painting, and what happens in between.</description>
+    <language>en</language>
+    <item>
+      <title>Why I paint after I dance</title>
+      <link>https://chiaralaurenza.github.io/blog/2026-09-movement-becomes-colour.html</link>
+      <guid>https://chiaralaurenza.github.io/blog/2026-09-movement-becomes-colour.html</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0200</pubDate>
+      <description>On the difference between a trace and a translation.</description>
+    </item>
+  </channel>
+</rss>

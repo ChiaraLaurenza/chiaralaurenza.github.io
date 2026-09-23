@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Dance — Chiara Laurenza</title>
+  <title>Blog — Chiara Laurenza</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
   :root {
@@ -206,93 +206,90 @@
   .btn-outline:hover { background:var(--black); color:var(--white); }
   .btn-fill { background:var(--black); color:var(--white); }
   .btn-fill:hover { background:#333; }
+
+  /* BLOG */
+  .post-list { padding:40px 48px 80px; }
+  .post-row { display:grid; grid-template-columns:160px 1fr auto; gap:40px; padding:36px 0; border-bottom:1px solid var(--grey-2); text-decoration:none; color:var(--black); align-items:baseline; }
+  .post-row:hover h3 { color:var(--red); }
+  .post-date { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--grey-3); }
+  .post-row h3 { font-family:'Playfair Display', serif; font-size:1.6rem; font-weight:400; line-height:1.2; margin-bottom:8px; transition:color 0.2s; }
+  .post-row p { font-size:0.88rem; line-height:1.8; color:#666; font-weight:300; max-width:560px; }
+  .post-more { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; }
+  .newsletter { padding:80px 48px; background:var(--black); color:white; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+  .newsletter h2 { font-family:'Playfair Display', serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:400; line-height:1.1; }
+  .newsletter h2 em { font-style:italic; color:var(--grey-3); }
+  .newsletter p { font-size:0.88rem; line-height:1.8; color:rgba(255,255,255,0.55); font-weight:300; margin-top:16px; }
+  .nl-form { display:flex; gap:12px; flex-wrap:wrap; }
+  .nl-form input { flex:1; min-width:200px; padding:14px 0; border:none; border-bottom:1px solid rgba(255,255,255,0.3); background:transparent; color:white; font-family:'Manrope',sans-serif; font-size:0.9rem; outline:none; }
+  .nl-form input:focus { border-bottom-color:white; }
+  .nl-form button { background:white; color:var(--black); border:1px solid white; }
+  .nl-form button:hover { background:transparent; color:white; }
+  .nl-note { width:100%; font-size:0.7rem; letter-spacing:1px; color:rgba(255,255,255,0.4); margin-top:8px; }
+  @media(max-width:900px){ .post-list { padding:24px 24px 60px; } .post-row { grid-template-columns:1fr; gap:8px; } .newsletter { grid-template-columns:1fr; padding:60px 24px; gap:32px; } }
+  .nav-right { display:flex; align-items:center; gap:28px; }
+  .lang-switch { display:flex; gap:2px; }
+  .lang-switch button { background:none; border:none; cursor:pointer; font-family:'Manrope',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:1.5px; color:var(--grey-3); padding:4px 6px; transition:color 0.2s; }
+  .lang-switch button:hover, .lang-switch button.active { color:var(--black); }
+  .lang-switch button.active { text-decoration:underline; text-underline-offset:4px; }
+  .mobile-menu .lang-switch { padding:13px 0 0; }
+  .mobile-menu .lang-switch button { font-size:0.78rem; padding:4px 12px 4px 0; }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Chiara Laurenza</a>
-  <ul class="nav-center"><li><a href="dance.html" class="active">Dance</a></li><li><a href="yoga.html" class="">Yoga</a></li><li><a href="art.html" class="">Art</a></li></ul>
-  <div class="nav-right"><a href="index.html#contact">Contact</a></div>
+  <ul class="nav-center"><li><a href="dance-art.html" class="">Dance &amp; Art</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="blog.html" class="active">Blog</a></li></ul>
+  <div class="nav-right"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div><a href="index.html#contact">Contact</a></div>
   <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="dance.html">Dance</a><a href="yoga.html">Yoga</a><a href="art.html">Art</a>
+  <a href="dance-art.html">Dance &amp; Art</a><a href="art.html">Paintings</a><a href="blog.html">Blog</a>
   <a href="index.html#contact">Contact</a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
 </div>
+
 
 <section class="page-hero">
   <div class="page-hero-left reveal from-left">
-    <p class="page-hero-eyebrow">Discipline &mdash; 01</p>
-    <h1>Dance</h1>
+    <p class="page-hero-eyebrow">Journal</p>
+    <h1>Blog</h1>
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
-    <p class="page-hero-desc">From the fluid lines of contemporary to the raw power of hip hop and the theatrical precision of jazz &mdash; find your vocabulary of motion.</p>
-    <button class="btn btn-outline page-hero-cta" onclick="openModal('Dance','Book a Workshop or Session')">Book Now</button>
+    <p class="page-hero-desc">Notes from the studio &mdash; what I dance, what I paint, and what happens in between.</p>
+    <a href="#newsletter" class="btn btn-outline page-hero-cta">Subscribe</a>
   </div>
 </section>
 
-<section class="offer-section">
-  <div class="offer-grid">
-    <div class="offer-item reveal" style="transition-delay:0ms">
-      <div class="offer-num">01</div>
-      <h3>Group Workshops</h3>
-      <p>Immersive multi-style sessions for small groups. Explore technique, improvisation, and choreographic process in a focused, collaborative space.</p>
-      <div class="offer-tags">
-        <span class="otag" style="border-color:var(--red);color:var(--red)">Contemporary</span>
-        <span class="otag" style="border-color:var(--red);color:var(--red)">Hip Hop</span>
-        <span class="otag" style="border-color:var(--red);color:var(--red)">Jazz</span>
-      </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Group Workshop')">Book Workshop</button>
+<section class="post-list">
+  <a class="post-row reveal" href="blog/2026-09-movement-becomes-colour.html">
+    <span class="post-date">September 2026</span>
+    <div>
+      <h3>Why I paint after I dance</h3>
+      <p>Other artists let the body leave marks on the floor. I wanted something else: to feel first, and let the colour come afterwards.</p>
     </div>
-    <div class="offer-item reveal" style="transition-delay:120ms">
-      <div class="offer-num">02</div>
-      <h3>Private Sessions</h3>
-      <p>One-on-one coaching built entirely around your goals &mdash; from technique refinement and solo development to audition preparation and freestyle exploration.</p>
-      <div class="offer-tags">
-        <span class="otag" style="border-color:var(--red);color:var(--red)">1-on-1</span>
-        <span class="otag" style="border-color:var(--red);color:var(--red)">60 / 90 min</span>
-      </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Private Session')">Book Session</button>
-    </div>
-    <div class="offer-item reveal" style="transition-delay:240ms">
-      <div class="offer-num">03</div>
-      <h3>Choreography</h3>
-      <p>Commission a bespoke choreography for performances, music videos, events, or personal projects. From concept through rehearsal to final piece.</p>
-      <div class="offer-tags">
-        <span class="otag" style="border-color:var(--red);color:var(--red)">Bespoke</span>
-        <span class="otag" style="border-color:var(--red);color:var(--red)">Performances</span>
-      </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance','Choreography Commission')">Request Quote</button>
-    </div>
-  </div>
+    <span class="post-more">Read &rarr;</span>
+  </a>
 </section>
 
-<section class="styles-section">
-  <h2 class="reveal">Styles &amp; Approach</h2>
-  <div class="styles-list">
-    <div class="style-row reveal">
-      <div class="style-name">Contemporary<em>Movement</em></div>
-      <div class="style-desc">A fluid, enquiring form drawing from ballet, modern, and release technique. We work with weight, momentum, floor work, and spatial awareness to develop a deeply personal movement language.</div>
-    </div>
-    <div class="style-row reveal" style="transition-delay:80ms">
-      <div class="style-name">Hip Hop<em>Street Dance</em></div>
-      <div class="style-desc">Rooted in the social and cultural history of street dance. Sessions cover foundational grooves, freestyling, and current styles &mdash; from popping and locking to new school choreography.</div>
-    </div>
-    <div class="style-row reveal" style="transition-delay:160ms">
-      <div class="style-name">Jazz<em>Theatre &amp; Commercial</em></div>
-      <div class="style-desc">High energy, rhythmically complex, and theatrically expressive. Jazz technique forms the backbone of commercial, musical theatre, and performance work, with an emphasis on showmanship and precision.</div>
-    </div>
+<section class="newsletter" id="newsletter">
+  <div class="reveal from-left">
+    <h2>New post,<br/><em>straight to you.</em></h2>
+    <p>One email each time I publish something new &mdash; new paintings, workshop dates, thoughts from the studio. No spam, unsubscribe anytime.</p>
   </div>
+  <form class="nl-form reveal from-right" onsubmit="event.preventDefault();document.getElementById('nl-ok').style.display='block'">
+    <input type="email" id="nl-email" placeholder="your@email.com" required aria-label="Email address">
+    <button class="btn" type="submit">Subscribe</button>
+    <p class="nl-note" id="nl-ok" style="display:none">Coming soon &mdash; the newsletter is not connected yet.</p>
+  </form>
 </section>
-
 
 <footer class="site-footer reveal">
   <span class="site-footer-logo">Chiara Laurenza</span>
   <div class="site-footer-links">
-    <a href="dance.html">Dance</a>
-    <a href="yoga.html">Yoga</a>
-    <a href="art.html">Art</a>
+    <a href="dance-art.html">Dance &amp; Art</a>
+    <a href="art.html">Paintings</a>
+    <a href="blog.html">Blog</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <span class="site-footer-copy">Munich &middot; 2026</span>
@@ -325,8 +322,8 @@
 <script>
   function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
   function openModal(tag, title){
-    document.getElementById('m-tag').textContent = tag;
-    document.getElementById('m-title').textContent = title;
+    document.getElementById('m-tag').textContent = window.t ? t(tag) : tag;
+    document.getElementById('m-title').textContent = window.t ? t(title) : title;
     document.getElementById('m-success').style.display='none';
     document.getElementById('modal-overlay').classList.add('active');
     document.body.style.overflow='hidden';
@@ -352,5 +349,7 @@
   });
 </script>
 
+<script src="i18n.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>

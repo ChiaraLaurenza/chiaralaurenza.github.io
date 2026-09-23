@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Yoga — Chiara Laurenza</title>
+  <title>Dance &amp; Art — Chiara Laurenza</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
   :root {
@@ -206,93 +206,131 @@
   .btn-outline:hover { background:var(--black); color:var(--white); }
   .btn-fill { background:var(--black); color:var(--white); }
   .btn-fill:hover { background:#333; }
+
+  /* DANCE & ART */
+  .steps-section { padding:80px 48px; border-bottom:1px solid var(--grey-2); }
+  .steps-section h2, .series-section h2, .ws-section h2 { font-family:'Playfair Display', serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:400; margin-bottom:40px; border-bottom:1px solid var(--grey-2); padding-bottom:20px; }
+  .series-section { padding:80px 48px; background:var(--grey-1); border-bottom:1px solid var(--grey-2); }
+  .series-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+  .series-item { aspect-ratio:3/4; position:relative; overflow:hidden; }
+  .series-item .work-item-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.05) 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
+  .series-item .lbl { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:4px; }
+  .series-item .ttl { font-family:'Playfair Display', serif; font-size:1.2rem; color:white; }
+  .series-note { margin-top:20px; font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey-3); }
+  .ws-section { padding:80px 48px; }
+  @media(max-width:900px){ .steps-section,.series-section,.ws-section { padding:60px 24px; } .series-grid { grid-template-columns:1fr; } }
+  .nav-right { display:flex; align-items:center; gap:28px; }
+  .lang-switch { display:flex; gap:2px; }
+  .lang-switch button { background:none; border:none; cursor:pointer; font-family:'Manrope',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:1.5px; color:var(--grey-3); padding:4px 6px; transition:color 0.2s; }
+  .lang-switch button:hover, .lang-switch button.active { color:var(--black); }
+  .lang-switch button.active { text-decoration:underline; text-underline-offset:4px; }
+  .mobile-menu .lang-switch { padding:13px 0 0; }
+  .mobile-menu .lang-switch button { font-size:0.78rem; padding:4px 12px 4px 0; }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Chiara Laurenza</a>
-  <ul class="nav-center"><li><a href="dance.html" class="">Dance</a></li><li><a href="yoga.html" class="active">Yoga</a></li><li><a href="art.html" class="">Art</a></li></ul>
-  <div class="nav-right"><a href="index.html#contact">Contact</a></div>
+  <ul class="nav-center"><li><a href="dance-art.html" class="active">Dance &amp; Art</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="blog.html" class="">Blog</a></li></ul>
+  <div class="nav-right"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div><a href="index.html#contact">Contact</a></div>
   <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="dance.html">Dance</a><a href="yoga.html">Yoga</a><a href="art.html">Art</a>
+  <a href="dance-art.html">Dance &amp; Art</a><a href="art.html">Paintings</a><a href="blog.html">Blog</a>
   <a href="index.html#contact">Contact</a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
 </div>
+
 
 <section class="page-hero">
   <div class="page-hero-left reveal from-left">
-    <p class="page-hero-eyebrow">Discipline &mdash; 02</p>
-    <h1>Yoga</h1>
+    <p class="page-hero-eyebrow">Discipline &mdash; 04</p>
+    <h1>Dance <em>&amp;</em><br/>Art</h1>
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
-    <p class="page-hero-desc">A somatic, body-led approach to practice &mdash; connecting movement, breath, and awareness for transformation that reaches beyond the mat.</p>
-    <button class="btn btn-outline page-hero-cta" onclick="openModal('Yoga','Book a Workshop or Session')">Book Now</button>
+    <p class="page-hero-desc">I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement &mdash; it is a translation of the feeling.</p>
+    <button class="btn btn-outline page-hero-cta" onclick="openModal('Dance &amp; Art','Book a Dance &amp; Art Workshop')">Book Now</button>
   </div>
+</section>
+
+<section class="steps-section">
+  <h2 class="reveal">The Process</h2>
+  <div class="styles-list">
+    <div class="style-row reveal">
+      <div class="style-name">Choose<em>Step 1</em></div>
+      <div class="style-desc">A concept to explore &mdash; a memory, a border, letting go.</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:60ms">
+      <div class="style-name">Embody<em>Step 2</em></div>
+      <div class="style-desc">Dance the concept until the body knows it.</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:120ms">
+      <div class="style-name">Pause<em>Step 3</em></div>
+      <div class="style-desc">Stay still and listen: weight, warmth, tension, space. What is left in the body?</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:180ms">
+      <div class="style-name">Translate<em>Step 4</em></div>
+      <div class="style-desc">Colour, pressure, rhythm and density on canvas &mdash; chosen only after the dance, never before.</div>
+    </div>
+    <div class="style-row reveal" style="transition-delay:240ms">
+      <div class="style-name">Reflect<em>Step 5</em></div>
+      <div class="style-desc">What came through? What was lost on the way?</div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <h2 class="reveal">Series I&ndash;III</h2>
+  <div class="series-grid">
+    <div class="series-item reveal"><div class="work-item-bg bg-art-1" style="position:absolute;inset:0"></div><div class="work-item-overlay"><span class="lbl">I</span><span class="ttl">What it was</span></div></div>
+    <div class="series-item reveal" style="transition-delay:100ms"><div class="work-item-bg bg-dance-1" style="position:absolute;inset:0"></div><div class="work-item-overlay"><span class="lbl">II</span><span class="ttl">Becoming</span></div></div>
+    <div class="series-item reveal" style="transition-delay:200ms"><div class="work-item-bg bg-yoga-1" style="position:absolute;inset:0"></div><div class="work-item-overlay"><span class="lbl">III</span><span class="ttl">New Identity</span></div></div>
+  </div>
+  <p class="series-note">In progress &mdash; autumn 2026</p>
 </section>
 
 <section class="offer-section">
   <div class="offer-grid">
-    <div class="offer-item reveal" style="transition-delay:0ms">
+    <div class="offer-item reveal">
       <div class="offer-num">01</div>
-      <h3>Group Workshops</h3>
-      <p>Themed group sessions exploring specific modalities: Hatha foundations, Vinyasa flow, or somatic body-awareness. Intimate group sizes for deeper engagement.</p>
+      <h3>Taster Workshop</h3>
+      <p>Three hours to meet the process: one concept, one dance, one canvas to take home. No dance or painting experience needed.</p>
       <div class="offer-tags">
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">Hatha</span>
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">Vinyasa</span>
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">Somatic</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">3 Hours</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Beginners</span>
       </div>
-      <button class="book-link" style="color:var(--teal)" onclick="openModal('Yoga','Group Workshop')">Book Workshop</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance &amp; Art','Taster Workshop')">Book Workshop</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:120ms">
       <div class="offer-num">02</div>
-      <h3>Private Yoga</h3>
-      <p>Personalised sessions built around your body, goals, and schedule. Ideal for those seeking a more intentional, individually guided practice at any level.</p>
+      <h3>Four-Evening Series</h3>
+      <p>One concept per evening. Over four weeks you create a small series of your own paintings, grown from movement.</p>
       <div class="offer-tags">
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">1-on-1</span>
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">All Levels</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">4 Evenings</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Small Group</span>
       </div>
-      <button class="book-link" style="color:var(--teal)" onclick="openModal('Yoga','Private Session')">Book Session</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance &amp; Art','Four-Evening Series')">Book Series</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:240ms">
       <div class="offer-num">03</div>
-      <h3>Retreats &amp; Events</h3>
-      <p>Full-day and weekend retreats combining yoga, movement, and stillness in curated spaces in and around Munich. Also available for corporate wellness events.</p>
+      <h3>Teams &amp; Events</h3>
+      <p>Out of the head, into the body: a creative session for companies, schools and groups.</p>
       <div class="offer-tags">
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">Day Retreats</span>
-        <span class="otag" style="border-color:var(--teal);color:var(--teal)">Munich</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">On Request</span>
+        <span class="otag" style="border-color:var(--red);color:var(--red)">Groups</span>
       </div>
-      <button class="book-link" style="color:var(--teal)" onclick="openModal('Yoga','Retreat or Event')">Enquire</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Dance &amp; Art','Teams &amp; Events')">Enquire</button>
     </div>
   </div>
 </section>
-
-<section class="styles-section">
-  <h2 class="reveal">Practices &amp; Approach</h2>
-  <div class="styles-list">
-    <div class="style-row reveal">
-      <div class="style-name">Hatha<em>Foundation</em></div>
-      <div class="style-desc">A deliberate, grounded practice working with individual postures, breath, and alignment. Ideal for building a strong foundation, developing body awareness, and establishing a sustainable personal practice.</div>
-    </div>
-    <div class="style-row reveal" style="transition-delay:80ms">
-      <div class="style-name">Vinyasa<em>Flow</em></div>
-      <div class="style-desc">Movement linked fluidly to breath in a continuous, dynamic sequence. Sessions build heat, strength, and a meditative quality of continuous motion, inviting both challenge and release.</div>
-    </div>
-    <div class="style-row reveal" style="transition-delay:160ms">
-      <div class="style-name">Somatic<em>Body-Led</em></div>
-      <div class="style-desc">Slow, exploratory movement originating from inner sensation rather than external form. Particularly powerful for dancers, athletes, and those recovering from long-held physical or emotional tension.</div>
-    </div>
-  </div>
-</section>
-
 
 <footer class="site-footer reveal">
   <span class="site-footer-logo">Chiara Laurenza</span>
   <div class="site-footer-links">
-    <a href="dance.html">Dance</a>
-    <a href="yoga.html">Yoga</a>
-    <a href="art.html">Art</a>
+    <a href="dance-art.html">Dance &amp; Art</a>
+    <a href="art.html">Paintings</a>
+    <a href="blog.html">Blog</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <span class="site-footer-copy">Munich &middot; 2026</span>
@@ -325,8 +363,8 @@
 <script>
   function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
   function openModal(tag, title){
-    document.getElementById('m-tag').textContent = tag;
-    document.getElementById('m-title').textContent = title;
+    document.getElementById('m-tag').textContent = window.t ? t(tag) : tag;
+    document.getElementById('m-title').textContent = window.t ? t(title) : title;
     document.getElementById('m-success').style.display='none';
     document.getElementById('modal-overlay').classList.add('active');
     document.body.style.overflow='hidden';
@@ -352,5 +390,7 @@
   });
 </script>
 
+<script src="i18n.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
