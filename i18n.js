@@ -189,6 +189,36 @@
     'Blog — September 2026': { de: 'Blog — September 2026', it: 'Blog — Settembre 2026' },
     'Handwritten in my journal.': { de: 'Handgeschrieben in meinem Tagebuch.', it: 'Scritto a mano nel mio diario.' },
     'Photo of page 1': { de: 'Foto von Seite 1', it: 'Foto della pagina 1' },
+    'Workshops': { de: 'Workshops', it: 'Workshop' },
+    'For Professionals': { de: 'Für Profis', it: 'Per professionisti' },
+    'For dancers, painters and movement artists. Work with your own material, go deeper into the process, and take the method into your practice.': {
+      de: 'Für Tänzer:innen, Maler:innen und Bewegungskünstler:innen. Arbeite mit deinem eigenen Material, geh tiefer in den Prozess und nimm die Methode in deine Praxis mit.',
+      it: 'Per danzatori, pittori e artisti del movimento. Lavora con il tuo materiale, approfondisci il processo e porta il metodo nella tua pratica.'
+    },
+    'Dancers & Artists': { de: 'Tänzer:innen & Künstler:innen', it: 'Danzatori & Artisti' },
+    'Intensive': { de: 'Intensiv', it: 'Intensivo' },
+    'Small Groups': { de: 'Kleine Gruppen', it: 'Piccoli gruppi' },
+    'For anyone who is curious. We move, pause and paint together in a small group. No dance or painting experience needed.': {
+      de: 'Für alle, die neugierig sind. Wir bewegen uns, halten inne und malen gemeinsam in einer kleinen Gruppe. Keine Tanz- oder Malerfahrung nötig.',
+      it: 'Per chiunque sia curioso. Ci muoviamo, ci fermiamo e dipingiamo insieme in un piccolo gruppo. Non serve esperienza di danza o pittura.'
+    },
+    'No Experience Needed': { de: 'Ohne Vorkenntnisse', it: 'Nessuna esperienza richiesta' },
+    'Companies': { de: 'Firmen', it: 'Aziende' },
+    'Out of the head, into the body: a creative session for teams, as a workshop or as part of an event.': {
+      de: 'Raus aus dem Kopf, rein in den Körper: eine kreative Session für Teams, als Workshop oder als Teil eines Events.',
+      it: 'Fuori dalla testa, dentro il corpo: una sessione creativa per team, come workshop o all’interno di un evento.'
+    },
+    'Teams': { de: 'Teams', it: 'Team' },
+    'Dance & Art — Small Groups': { de: 'Tanz & Kunst — Kleine Gruppen', it: 'Danza & Arte — Piccoli gruppi' },
+    'Dance & Art — For Professionals': { de: 'Tanz & Kunst — Für Profis', it: 'Danza & Arte — Per professionisti' },
+    'Dance & Art — Companies': { de: 'Tanz & Kunst — Firmen', it: 'Danza & Arte — Aziende' },
+    'Dancer & Painter': { de: 'Tänzerin & Malerin', it: 'Danzatrice & Pittrice' },
+    'Order a custom painting for your home, your studio, or as a personal gift. Each piece is unique and made by hand.': {
+      de: 'Ein Bild nach deinen Wünschen, für dein Zuhause, dein Studio oder als persönliches Geschenk. Jedes Stück ist ein handgemachtes Unikat.',
+      it: 'Un dipinto su misura per la tua casa, il tuo studio o come regalo personale. Ogni pezzo è unico e fatto a mano.'
+    },
+    'Works': { de: 'Werke', it: 'Opere' },
+    'Acrylic on canvas': { de: 'Acryl auf Leinwand', it: 'Acrilico su tela' },
     'All posts': { de: 'Alle Beiträge', it: 'Tutti i post' },
     'Sending…': { de: 'Wird gesendet …', it: 'Invio in corso…' },
     'Something went wrong — please try again.': { de: 'Etwas ist schiefgelaufen — bitte versuch es noch einmal.', it: 'Qualcosa è andato storto — riprova.' }
