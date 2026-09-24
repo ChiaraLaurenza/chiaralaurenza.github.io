@@ -5,7 +5,9 @@
 (function () {
   var T = {
     // nav + footer
-    'Dance & Art': { de: 'Tanz & Kunst', it: 'Danza & Arte' },
+    'Art & Dance Space': { de: 'Art & Dance Space', it: 'Art & Dance Space' },
+    'Art & Dance': { de: 'Art & Dance', it: 'Art & Dance' },
+    'Space': { de: 'Space', it: 'Space' },
     'Paintings': { de: 'Bilder', it: 'Dipinti' },
     'Contact': { de: 'Kontakt', it: 'Contatti' },
     'Munich · 2026': { de: 'München · 2026', it: 'Monaco di Baviera · 2026' },
@@ -24,7 +26,7 @@
     'Book a Workshop': { de: 'Workshop buchen', it: 'Prenota un workshop' },
     'What I Offer': { de: 'Was ich anbiete', it: 'Cosa offro' },
     'Workshops — 01': { de: 'Workshops — 01', it: 'Workshop — 01' },
-    'Dance & Art Workshops': { de: 'Tanz & Kunst Workshops', it: 'Workshop di Danza & Arte' },
+    'Art & Dance Space Workshops': { de: 'Art & Dance Space Workshops', it: 'Workshop Art & Dance Space' },
     'Explore →': { de: 'Entdecken →', it: 'Scopri →' },
     'Paintings — 02': { de: 'Bilder — 02', it: 'Dipinti — 02' },
     'Originals & Commissions': { de: 'Originale & Auftragsarbeiten', it: 'Originali & Commissioni' },
@@ -41,8 +43,6 @@
     'First Name': { de: 'Vorname', it: 'Nome' },
     'Last Name': { de: 'Nachname', it: 'Cognome' },
     'Topic': { de: 'Thema', it: 'Argomento' },
-    'Dance & Art — Workshop': { de: 'Tanz & Kunst — Workshop', it: 'Danza & Arte — Workshop' },
-    'Dance & Art — Teams & Events': { de: 'Tanz & Kunst — Teams & Events', it: 'Danza & Arte — Team & Eventi' },
     'Painting — Buy or Commission': { de: 'Bild — kaufen oder beauftragen', it: 'Dipinto — acquisto o commissione' },
     'General Enquiry': { de: 'Allgemeine Anfrage', it: 'Richiesta generale' },
     'Message': { de: 'Nachricht', it: 'Messaggio' },
@@ -71,7 +71,6 @@
     'Four-Evening Series': { de: 'Serie an vier Abenden', it: 'Ciclo di quattro serate' },
     'Teams & Events': { de: 'Teams & Events', it: 'Team & Eventi' },
     'Commission a Piece': { de: 'Bild in Auftrag geben', it: 'Commissiona un’opera' },
-    'Book a Dance & Art Workshop': { de: 'Tanz & Kunst Workshop buchen', it: 'Prenota un workshop di Danza & Arte' },
     'Art': { de: 'Kunst', it: 'Arte' },
 
     // paintings page
@@ -118,7 +117,7 @@
     },
 
     // dance & art page
-    'Dance & Art — Chiara Laurenza': { de: 'Tanz & Kunst — Chiara Laurenza', it: 'Danza & Arte — Chiara Laurenza' },
+    'Art & Dance Space — Chiara Laurenza': { de: 'Art & Dance Space — Chiara Laurenza', it: 'Art & Dance Space — Chiara Laurenza' },
     'Discipline — 04': { de: 'Workshops', it: 'Workshop' },
     'Dance': { de: 'Tanz', it: 'Danza' },
     'I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement — it is a translation of the feeling.': {
@@ -209,14 +208,28 @@
       it: 'Fuori dalla testa, dentro il corpo: una sessione creativa per team, come workshop o all’interno di un evento.'
     },
     'Teams': { de: 'Teams', it: 'Team' },
-    'Dance & Art — Small Groups': { de: 'Tanz & Kunst — Kleine Gruppen', it: 'Danza & Arte — Piccoli gruppi' },
-    'Dance & Art — For Professionals': { de: 'Tanz & Kunst — Für Profis', it: 'Danza & Arte — Per professionisti' },
-    'Dance & Art — Companies': { de: 'Tanz & Kunst — Firmen', it: 'Danza & Arte — Aziende' },
+    'Art & Dance Space — Small Groups': { de: 'Art & Dance Space — Kleine Gruppen', it: 'Art & Dance Space — Piccoli gruppi' },
+    'Art & Dance Space — For Professionals': { de: 'Art & Dance Space — Für Profis', it: 'Art & Dance Space — Per professionisti' },
+    'Art & Dance Space — Companies': { de: 'Art & Dance Space — Firmen', it: 'Art & Dance Space — Aziende' },
     'Dancer & Painter': { de: 'Tänzerin & Malerin', it: 'Danzatrice & Pittrice' },
     'Order a custom painting for your home, your studio, or as a personal gift. Each piece is unique and made by hand.': {
       de: 'Ein Bild nach deinen Wünschen, für dein Zuhause, dein Studio oder als persönliches Geschenk. Jedes Stück ist ein handgemachtes Unikat.',
       it: 'Un dipinto su misura per la tua casa, il tuo studio o come regalo personale. Ogni pezzo è unico e fatto a mano.'
     },
+    'Events': { de: 'Termine', it: 'Eventi' },
+    'Events — Chiara Laurenza': { de: 'Termine — Chiara Laurenza', it: 'Eventi — Chiara Laurenza' },
+    'Workshops, performances and open labs — where you can move, paint and meet me next.': {
+      de: 'Workshops, Performances und offene Labs — wo du als Nächstes mit mir tanzen, malen und mich treffen kannst.',
+      it: 'Workshop, performance e open lab — dove puoi muoverti, dipingere e incontrarmi la prossima volta.'
+    },
+    'Upcoming': { de: 'Demnächst', it: 'Prossimamente' },
+    'All Events →': { de: 'Alle Termine →', it: 'Tutti gli eventi →' },
+    'Register': { de: 'Anmelden', it: 'Iscriviti' },
+    'Add to calendar': { de: 'In Kalender übernehmen', it: 'Aggiungi al calendario' },
+    'No upcoming events right now — new dates are coming soon.': { de: 'Gerade keine Termine — neue Daten folgen bald.', it: 'Nessun evento in programma — nuove date in arrivo.' },
+    'Events could not be loaded — please try again later.': { de: 'Termine konnten nicht geladen werden — bitte später erneut versuchen.', it: 'Impossibile caricare gli eventi — riprova più tardi.' },
+    'Paintings · Chiara Laurenza': { de: 'Bilder · Chiara Laurenza', it: 'Dipinti · Chiara Laurenza' },
+    'Events · Chiara Laurenza': { de: 'Termine · Chiara Laurenza', it: 'Eventi · Chiara Laurenza' },
     'Works': { de: 'Werke', it: 'Opere' },
     'Acrylic on canvas': { de: 'Acryl auf Leinwand', it: 'Acrilico su tela' },
     'All posts': { de: 'Alle Beiträge', it: 'Tutti i post' },
