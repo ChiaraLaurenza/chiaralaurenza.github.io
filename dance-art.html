@@ -6,7 +6,7 @@
   <link rel="icon" href="favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" href="favicon-48.png"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-  <title>Art &amp; Dance Space · Chiara Laurenza</title>
+  <title>Art Chiasma · Chiara Laurenza</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
   :root {
@@ -229,18 +229,39 @@
   .lang-switch button.active { text-decoration:underline; text-underline-offset:4px; }
   .mobile-menu .lang-switch { padding:13px 0 0; }
   .mobile-menu .lang-switch button { font-size:0.78rem; padding:4px 12px 4px 0; }
+
+  /* FAQ */
+  .faq-section { padding:80px 48px; border-top:1px solid var(--grey-2); }
+  .faq-section h2 { font-family:'Playfair Display', serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:400; margin-bottom:24px; border-bottom:1px solid var(--grey-2); padding-bottom:20px; }
+  .faq-list { max-width:860px; }
+  .faq-item { border-bottom:1px solid var(--grey-2); }
+  .faq-item summary { list-style:none; cursor:pointer; padding:26px 40px 26px 0; position:relative; font-family:'Playfair Display', serif; font-size:1.2rem; line-height:1.35; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary::after { content:'+'; position:absolute; right:4px; top:22px; font-family:'Manrope',sans-serif; font-size:1.3rem; font-weight:300; color:var(--grey-3); transition:transform 0.3s; }
+  .faq-item[open] summary::after { transform:rotate(45deg); color:var(--red); }
+  .faq-item summary:hover { color:var(--red); }
+  .faq-item p { padding:0 40px 28px 0; font-size:0.92rem; line-height:1.9; color:#555; font-weight:300; max-width:680px; }
+  .ask { margin-top:72px; display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:start; background:var(--grey-1); padding:48px; }
+  .ask h3 { font-family:'Playfair Display', serif; font-size:1.6rem; font-weight:400; margin-bottom:14px; }
+  .ask p { font-size:0.9rem; line-height:1.85; color:#666; font-weight:300; }
+  .ask-form { display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+  .ask-label { font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--grey-3); }
+  .ask-form textarea { width:100%; min-height:110px; padding:12px 0; border:none; border-bottom:1px solid var(--grey-3); background:transparent; font-family:'Manrope',sans-serif; font-size:0.95rem; resize:vertical; outline:none; }
+  .ask-form textarea:focus { border-bottom-color:var(--black); }
+  .ask-note { font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; color:var(--red); }
+  @media(max-width:900px){ .faq-section { padding:60px 24px; } .ask { grid-template-columns:1fr; gap:24px; padding:32px 24px; } }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Chiara Laurenza</a>
-  <ul class="nav-center"><li><a href="dance-art.html" class="active">Art &amp; Dance Space</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="events.html" class="">Events</a></li><li><a href="about.html" class="">About</a></li></ul>
+  <ul class="nav-center"><li><a href="dance-art.html" class="active">Art Chiasma</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="events.html" class="">Events</a></li><li><a href="about.html" class="">About</a></li></ul>
   <div class="nav-right"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div><a href="index.html#contact">Contact</a></div>
   <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="dance-art.html">Art &amp; Dance Space</a><a href="art.html">Paintings</a><a href="events.html">Events</a><a href="about.html">About</a>
+  <a href="dance-art.html">Art Chiasma</a><a href="art.html">Paintings</a><a href="events.html">Events</a><a href="about.html">About</a>
   <a href="index.html#contact">Contact</a>
   <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
 </div>
@@ -252,7 +273,7 @@
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
     <p class="page-hero-desc">I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement &mdash; it is a translation of the feeling.</p>
-    <button class="btn btn-outline page-hero-cta" onclick="openModal('Art &amp; Dance Space','Book a Workshop')">Book Now</button>
+    <button class="btn btn-outline page-hero-cta" onclick="openModal('Art Chiasma','Book a Workshop')">Book Now</button>
   </div>
 </section>
 
@@ -302,7 +323,7 @@
         <span class="otag" style="border-color:var(--red);color:var(--red)">Dancers &amp; Artists</span>
         <span class="otag" style="border-color:var(--red);color:var(--red)">Intensive</span>
       </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Art &amp; Dance Space','For Professionals')">Enquire</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Art Chiasma','For Professionals')">Enquire</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:120ms">
       <div class="offer-num">02</div>
@@ -312,7 +333,7 @@
         <span class="otag" style="border-color:var(--red);color:var(--red)">Small Group</span>
         <span class="otag" style="border-color:var(--red);color:var(--red)">No Experience Needed</span>
       </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Art &amp; Dance Space','Small Groups')">Book Workshop</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Art Chiasma','Small Groups')">Book Workshop</button>
     </div>
     <div class="offer-item reveal" style="transition-delay:240ms">
       <div class="offer-num">03</div>
@@ -322,15 +343,70 @@
         <span class="otag" style="border-color:var(--red);color:var(--red)">Teams</span>
         <span class="otag" style="border-color:var(--red);color:var(--red)">On Request</span>
       </div>
-      <button class="book-link" style="color:var(--red)" onclick="openModal('Art &amp; Dance Space','Companies')">Enquire</button>
+      <button class="book-link" style="color:var(--red)" onclick="openModal('Art Chiasma','Companies')">Enquire</button>
     </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <h2 class="reveal">Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>Do I need dance or painting experience?</summary>
+      <p>No. The workshops are made for curious people, not for experts. We start gently, and there is no right or wrong movement or colour.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>What should I wear and bring?</summary>
+      <p>Comfortable clothes you can move in and that may get a little paint on them. All painting materials are provided.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>How much does a workshop cost?</summary>
+      <p>Prices are listed with each date on the Events page. For companies and private groups, I make an individual offer.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Where do the workshops take place?</summary>
+      <p>In studios and partner cafés in Munich. The exact location is shown with each date.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Do I have to show my dance or painting to others?</summary>
+      <p>Only if you want to. Nobody is watched or judged. At the end we sit together over tea or coffee, and you can share as much or as little as you like.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Can I take my painting home?</summary>
+      <p>Yes, your painting is yours to keep.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>How big are the groups?</summary>
+      <p>Small, so there is space for everyone to move and paint.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Which language are the workshops in?</summary>
+      <p>German, English or Italian — whatever the group needs.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Can I book a workshop for my team or a private group?</summary>
+      <p>Yes. Write to me with your idea, the size of the group and a possible date, and I will send you an offer.</p>
+    </details>
+  </div>
+
+  <div class="ask reveal">
+    <div>
+      <h3>Didn&rsquo;t find your answer?</h3>
+      <p>Ask me anything &mdash; anonymously. No name, no email needed. I read every question and add the answers here.</p>
+    </div>
+    <form class="ask-form" onsubmit="handleQuestion(event)">
+      <label for="ask-q" class="ask-label">Your question</label>
+      <textarea id="ask-q" required placeholder="e.g. Can I come alone?"></textarea>
+      <button class="btn btn-fill" type="submit">Send Question</button>
+      <p class="ask-note" id="ask-status" style="display:none"></p>
+    </form>
   </div>
 </section>
 
 <footer class="site-footer reveal">
   <span class="site-footer-logo">Chiara Laurenza</span>
   <div class="site-footer-links">
-    <a href="dance-art.html">Art &amp; Dance Space</a>
+    <a href="dance-art.html">Art Chiasma</a>
     <a href="art.html">Paintings</a>
     <a href="events.html">Events</a>
     <a href="about.html">About</a>

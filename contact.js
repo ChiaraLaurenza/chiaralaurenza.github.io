@@ -43,6 +43,23 @@
     }, status);
   };
 
+  window.handleQuestion = function (e) {
+    e.preventDefault();
+    var form = e.target, status = document.getElementById('ask-status'), btn = form.querySelector('button');
+    btn.disabled = true; status.style.display = 'block'; status.textContent = tr('Sending…');
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'Website: anonymous question', Question: document.getElementById('ask-q').value,
+        Page: location.pathname, Language: document.documentElement.getAttribute('data-lang') || 'en',
+        _template: 'table', _captcha: 'false' })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () { form.reset(); status.textContent = tr('Thank you — your question has been sent anonymously.'); })
+      .catch(function () { status.textContent = tr('Something went wrong — please try again.'); })
+      .finally(function () { btn.disabled = false; });
+  };
+
   window.submitModal = function (e) {
     e.preventDefault();
     var status = document.getElementById('m-success');
