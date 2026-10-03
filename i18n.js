@@ -13,8 +13,8 @@
     'Munich · 2026': { de: 'München · 2026', it: 'Monaco di Baviera · 2026' },
 
     // home
-    'Chiara Laurenza — Chiara Laurenza': { de: 'Chiara Laurenza', it: 'Chiara Laurenza' },
-    'Dancer & Painter — Munich': { de: 'Tänzerin & Malerin — München', it: 'Danzatrice & Pittrice — Monaco' },
+    'Chiara Laurenza · Chiara Laurenza': { de: 'Chiara Laurenza', it: 'Chiara Laurenza' },
+    'Dancer & Painter · Munich': { de: 'Tänzerin & Malerin · München', it: 'Danzatrice & Pittrice · Monaco' },
     'Dance.': { de: 'Tanzen.', it: 'Danza.' },
     'Feel.': { de: 'Fühlen.', it: 'Senti.' },
     'Paint.': { de: 'Malen.', it: 'Dipingi.' },
@@ -25,16 +25,16 @@
     'See Workshops': { de: 'Workshops ansehen', it: 'Scopri i workshop' },
     'Book a Workshop': { de: 'Workshop buchen', it: 'Prenota un workshop' },
     'What I Offer': { de: 'Was ich anbiete', it: 'Cosa offro' },
-    'Workshops — 01': { de: 'Workshops — 01', it: 'Workshop — 01' },
+    'Workshops · 01': { de: 'Workshops · 01', it: 'Workshop · 01' },
     'Art Chiasma Workshops': { de: 'Art Chiasma Workshops', it: 'Workshop Art Chiasma' },
     'Explore →': { de: 'Entdecken →', it: 'Scopri →' },
-    'Paintings — 02': { de: 'Bilder — 02', it: 'Dipinti — 02' },
+    'Paintings · 02': { de: 'Bilder · 02', it: 'Dipinti · 02' },
     'Originals & Commissions': { de: 'Originale & Auftragsarbeiten', it: 'Originali & Commissioni' },
     'Notes from the Studio': { de: 'Notizen aus dem Atelier', it: 'Appunti dallo studio' },
     'Read →': { de: 'Lesen →', it: 'Leggi →' },
     'Let’s create': { de: 'Lass uns gemeinsam', it: 'Creiamo' },
     'together.': { de: 'etwas schaffen.', it: 'insieme.' },
-    'Questions about workshops, paintings or commissions — I would love to hear from you.': {
+    'Questions about workshops, paintings or commissions? I would love to hear from you.': {
       de: 'Fragen zu Workshops, Bildern oder Auftragsarbeiten? Ich freue mich, von dir zu hören.',
       it: 'Domande su workshop, dipinti o commissioni? Sarò felice di sentirti.'
     },
@@ -43,12 +43,12 @@
     'First Name': { de: 'Vorname', it: 'Nome' },
     'Last Name': { de: 'Nachname', it: 'Cognome' },
     'Topic': { de: 'Thema', it: 'Argomento' },
-    'Painting — Buy or Commission': { de: 'Bild — kaufen oder beauftragen', it: 'Dipinto — acquisto o commissione' },
+    'Painting · Buy or Commission': { de: 'Bild · kaufen oder beauftragen', it: 'Dipinto · acquisto o commissione' },
     'General Enquiry': { de: 'Allgemeine Anfrage', it: 'Richiesta generale' },
     'Message': { de: 'Nachricht', it: 'Messaggio' },
     'Tell me what you have in mind...': { de: 'Erzähl mir, was du vorhast …', it: 'Raccontami cosa hai in mente…' },
     'Send Message': { de: 'Nachricht senden', it: 'Invia messaggio' },
-    'Message received — I will be in touch shortly.': { de: 'Nachricht erhalten — ich melde mich bald.', it: 'Messaggio ricevuto — ti risponderò presto.' },
+    'Message received. I will be in touch shortly.': { de: 'Nachricht erhalten. Ich melde mich bald.', it: 'Messaggio ricevuto. Ti risponderò presto.' },
 
     // booking popup
     'Close ×': { de: 'Schließen ×', it: 'Chiudi ×' },
@@ -65,7 +65,7 @@
     'Advanced': { de: 'Sehr erfahren', it: 'Avanzato' },
     'Tell me about your goals...': { de: 'Was wünschst du dir? …', it: 'Raccontami cosa desideri…' },
     'Send Request': { de: 'Anfrage senden', it: 'Invia richiesta' },
-    'Received — I will be in touch shortly.': { de: 'Erhalten — ich melde mich bald.', it: 'Ricevuto — ti risponderò presto.' },
+    'Received. I will be in touch shortly.': { de: 'Erhalten. Ich melde mich bald.', it: 'Ricevuto. Ti risponderò presto.' },
     'Ask About a Painting': { de: 'Anfrage zu einem Bild', it: 'Informazioni su un dipinto' },
     'Taster Workshop': { de: 'Schnupper-Workshop', it: 'Workshop introduttivo' },
     'Four-Evening Series': { de: 'Serie an vier Abenden', it: 'Ciclo di quattro serate' },
@@ -74,17 +74,17 @@
     'Art': { de: 'Kunst', it: 'Arte' },
 
     // paintings page
-    'Art — Chiara Laurenza': { de: 'Bilder — Chiara Laurenza', it: 'Dipinti — Chiara Laurenza' },
-    'Discipline — 03': { de: 'Malerei', it: 'Pittura' },
+    'Art · Chiara Laurenza': { de: 'Bilder · Chiara Laurenza', it: 'Dipinti · Chiara Laurenza' },
+    'Discipline · 03': { de: 'Malerei', it: 'Pittura' },
     'Painting': { de: 'Malerei', it: 'Pittura' },
-    'Original acrylic paintings — for sale and made on commission.': {
-      de: 'Original-Acrylbilder — zum Kaufen und auf Auftrag.',
-      it: 'Dipinti originali in acrilico — in vendita e su commissione.'
+    'Original acrylic paintings, for sale and made on commission.': {
+      de: 'Original-Acrylbilder, zum Kaufen und auf Auftrag.',
+      it: 'Dipinti originali in acrilico, in vendita e su commissione.'
     },
     'Get in Touch': { de: 'Kontakt aufnehmen', it: 'Scrivimi' },
-    'Order a custom painting for your home, studio, or as a considered, deeply personal gift. Each piece is unique and made by hand — on canvas, textile, or any surface you choose.': {
-      de: 'Ein Bild nach deinen Wünschen, für dein Zuhause, dein Studio oder als besonders persönliches Geschenk. Jedes Stück ist ein handgemachtes Unikat — auf Leinwand, Stoff oder einer Fläche deiner Wahl.',
-      it: 'Un dipinto su misura per la tua casa, il tuo studio o come regalo davvero personale. Ogni pezzo è unico e fatto a mano — su tela, tessuto o qualsiasi superficie tu scelga.'
+    'Order a custom painting for your home, studio, or as a considered, deeply personal gift. Each piece is unique and made by hand: on canvas, textile, or any surface you choose.': {
+      de: 'Ein Bild nach deinen Wünschen, für dein Zuhause, dein Studio oder als besonders persönliches Geschenk. Jedes Stück ist ein handgemachtes Unikat: auf Leinwand, Stoff oder einer Fläche deiner Wahl.',
+      it: 'Un dipinto su misura per la tua casa, il tuo studio o come regalo davvero personale. Ogni pezzo è unico e fatto a mano: su tela, tessuto o qualsiasi superficie tu scelga.'
     },
     'Custom': { de: 'Individuell', it: 'Su misura' },
     'Canvas': { de: 'Leinwand', it: 'Tela' },
@@ -100,9 +100,9 @@
     'Ask About Works': { de: 'Nach Werken fragen', it: 'Chiedi delle opere' },
     'Surface & Medium': { de: 'Untergrund & Material', it: 'Superficie & Materiale' },
     'The Surface': { de: 'Der Untergrund', it: 'La superficie' },
-    'Fabric becomes a living canvas — painting on cloth brings colour into everyday objects, from clothing to home pieces. Each piece absorbs the paint differently, making every result one of a kind.': {
-      de: 'Stoff wird zur lebendigen Leinwand — Malerei auf Textil bringt Farbe in Alltagsdinge, von Kleidung bis zu Wohnstücken. Jedes Stück nimmt die Farbe anders auf, deshalb ist jedes Ergebnis einzigartig.',
-      it: 'Il tessuto diventa una tela viva — dipingere sulla stoffa porta il colore negli oggetti di ogni giorno, dagli abiti alla casa. Ogni pezzo assorbe il colore in modo diverso, rendendo ogni risultato unico.'
+    'Fabric becomes a living canvas. Painting on cloth brings colour into everyday objects, from clothing to home pieces. Each piece absorbs the paint differently, making every result one of a kind.': {
+      de: 'Stoff wird zur lebendigen Leinwand. Malerei auf Textil bringt Farbe in Alltagsdinge, von Kleidung bis zu Wohnstücken. Jedes Stück nimmt die Farbe anders auf, deshalb ist jedes Ergebnis einzigartig.',
+      it: 'Il tessuto diventa una tela viva. Dipingere sulla stoffa porta il colore negli oggetti di ogni giorno, dagli abiti alla casa. Ogni pezzo assorbe il colore in modo diverso, rendendo ogni risultato unico.'
     },
     'Candles': { de: 'Kerzen', it: 'Candele' },
     'The Object': { de: 'Das Objekt', it: 'L’oggetto' },
@@ -111,24 +111,24 @@
       it: 'Dipingere direttamente sulle candele trasforma un oggetto semplice in qualcosa di decorativo e personale. Pennellate delicate, motivi botanici e strati di colore risaltano sulla cera.'
     },
     'The Classic': { de: 'Der Klassiker', it: 'Il classico' },
-    'The canvas is where painting finds its full freedom — colour, composition, and gesture with no constraints. Sessions range from guided studies to open, expressive painting for all levels.': {
-      de: 'Auf der Leinwand findet die Malerei ihre ganze Freiheit — Farbe, Komposition und Geste ohne Grenzen.',
-      it: 'Sulla tela la pittura trova tutta la sua libertà — colore, composizione e gesto senza vincoli.'
+    'The canvas is where painting finds its full freedom: colour, composition, and gesture with no constraints. Sessions range from guided studies to open, expressive painting for all levels.': {
+      de: 'Auf der Leinwand findet die Malerei ihre ganze Freiheit: Farbe, Komposition und Geste ohne Grenzen.',
+      it: 'Sulla tela la pittura trova tutta la sua libertà: colore, composizione e gesto senza vincoli.'
     },
 
     // dance & art page
-    'Art Chiasma — Chiara Laurenza': { de: 'Art Chiasma — Chiara Laurenza', it: 'Art Chiasma — Chiara Laurenza' },
-    'Discipline — 04': { de: 'Workshops', it: 'Workshop' },
+    'Art Chiasma · Chiara Laurenza': { de: 'Art Chiasma · Chiara Laurenza', it: 'Art Chiasma · Chiara Laurenza' },
+    'Discipline · 04': { de: 'Workshops', it: 'Workshop' },
     'Dance': { de: 'Tanz', it: 'Danza' },
-    'I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement — it is a translation of the feeling.': {
-      de: 'Ich nehme ein Konzept in den Körper, tanze es, halte inne und übersetze, was der Körper gefühlt hat, in Farbe. Das Bild ist keine Spur der Bewegung — es ist eine Übersetzung des Gefühls.',
-      it: 'Porto un concetto nel corpo, lo danzo, mi fermo e traduco in colore ciò che il corpo ha sentito. Il dipinto non è una traccia del movimento — è una traduzione dell’emozione.'
+    'I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement. It is a translation of the feeling.': {
+      de: 'Ich nehme ein Konzept in den Körper, tanze es, halte inne und übersetze, was der Körper gefühlt hat, in Farbe. Das Bild ist keine Spur der Bewegung. Es ist eine Übersetzung des Gefühls.',
+      it: 'Porto un concetto nel corpo, lo danzo, mi fermo e traduco in colore ciò che il corpo ha sentito. Il dipinto non è una traccia del movimento. È una traduzione dell’emozione.'
     },
     'Book Now': { de: 'Jetzt buchen', it: 'Prenota ora' },
     'The Process': { de: 'Der Ablauf', it: 'Il processo' },
     'Choose': { de: 'Wählen', it: 'Scegliere' },
     'Step 1': { de: 'Schritt 1', it: 'Passo 1' },
-    'A concept to explore — a memory, a border, letting go.': { de: 'Ein Konzept zum Erforschen — eine Erinnerung, eine Grenze, das Loslassen.', it: 'Un concetto da esplorare — un ricordo, un confine, il lasciar andare.' },
+    'A concept to explore: a memory, a border, letting go.': { de: 'Ein Konzept zum Erforschen: eine Erinnerung, eine Grenze, das Loslassen.', it: 'Un concetto da esplorare: un ricordo, un confine, il lasciar andare.' },
     'Embody': { de: 'Verkörpern', it: 'Incarnare' },
     'Step 2': { de: 'Schritt 2', it: 'Passo 2' },
     'Dance the concept until the body knows it.': { de: 'Das Konzept tanzen, bis der Körper es kennt.', it: 'Danzare il concetto finché il corpo non lo conosce.' },
@@ -137,7 +137,7 @@
     'Stay still and listen: weight, warmth, tension, space. What is left in the body?': { de: 'Still werden und hinhören: Gewicht, Wärme, Spannung, Raum. Was ist im Körper geblieben?', it: 'Restare immobili e ascoltare: peso, calore, tensione, spazio. Cosa è rimasto nel corpo?' },
     'Translate': { de: 'Übersetzen', it: 'Tradurre' },
     'Step 4': { de: 'Schritt 4', it: 'Passo 4' },
-    'Colour, pressure, rhythm and density on canvas — chosen only after the dance, never before.': { de: 'Farbe, Druck, Rhythmus und Dichte auf der Leinwand — erst nach dem Tanz gewählt, nie vorher.', it: 'Colore, pressione, ritmo e densità sulla tela — scelti solo dopo la danza, mai prima.' },
+    'Colour, pressure, rhythm and density on canvas, chosen only after the dance, never before.': { de: 'Farbe, Druck, Rhythmus und Dichte auf der Leinwand, erst nach dem Tanz gewählt, nie vorher.', it: 'Colore, pressione, ritmo e densità sulla tela, scelti solo dopo la danza, mai prima.' },
     'Reflect': { de: 'Reflektieren', it: 'Riflettere' },
     'Step 5': { de: 'Schritt 5', it: 'Passo 5' },
     'What came through? What was lost on the way?': { de: 'Was ist angekommen? Was ist unterwegs verloren gegangen?', it: 'Cosa è arrivato? Cosa si è perso lungo la strada?' },
@@ -145,7 +145,7 @@
     'What it was': { de: 'Was war', it: 'Ciò che era' },
     'Becoming': { de: 'Werden', it: 'Divenire' },
     'New Identity': { de: 'Neue Identität', it: 'Nuova identità' },
-    'In progress — autumn 2026': { de: 'In Arbeit — Herbst 2026', it: 'In corso — autunno 2026' },
+    'In progress, autumn 2026': { de: 'In Arbeit, Herbst 2026', it: 'In corso, autunno 2026' },
     'Three hours to meet the process: one concept, one dance, one canvas to take home. No dance or painting experience needed.': {
       de: 'Drei Stunden, um den Ablauf kennenzulernen: ein Konzept, ein Tanz, eine Leinwand zum Mitnehmen. Keine Tanz- oder Malerfahrung nötig.',
       it: 'Tre ore per conoscere il processo: un concetto, una danza, una tela da portare a casa. Non serve esperienza di danza o pittura.'
@@ -169,23 +169,23 @@
     'Enquire': { de: 'Anfragen', it: 'Richiedi informazioni' },
 
     // blog
-    'Blog — Chiara Laurenza': { de: 'Blog — Chiara Laurenza', it: 'Blog — Chiara Laurenza' },
+    'Blog · Chiara Laurenza': { de: 'Blog · Chiara Laurenza', it: 'Blog · Chiara Laurenza' },
     'Journal': { de: 'Tagebuch', it: 'Diario' },
-    'Notes from the studio — what I dance, what I paint, and what happens in between.': {
-      de: 'Notizen aus dem Atelier — was ich tanze, was ich male und was dazwischen passiert.',
-      it: 'Appunti dallo studio — cosa danzo, cosa dipingo e cosa succede nel mezzo.'
+    'Notes from the studio: what I dance, what I paint, and what happens in between.': {
+      de: 'Notizen aus dem Atelier: was ich tanze, was ich male und was dazwischen passiert.',
+      it: 'Appunti dallo studio: cosa danzo, cosa dipingo e cosa succede nel mezzo.'
     },
     'Subscribe': { de: 'Abonnieren', it: 'Iscriviti' },
     'September 2026': { de: 'September 2026', it: 'Settembre 2026' },
     'New post,': { de: 'Neuer Beitrag,', it: 'Nuovo post,' },
     'straight to you.': { de: 'direkt zu dir.', it: 'direttamente a te.' },
-    'One email each time I publish something new — new paintings, workshop dates, thoughts from the studio. No spam, unsubscribe anytime.': {
-      de: 'Eine E-Mail, wann immer ich etwas Neues veröffentliche — neue Bilder, Workshop-Termine, Gedanken aus dem Atelier. Kein Spam, jederzeit abbestellbar.',
-      it: 'Una email ogni volta che pubblico qualcosa di nuovo — nuovi dipinti, date dei workshop, pensieri dallo studio. Niente spam, disiscrizione in qualsiasi momento.'
+    'One email each time I publish something new: new paintings, workshop dates, thoughts from the studio. No spam, unsubscribe anytime.': {
+      de: 'Eine E-Mail, wann immer ich etwas Neues veröffentliche: neue Bilder, Workshop-Termine, Gedanken aus dem Atelier. Kein Spam, jederzeit abbestellbar.',
+      it: 'Una email ogni volta che pubblico qualcosa di nuovo: nuovi dipinti, date dei workshop, pensieri dallo studio. Niente spam, disiscrizione in qualsiasi momento.'
     },
     'Email address': { de: 'E-Mail-Adresse', it: 'Indirizzo email' },
-    'Coming soon — the newsletter is not connected yet.': { de: 'Bald verfügbar — der Newsletter ist noch nicht verbunden.', it: 'In arrivo — la newsletter non è ancora attiva.' },
-    'Blog — September 2026': { de: 'Blog — September 2026', it: 'Blog — Settembre 2026' },
+    'Coming soon. The newsletter is not connected yet.': { de: 'Bald verfügbar. Der Newsletter ist noch nicht verbunden.', it: 'In arrivo. La newsletter non è ancora attiva.' },
+    'Blog · September 2026': { de: 'Blog · September 2026', it: 'Blog · Settembre 2026' },
     'Handwritten in my journal.': { de: 'Handgeschrieben in meinem Tagebuch.', it: 'Scritto a mano nel mio diario.' },
     'Photo of page 1': { de: 'Foto von Seite 1', it: 'Foto della pagina 1' },
     'Workshops': { de: 'Workshops', it: 'Workshop' },
@@ -208,31 +208,31 @@
       it: 'Fuori dalla testa, dentro il corpo: una sessione creativa per team, come workshop o all’interno di un evento.'
     },
     'Teams': { de: 'Teams', it: 'Team' },
-    'Art Chiasma — Small Groups': { de: 'Art Chiasma — Kleine Gruppen', it: 'Art Chiasma — Piccoli gruppi' },
-    'Art Chiasma — For Professionals': { de: 'Art Chiasma — Für Profis', it: 'Art Chiasma — Per professionisti' },
-    'Art Chiasma — Companies': { de: 'Art Chiasma — Firmen', it: 'Art Chiasma — Aziende' },
+    'Art Chiasma · Small Groups': { de: 'Art Chiasma · Kleine Gruppen', it: 'Art Chiasma · Piccoli gruppi' },
+    'Art Chiasma · For Professionals': { de: 'Art Chiasma · Für Profis', it: 'Art Chiasma · Per professionisti' },
+    'Art Chiasma · Companies': { de: 'Art Chiasma · Firmen', it: 'Art Chiasma · Aziende' },
     'Dancer & Painter': { de: 'Tänzerin & Malerin', it: 'Danzatrice & Pittrice' },
     'Order a custom painting for your home, your studio, or as a personal gift. Each piece is unique and made by hand.': {
       de: 'Ein Bild nach deinen Wünschen, für dein Zuhause, dein Studio oder als persönliches Geschenk. Jedes Stück ist ein handgemachtes Unikat.',
       it: 'Un dipinto su misura per la tua casa, il tuo studio o come regalo personale. Ogni pezzo è unico e fatto a mano.'
     },
     'Events': { de: 'Termine', it: 'Eventi' },
-    'Events — Chiara Laurenza': { de: 'Termine — Chiara Laurenza', it: 'Eventi — Chiara Laurenza' },
-    'Workshops, performances and open labs — where you can move, paint and meet me next.': {
-      de: 'Workshops, Performances und offene Labs — wo du als Nächstes mit mir tanzen, malen und mich treffen kannst.',
-      it: 'Workshop, performance e open lab — dove puoi muoverti, dipingere e incontrarmi la prossima volta.'
+    'Events · Chiara Laurenza': { de: 'Termine · Chiara Laurenza', it: 'Eventi · Chiara Laurenza' },
+    'Workshops, performances and open labs: where you can move, paint and meet me next.': {
+      de: 'Workshops, Performances und offene Labs: wo du als Nächstes mit mir tanzen, malen und mich treffen kannst.',
+      it: 'Workshop, performance e open lab: dove puoi muoverti, dipingere e incontrarmi la prossima volta.'
     },
     'Upcoming': { de: 'Demnächst', it: 'Prossimamente' },
     'All Events →': { de: 'Alle Termine →', it: 'Tutti gli eventi →' },
     'Register': { de: 'Anmelden', it: 'Iscriviti' },
     'Add to calendar': { de: 'In Kalender übernehmen', it: 'Aggiungi al calendario' },
-    'No upcoming events right now — new dates are coming soon.': { de: 'Gerade keine Termine — neue Daten folgen bald.', it: 'Nessun evento in programma — nuove date in arrivo.' },
-    'Events could not be loaded — please try again later.': { de: 'Termine konnten nicht geladen werden — bitte später erneut versuchen.', it: 'Impossibile caricare gli eventi — riprova più tardi.' },
+    'No upcoming events right now. New dates are coming soon.': { de: 'Gerade keine Termine. Neue Daten folgen bald.', it: 'Nessun evento in programma. Nuove date in arrivo.' },
+    'Events could not be loaded. Please try again later.': { de: 'Termine konnten nicht geladen werden. Bitte später erneut versuchen.', it: 'Impossibile caricare gli eventi. Riprova più tardi.' },
     'Paintings · Chiara Laurenza': { de: 'Bilder · Chiara Laurenza', it: 'Dipinti · Chiara Laurenza' },
     'Events · Chiara Laurenza': { de: 'Termine · Chiara Laurenza', it: 'Eventi · Chiara Laurenza' },
     'About': { de: 'Über mich', it: 'Chi sono' },
     'About · Chiara Laurenza': { de: 'Über mich · Chiara Laurenza', it: 'Chi sono · Chiara Laurenza' },
-    'About — 03': { de: 'Über mich — 03', it: 'Chi sono — 03' },
+    'About · 03': { de: 'Über mich · 03', it: 'Chi sono · 03' },
     'Showreel, CV & Notes': { de: 'Showreel, Lebenslauf & Notizen', it: 'Showreel, CV & Note' },
     'Contemporary, jazz and hip hop dancer, painter and choreographer, based in Munich.': { de: 'Contemporary-, Jazz- und Hip-Hop-Tänzerin, Malerin und Choreografin in München.', it: 'Danzatrice contemporanea, jazz e hip hop, pittrice e coreografa a Monaco di Baviera.' },
     'Portrait coming soon': { de: 'Porträt folgt', it: 'Ritratto in arrivo' },
@@ -283,21 +283,21 @@
     'How big are the groups?': { de: 'Wie groß sind die Gruppen?', it: 'Quanto sono grandi i gruppi?' },
     'Small, so there is space for everyone to move and paint.': { de: 'Klein, damit alle genug Platz zum Bewegen und Malen haben.', it: 'Piccoli, così c’è spazio per tutti per muoversi e dipingere.' },
     'Which language are the workshops in?': { de: 'In welcher Sprache sind die Workshops?', it: 'In che lingua sono i workshop?' },
-    'German, English or Italian — whatever the group needs.': { de: 'Deutsch, Englisch oder Italienisch — je nachdem, was die Gruppe braucht.', it: 'Tedesco, inglese o italiano — in base al gruppo.' },
+    'German, English or Italian, whatever the group needs.': { de: 'Deutsch, Englisch oder Italienisch, je nachdem, was die Gruppe braucht.', it: 'Tedesco, inglese o italiano, in base al gruppo.' },
     'Can I book a workshop for my team or a private group?': { de: 'Kann ich einen Workshop für mein Team oder eine private Gruppe buchen?', it: 'Posso prenotare un workshop per il mio team o un gruppo privato?' },
     'Yes. Write to me with your idea, the size of the group and a possible date, and I will send you an offer.': { de: 'Ja. Schreib mir deine Idee, die Gruppengröße und einen möglichen Termin, und ich schicke dir ein Angebot.', it: 'Sì. Scrivimi la tua idea, il numero di persone e una possibile data, e ti invierò un’offerta.' },
     'Didn’t find your answer?': { de: 'Keine Antwort gefunden?', it: 'Non hai trovato la risposta?' },
-    'Ask me anything — anonymously. No name, no email needed. I read every question and add the answers here.': { de: 'Frag mich alles — anonym. Ohne Namen, ohne E-Mail. Ich lese jede Frage und ergänze die Antworten hier.', it: 'Chiedimi qualsiasi cosa — in modo anonimo. Nessun nome, nessuna email. Leggo ogni domanda e aggiungo le risposte qui.' },
+    'Ask me anything, anonymously. No name, no email needed. I read every question and add the answers here.': { de: 'Frag mich alles, anonym. Ohne Namen, ohne E-Mail. Ich lese jede Frage und ergänze die Antworten hier.', it: 'Chiedimi qualsiasi cosa, in modo anonimo. Nessun nome, nessuna email. Leggo ogni domanda e aggiungo le risposte qui.' },
     'Your question': { de: 'Deine Frage', it: 'La tua domanda' },
     'e.g. Can I come alone?': { de: 'z. B. Kann ich allein kommen?', it: 'es. Posso venire da sola/o?' },
     'Send Question': { de: 'Frage senden', it: 'Invia domanda' },
-    'Thank you — your question has been sent anonymously.': { de: 'Danke — deine Frage wurde anonym gesendet.', it: 'Grazie — la tua domanda è stata inviata in forma anonima.' },
+    'Thank you. Your question has been sent anonymously.': { de: 'Danke. Deine Frage wurde anonym gesendet.', it: 'Grazie. La tua domanda è stata inviata in forma anonima.' },
     'Read the FAQ': { de: 'Häufige Fragen lesen', it: 'Leggi le FAQ' },
     'Works': { de: 'Werke', it: 'Opere' },
     'Acrylic on canvas': { de: 'Acryl auf Leinwand', it: 'Acrilico su tela' },
     'All posts': { de: 'Alle Beiträge', it: 'Tutti i post' },
     'Sending…': { de: 'Wird gesendet …', it: 'Invio in corso…' },
-    'Something went wrong — please try again.': { de: 'Etwas ist schiefgelaufen — bitte versuch es noch einmal.', it: 'Qualcosa è andato storto — riprova.' }
+    'Something went wrong. Please try again.': { de: 'Etwas ist schiefgelaufen. Bitte versuch es noch einmal.', it: 'Qualcosa è andato storto. Riprova.' }
   };
 
   var LANGS = ['en', 'de', 'it'];

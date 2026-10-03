@@ -31,7 +31,7 @@
     })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function () { form.reset(); onOk(); })
-      .catch(function () { statusEl.textContent = tr('Something went wrong — please try again.'); })
+      .catch(function () { statusEl.textContent = tr('Something went wrong. Please try again.'); })
       .finally(function () { btn.disabled = false; });
   }
 
@@ -39,7 +39,7 @@
     e.preventDefault();
     var status = document.getElementById('cs');
     send(e.target, { _subject: 'Website: new message' }, function () {
-      status.textContent = tr('Message received — I will be in touch shortly.');
+      status.textContent = tr('Message received. I will be in touch shortly.');
     }, status);
   };
 
@@ -55,8 +55,8 @@
         _template: 'table', _captcha: 'false' })
     })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function () { form.reset(); status.textContent = tr('Thank you — your question has been sent anonymously.'); })
-      .catch(function () { status.textContent = tr('Something went wrong — please try again.'); })
+      .then(function () { form.reset(); status.textContent = tr('Thank you. Your question has been sent anonymously.'); })
+      .catch(function () { status.textContent = tr('Something went wrong. Please try again.'); })
       .finally(function () { btn.disabled = false; });
   };
 
@@ -65,7 +65,7 @@
     var status = document.getElementById('m-success');
     var what = document.getElementById('m-title').textContent;
     send(e.target, { _subject: 'Website booking: ' + what, Request: what }, function () {
-      status.textContent = tr('Received — I will be in touch shortly.');
+      status.textContent = tr('Received. I will be in touch shortly.');
       setTimeout(closeModal, 3000);
     }, status);
   };

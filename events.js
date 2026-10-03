@@ -38,7 +38,7 @@
     var section = list.closest('[data-hide-if-empty]');
     if (!items.length) {
       if (section) { section.hidden = true; return; }
-      list.innerHTML = '<p class="ev-empty">' + esc(tr('No upcoming events right now — new dates are coming soon.')) + '</p>';
+      list.innerHTML = '<p class="ev-empty">' + esc(tr('No upcoming events right now. New dates are coming soon.')) + '</p>';
       return;
     }
     if (section) section.hidden = false;
@@ -70,7 +70,7 @@
       lists.forEach(function (l) {
         var section = l.closest('[data-hide-if-empty]');
         if (section) section.hidden = true;
-        else l.innerHTML = '<p class="ev-empty">' + esc(tr('Events could not be loaded — please try again later.')) + '</p>';
+        else l.innerHTML = '<p class="ev-empty">' + esc(tr('Events could not be loaded. Please try again later.')) + '</p>';
       });
     });
   }
