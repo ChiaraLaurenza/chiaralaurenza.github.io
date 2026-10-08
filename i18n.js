@@ -18,6 +18,7 @@
     'Dance.': { de: 'Tanzen.', it: 'Danza.' },
     'Feel.': { de: 'Fühlen.', it: 'Senti.' },
     'Paint.': { de: 'Malen.', it: 'Dipingi.' },
+    'Scroll': { de: 'Scrollen', it: 'Scorri' },
     'We dance a feeling, pause to listen, and translate what the body holds into colour on canvas.': {
       de: 'Wir tanzen ein Gefühl, halten inne, um hinzuhören, und übersetzen, was der Körper in sich trägt, in Farbe auf Leinwand.',
       it: 'Danziamo un’emozione, ci fermiamo ad ascoltare e traduciamo ciò che il corpo custodisce in colore sulla tela.'

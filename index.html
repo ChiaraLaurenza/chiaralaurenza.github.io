@@ -8,6 +8,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <title>Chiara Laurenza · Art Chiasma</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="motion.css"/>
   <style>
   :root {
     --black:   #0A0A0A;
@@ -180,7 +181,7 @@
 
   /* VIDEO CONTROLS (bottom right) */
   .hero-controls {
-    position:absolute; bottom:32px; right:48px;
+    position:absolute; bottom:40px; right:48px;
     z-index:3; display:flex; align-items:center; gap:12px;
   }
   .hero-dot {
@@ -197,10 +198,50 @@
   .hero-pause:hover { color:white; }
 
   .hero {
-    height:100vh; padding:0 48px;
+    height:100vh; height:100svh; padding:0 48px;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
-    position:relative;
+    position:sticky; top:0; z-index:0; overflow:hidden;
   }
+  .hero-main { will-change:transform, opacity; }
+  .hero-scroll {
+    position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:3;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; font-weight:600;
+    color:rgba(255,255,255,0.6);
+  }
+  .hero-scroll i { display:block; width:1px; height:48px; background:rgba(255,255,255,0.25); position:relative; overflow:hidden; }
+  .hero-scroll i::after {
+    content:''; position:absolute; left:0; top:0; width:1px; height:16px; background:white;
+    animation:drip 2s cubic-bezier(0.77,0,0.18,1) infinite;
+  }
+  @keyframes drip { from { transform:translateY(-16px); } to { transform:translateY(48px); } }
+
+  /* SHEET: the white page that slides up over the video */
+  .sheet {
+    position:relative; z-index:2; background:var(--white);
+    border-radius:32px 32px 0 0;
+    box-shadow:0 -40px 80px rgba(0,0,0,0.35);
+  }
+
+  /* NAV over the video: transparent, white type */
+  nav { transition:background 0.4s, border-color 0.4s, color 0.4s; }
+  nav.on-hero { background:transparent; backdrop-filter:none; border-bottom-color:transparent; }
+  nav.on-hero .nav-logo, nav.on-hero .nav-center a, nav.on-hero .nav-right a,
+  nav.on-hero .lang-switch button.active, nav.on-hero .lang-switch button:hover { color:white; }
+  nav.on-hero .lang-switch button { color:rgba(255,255,255,0.5); }
+  nav.on-hero .nav-burger span { background:white; }
+
+  /* MARQUEE: the three words drift by, faster when you scroll */
+  .marquee { overflow:hidden; padding:56px 0; border-bottom:1px solid var(--grey-2); }
+  .marquee-track { display:flex; width:max-content; will-change:transform; }
+  .marquee-group { display:flex; align-items:center; }
+  .marquee-group span {
+    font-family:'Playfair Display', serif; font-weight:400; font-size:clamp(4rem,11vw,10rem);
+    line-height:1; letter-spacing:-3px; padding:0 0.25em; white-space:nowrap;
+  }
+  .marquee-group span.m-out { font-style:italic; color:transparent; -webkit-text-stroke:1px var(--black); }
+  .marquee-group span.m-red { font-style:italic; color:var(--red); }
+  .marquee-group b { width:14px; height:14px; border-radius:50%; background:var(--red); flex-shrink:0; }
   .hero-top-row {
     display:flex; justify-content:space-between; align-items:center;
     position:absolute; top:100px; left:48px; right:48px;
@@ -272,12 +313,16 @@
   .section-header-row a:hover { color:var(--red); }
 
   .work-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:3px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:start;
   }
   .work-item {
     display:block; text-decoration:none; color:var(--black);
-    position:relative; overflow:hidden; aspect-ratio:3/2;
+    position:relative; overflow:hidden; aspect-ratio:4/5; background:var(--black);
   }
+  .work-item:nth-child(2) { margin-top:64px; }
+  .work-item:nth-child(3) { margin-top:128px; }
+  .work-item-bg img, .work-item-bg video { width:100%; height:100%; object-fit:cover; display:block; }
+  .work-item-title { font-size:1.5rem !important; }
   .work-item-bg {
     position:absolute; inset:0;
     transition:transform 0.7s cubic-bezier(0.16,1,0.3,1);
@@ -350,7 +395,16 @@
     .contact-section { padding:64px 24px; }
     .contact-grid { grid-template-columns:1fr; gap:48px; }
   }
-  @media(max-width:600px){ .work-grid { grid-template-columns:1fr; } }
+  @media(max-width:600px){
+    .work-grid { grid-template-columns:1fr; }
+    .work-item:nth-child(n) { margin-top:0; }
+  }
+  @media(max-width:900px){
+    .hero-scroll { display:none; }
+    .hero-controls { right:24px; }
+    .sheet { border-radius:20px 20px 0 0; }
+    .marquee { padding:36px 0; }
+  }
   .nav-right { display:flex; align-items:center; gap:28px; }
   .lang-switch { display:flex; gap:2px; }
   .lang-switch button { background:none; border:none; cursor:pointer; font-family:'Manrope',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:1.5px; color:var(--grey-3); padding:4px 6px; transition:color 0.2s; }
@@ -409,8 +463,11 @@
   </div>
 
   <div class="hero-controls" id="hero-controls"></div>
+  <div class="hero-scroll" aria-hidden="true">Scroll<i></i></div>
 
 </section>
+
+<main class="sheet">
 
 <!-- INTRO STRIP -->
 <section class="intro-strip reveal">
@@ -420,6 +477,16 @@
     <button class="btn btn-outline" onclick="openModal('Art Chiasma','Book a Workshop')">Book a Workshop</button>
   </div>
 </section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
+    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
+    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
+    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
+  </div>
+</div>
 
 <!-- UPCOMING -->
 <section class="work-section" id="upcoming" data-hide-if-empty hidden>
@@ -437,24 +504,24 @@
   </div>
 
   <div class="work-grid">
-    <a href="dance-art.html" class="work-item reveal" style="transition-delay:0ms">
-      <div class="work-item-bg bg-dance-1"></div>
+    <a href="dance-art.html" class="work-item wipe" style="transition-delay:0ms">
+      <div class="work-item-bg"><video src="videos/art.mp4" poster="images/workshop-poster.jpg" muted loop playsinline preload="metadata"></video></div>
       <div class="work-item-overlay">
         <span class="work-item-label">Workshops · 01</span>
         <span class="work-item-title">Art Chiasma Workshops</span>
       </div>
       <span class="work-item-arrow">Explore &rarr;</span>
     </a>
-    <a href="art.html" class="work-item reveal" style="transition-delay:100ms">
-      <div class="work-item-bg bg-art-1"></div>
+    <a href="art.html" class="work-item wipe" style="transition-delay:150ms">
+      <div class="work-item-bg"><img src="images/paintings/lady-in-blue.jpg" alt="" loading="lazy"></div>
       <div class="work-item-overlay">
         <span class="work-item-label">Paintings · 02</span>
         <span class="work-item-title">Originals &amp; Commissions</span>
       </div>
       <span class="work-item-arrow">Explore &rarr;</span>
     </a>
-    <a href="about.html" class="work-item reveal" style="transition-delay:200ms">
-      <div class="work-item-bg bg-yoga-1"></div>
+    <a href="about.html" class="work-item wipe" style="transition-delay:300ms">
+      <div class="work-item-bg"><img src="images/portrait.jpg" alt="" loading="lazy"></div>
       <div class="work-item-overlay">
         <span class="work-item-label">About · 03</span>
         <span class="work-item-title">Showreel, CV &amp; Notes</span>
@@ -508,6 +575,7 @@
   </div>
   <span class="site-footer-copy"></span>
 </footer>
+</main>
 
 <div class="modal-overlay" id="modal-overlay" onclick="closeOut(event)">
   <div class="modal">
@@ -610,7 +678,50 @@
   })();
 </script>
 
+<script>
+  // ── SCROLL: video stays, the page slides over it ─────────────────────────
+  (function(){
+    const nav = document.querySelector('nav');
+    const main = document.querySelector('.hero-main');
+    const track = document.getElementById('marquee');
+    const card = document.querySelector('.work-item video');
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let lastY = window.scrollY, offset = 0, speed = 0;
+
+    function onScroll(){
+      const h = window.innerHeight, y = window.scrollY;
+      const p = Math.min(y / h, 1);
+      nav.classList.toggle('on-hero', y < h - 72);
+      if (!still) {
+        main.style.transform = 'translateY(' + (p * -80) + 'px) scale(' + (1 - p * 0.12) + ')';
+        main.style.opacity = String(Math.max(1 - p * 1.4, 0));
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    // Marquee drifts slowly and speeds up with the scroll.
+    if (!still) (function loop(){
+      const y = window.scrollY;
+      speed += ((y - lastY) * 0.6 - speed) * 0.1;
+      lastY = y;
+      offset -= 0.6 + Math.abs(speed);
+      const half = track.scrollWidth / 2;
+      if (half && offset <= -half) offset += half;
+      track.style.transform = 'translateX(' + offset + 'px)';
+      requestAnimationFrame(loop);
+    })();
+
+    // The workshop card plays its video while you look at it.
+    if (card) new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) card.play().catch(()=>{}); else card.pause();
+    }), { threshold:0.3 }).observe(card);
+  })();
+</script>
+
 <script src="i18n.js"></script>
+<script src="motion.js"></script>
 <script src="contact.js"></script>
 <script src="events.js"></script>
 </body>
