@@ -22,6 +22,21 @@
     })();
   }
 
+  // Page title zoom: like the video on the home page, the camera moves into
+  // the title and it softly blurs as you scroll away from it.
+  var ph = document.querySelector('.page-hero');
+  if (ph && !reduced) {
+    var zoom = function () {
+      var p = Math.min(window.scrollY / ph.offsetHeight, 1);
+      ph.style.transform = 'scale(' + (1 + p * 0.25) + ')';
+      ph.style.filter = 'blur(' + (p * 8) + 'px)';
+      ph.style.opacity = String(1 - p * 0.8);
+    };
+    window.addEventListener('scroll', zoom, { passive: true });
+    window.addEventListener('resize', zoom);
+    zoom();
+  }
+
   // Image wipes: pictures uncover when they scroll into view.
   var wipes = document.querySelectorAll('.wipe');
   if (!('IntersectionObserver' in window)) {

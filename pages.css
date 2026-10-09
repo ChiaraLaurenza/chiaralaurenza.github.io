@@ -1,0 +1,65 @@
+/* Polish layer for the inner pages (About, Paintings, Art Chiasma, Events, Blog).
+   Loaded after each page's own styles, so it only refines what is there. */
+
+/* ── FOOTER AT THE BOTTOM ── short pages no longer leave the footer floating */
+body { min-height:100vh; min-height:100svh; display:flex; flex-direction:column; }
+body > .site-footer { margin-top:auto; }
+
+/* ── PAGE HERO ── taller, bigger title with the red full stop from the home page */
+.page-hero {
+  min-height:clamp(420px, 62vh, 680px);
+  padding:160px 48px 72px;
+  align-items:end;
+}
+.page-hero h1 {
+  font-size:clamp(4rem,10vw,9.5rem);
+  letter-spacing:-0.04em; line-height:0.9;
+}
+.page-hero h1::after { content:'.'; color:var(--red); }
+.page-hero-desc {
+  font-size:1.05rem; line-height:1.75; color:#333; font-weight:400; max-width:440px;
+}
+
+/* ── READABLE TEXT ── the very light grey body text was hard to read */
+.offer-item p, .style-desc, .bio-text p, .cv-what p, .ev-main p, .post-row p,
+.faq-item p, .ask p {
+  color:#444; font-weight:400;
+}
+
+/* ── ONE ACCENT COLOUR ── tags and links use the site red everywhere */
+.otag { color:var(--red) !important; border-color:currentColor !important; }
+.offer-item .book-link { color:var(--red) !important; }
+.offer-num { color:var(--grey-3); opacity:0.45; }
+
+/* ── CARDS ── soft lift on hover */
+.offer-item { transition:background 0.4s, transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.offer-item:hover { background:var(--grey-1); }
+
+/* ── SERIES I-III ── dark tiles with a large numeral while the paintings are in progress */
+.series-item { background:#141414; }
+.series-item .work-item-bg { display:none; }
+.series-item .work-item-overlay { background:none; justify-content:space-between; padding:28px; }
+.series-item .lbl {
+  font-family:'Playfair Display', serif; font-size:clamp(4rem,8vw,7rem); font-style:italic;
+  letter-spacing:0; text-transform:none; font-weight:400; color:rgba(255,255,255,0.12); line-height:1;
+}
+.series-item .ttl { font-size:1.5rem; }
+.series-item:hover .lbl { color:var(--red); transition:color 0.5s; }
+
+/* ── PAINTINGS ── fewer, bigger pictures */
+.gallery { grid-template-columns:repeat(2,1fr); gap:32px; }
+.g-item { aspect-ratio:4/5; }
+@media (min-width:1300px) { .gallery { grid-template-columns:repeat(4,1fr); gap:24px; } .g-item { aspect-ratio:3/4; } }
+
+/* ── EVENTS ── a calmer empty state */
+.ev-empty {
+  font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(1.4rem,2.6vw,2rem);
+  line-height:1.4; color:var(--black); padding:56px 0;
+}
+
+@media (max-width:900px) {
+  .page-hero { min-height:auto; padding:130px 24px 56px; }
+  .page-hero h1 { font-size:clamp(3.4rem,16vw,5.5rem); }
+  .gallery { grid-template-columns:1fr; gap:20px; }
+  .series-item { aspect-ratio:16/10; }
+}

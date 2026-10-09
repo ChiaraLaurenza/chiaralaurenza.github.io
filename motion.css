@@ -39,6 +39,10 @@ body::after {
 .wipe img, .wipe video { transform:scale(1.15); transition:transform 1.8s cubic-bezier(0.16,1,0.3,1); }
 .wipe.visible img, .wipe.visible video { transform:none; }
 
+/* ── PAGE TITLE ZOOM ── the title grows and blurs as you scroll (see motion.js) */
+.page-hero { transform-origin:50% 30%; will-change:transform, filter, opacity; }
+body { overflow-x:clip; }
+
 /* ── LINK UNDERLINE ── draws itself in on hover */
 .nav-center a, .site-footer-links a { position:relative; }
 .nav-center a::after, .site-footer-links a::after {
@@ -54,6 +58,12 @@ body::after {
   body::after { animation:none; }
   .page-hero h1 { animation:none; }
   .wipe, .wipe img, .wipe video { clip-path:none; transform:none; transition:none; }
+}
+
+/* Phone: footer links wrap, so the page is never wider than the screen. */
+@media (max-width:600px) {
+  .site-footer-links { flex-wrap:wrap; gap:14px 22px; }
+  .site-footer > * { min-width:0; }
 }
 
 /* Phone: the language switch lives in the burger menu, so hide the desktop one. */
