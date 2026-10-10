@@ -255,7 +255,7 @@
     'Choreographer & performer, “The Chain”': { de: 'Choreografin & Tänzerin, „The Chain“', it: 'Coreografa e interprete, „The Chain“' },
     'Open Stage Iwanson, IMAL, Gasteig HP8, Munich': { de: 'Open Stage Iwanson, IMAL, Gasteig HP8, München', it: 'Open Stage Iwanson, IMAL, Gasteig HP8, Monaco' },
     'Original 90-second solo.': { de: 'Eigenes Solo, 90 Sekunden.', it: 'Assolo originale di 90 secondi.' },
-    'The Chain · solo, choreography and performance · Open Stage Iwanson, IMAL, Gasteig HP8 · June 2026': { de: 'The Chain · Solo, Choreografie und Tanz · Open Stage Iwanson, IMAL, Gasteig HP8 · Juni 2026', it: 'The Chain · assolo, coreografia e interpretazione · Open Stage Iwanson, IMAL, Gasteig HP8 · giugno 2026' },
+    'The Chain · choreography and performance by Chiara Laurenza · Open Stage Iwanson, IMAL, Gasteig HP8 · June 2026': { de: 'The Chain · Choreografie und Tanz: Chiara Laurenza · Open Stage Iwanson, IMAL, Gasteig HP8 · Juni 2026', it: 'The Chain · coreografia e interpretazione di Chiara Laurenza · Open Stage Iwanson, IMAL, Gasteig HP8 · giugno 2026' },
     'Empathy · choreography by Johannes Härtl · Open Stage Iwanson, IMAL, Gasteig HP8 · June 2026': { de: 'Empathy · Choreografie von Johannes Härtl · Open Stage Iwanson, IMAL, Gasteig HP8 · Juni 2026', it: 'Empathy · coreografia di Johannes Härtl · Open Stage Iwanson, IMAL, Gasteig HP8 · giugno 2026' },
     'Choreographer, UEFA 2024 Side Event': { de: 'Choreografin, UEFA-2024-Side-Event', it: 'Coreografa, evento collaterale UEFA 2024' },
     'MoveMent, Olympiapark Munich': { de: 'MoveMent, Olympiapark München', it: 'MoveMent, Olympiapark Monaco' },
