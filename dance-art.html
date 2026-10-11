@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://chiaralaurenza.com/images/portrait.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="motion.css?v=4"/>
+  <link rel="stylesheet" href="motion.css?v=5"/>
   <style>
   :root {
     --black:   #0A0A0A;
@@ -282,7 +282,7 @@
   </div>
   <div class="page-hero-right reveal from-right" style="transition-delay:120ms">
     <p class="page-hero-desc">I take a concept into the body, dance it, pause, and translate what the body felt into colour. The painting is not a trace of the movement. It is a translation of the feeling.</p>
-    <button class="btn btn-outline page-hero-cta" onclick="openModal('Art Chiasma','Book a Workshop')">Book Now</button>
+    <!-- Book Now hidden while Art Chiasma is in progress -->
   </div>
 </section>
 
@@ -322,7 +322,8 @@
   <p class="series-note">In progress, autumn 2026</p>
 </section>
 
-<section class="offer-section">
+<!-- Hidden while Art Chiasma is in progress; remove "hidden" to show again. -->
+<section class="offer-section" hidden>
   <div class="offer-grid">
     <div class="offer-item reveal" style="transition-delay:0ms">
       <div class="offer-num">01</div>
@@ -357,7 +358,7 @@
   </div>
 </section>
 
-<section class="faq-section" id="faq">
+<section class="faq-section" id="faq" hidden>
   <h2 class="reveal">Questions</h2>
   <div class="faq-list">
     <details class="faq-item reveal">

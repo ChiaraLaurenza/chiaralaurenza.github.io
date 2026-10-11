@@ -50,3 +50,6 @@ body { overflow-x:clip; }
 
 /* Headlines stay upright and black: no grey italic second word. */
 h1 em, h2 em { font-style:normal !important; color:inherit !important; }
+
+/* Anything marked hidden stays hidden, even if a layout rule says otherwise. */
+[hidden] { display:none !important; }

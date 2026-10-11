@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://chiaralaurenza.com/images/portrait.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="motion.css?v=4"/>
+  <link rel="stylesheet" href="motion.css?v=5"/>
   <style>
   :root {
     --black:   #0A0A0A;
@@ -454,7 +454,7 @@
 <!-- INTRO STRIP -->
 <section class="intro-strip reveal">
   <p class="intro-strip-text">We dance a feeling, pause to listen, and translate what the body holds into colour on canvas.</p>
-  <div class="intro-strip-ctas">
+  <div class="intro-strip-ctas" hidden><!-- hidden while Art Chiasma is in progress -->
     <a href="dance-art.html" class="btn btn-fill">See Workshops</a>
     <button class="btn btn-outline" onclick="openModal('Art Chiasma','Book a Workshop')">Book a Workshop</button>
   </div>
@@ -509,7 +509,7 @@
     <div class="contact-left reveal from-left">
       <h2>Let&rsquo;s create<br/><em style="font-style:italic;font-family:'Playfair Display',serif">together.</em></h2>
       <p>Questions about workshops, paintings or commissions? I would love to hear from you.</p>
-      <p><a href="dance-art.html#faq" class="book-link" style="color:var(--red);text-decoration:none">Read the FAQ</a></p>
+      <!-- FAQ hidden while Art Chiasma is in progress -->
       <div class="contact-meta"><div class="contact-meta-label">Location</div><div class="contact-meta-val">Munich, Bavaria, Germany</div></div>
     </div>
     <form class="cform reveal from-right" onsubmit="handleContact(event)">
@@ -520,9 +520,6 @@
       <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
       <div class="fg"><label>Topic</label>
         <select>
-          <option>Art Chiasma · Small Groups</option>
-          <option>Art Chiasma · For Professionals</option>
-          <option>Art Chiasma · Companies</option>
           <option>Painting · Buy or Commission</option>
           <option>General Enquiry</option>
         </select>
