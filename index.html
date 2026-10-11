@@ -7,8 +7,15 @@
   <link rel="icon" type="image/png" href="favicon-48.png"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <title>Chiara Laurenza · Art Chiasma</title>
+  <meta name="description" content="Contemporary, jazz and hip hop dancer, painter and choreographer, based in Munich."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Chiara Laurenza · Art Chiasma"/>
+  <meta property="og:description" content="Contemporary, jazz and hip hop dancer, painter and choreographer, based in Munich."/>
+  <meta property="og:url" content="https://chiaralaurenza.com/"/>
+  <meta property="og:image" content="https://chiaralaurenza.com/images/portrait.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="motion.css?v=3"/>
+  <link rel="stylesheet" href="motion.css?v=4"/>
   <style>
   :root {
     --black:   #0A0A0A;
@@ -203,19 +210,7 @@
     position:sticky; top:0; z-index:0; overflow:hidden;
   }
   .hero-main { will-change:transform, opacity; }
-  .hero-bg { will-change:transform, filter; }
-  .hero-scroll {
-    position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:3;
-    display:flex; flex-direction:column; align-items:center; gap:12px;
-    font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; font-weight:600;
-    color:rgba(255,255,255,0.6);
-  }
-  .hero-scroll i { display:block; width:1px; height:48px; background:rgba(255,255,255,0.25); position:relative; overflow:hidden; }
-  .hero-scroll i::after {
-    content:''; position:absolute; left:0; top:0; width:1px; height:16px; background:white;
-    animation:drip 2s cubic-bezier(0.77,0,0.18,1) infinite;
-  }
-  @keyframes drip { from { transform:translateY(-16px); } to { transform:translateY(48px); } }
+  .hero-bg { will-change:transform; }
 
   /* SHEET: the white page that slides up over the video */
   .sheet {
@@ -232,17 +227,6 @@
   nav.on-hero .lang-switch button { color:rgba(255,255,255,0.5); }
   nav.on-hero .nav-burger span { background:white; }
 
-  /* MARQUEE: the three words drift by, faster when you scroll */
-  .marquee { overflow:hidden; padding:56px 0; border-bottom:1px solid var(--grey-2); }
-  .marquee-track { display:flex; width:max-content; will-change:transform; }
-  .marquee-group { display:flex; align-items:center; }
-  .marquee-group span {
-    font-family:'Playfair Display', serif; font-weight:400; font-size:clamp(4rem,11vw,10rem);
-    line-height:1; letter-spacing:-3px; padding:0 0.25em; white-space:nowrap;
-  }
-  .marquee-group span.m-out { font-style:italic; color:transparent; -webkit-text-stroke:1px var(--black); }
-  .marquee-group span.m-red { font-style:italic; color:var(--red); }
-  .marquee-group b { width:14px; height:14px; border-radius:50%; background:var(--red); flex-shrink:0; }
   .hero-top-row {
     display:flex; justify-content:space-between; align-items:center;
     position:absolute; top:100px; left:48px; right:48px;
@@ -401,10 +385,8 @@
     .work-item:nth-child(n) { margin-top:0; }
   }
   @media(max-width:900px){
-    .hero-scroll { display:none; }
     .hero-controls { right:24px; }
     .sheet { border-radius:20px 20px 0 0; }
-    .marquee { padding:36px 0; }
   }
   .nav-right { display:flex; align-items:center; gap:28px; }
   .lang-switch { display:flex; gap:2px; }
@@ -464,7 +446,6 @@
   </div>
 
   <div class="hero-controls" id="hero-controls"></div>
-  <div class="hero-scroll" aria-hidden="true">Scroll<i></i></div>
 
 </section>
 
@@ -478,16 +459,6 @@
     <button class="btn btn-outline" onclick="openModal('Art Chiasma','Book a Workshop')">Book a Workshop</button>
   </div>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee">
-    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
-    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
-    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
-    <div class="marquee-group"><span>Dance.</span><b></b><span class="m-out">Feel.</span><b></b><span class="m-red">Paint.</span><b></b></div>
-  </div>
-</div>
 
 <!-- UPCOMING -->
 <section class="work-section" id="upcoming" data-hide-if-empty hidden>
@@ -685,38 +656,23 @@
     const nav = document.querySelector('nav');
     const main = document.querySelector('.hero-main');
     const bg = document.getElementById('hero-bg');
-    const track = document.getElementById('marquee');
     const card = document.querySelector('.work-item video');
     const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let lastY = window.scrollY, offset = 0, speed = 0;
 
     function onScroll(){
       const h = window.innerHeight, y = window.scrollY;
       const p = Math.min(y / h, 1);
       nav.classList.toggle('on-hero', y < h - 72);
       if (!still) {
-        main.style.transform = 'translateY(' + (p * -80) + 'px) scale(' + (1 - p * 0.12) + ')';
+        main.style.transform = 'translateY(' + (p * -40) + 'px)';
         main.style.opacity = String(Math.max(1 - p * 1.4, 0));
-        // the camera moves into the video and it softly blurs
-        bg.style.transform = 'scale(' + (1 + p * 0.35) + ')';
-        bg.style.filter = 'blur(' + (p * 10) + 'px)';
+        // the camera moves gently into the video
+        bg.style.transform = 'scale(' + (1 + p * 0.08) + ')';
       }
     }
     window.addEventListener('scroll', onScroll, { passive:true });
     window.addEventListener('resize', onScroll);
     onScroll();
-
-    // Marquee drifts slowly and speeds up with the scroll.
-    if (!still) (function loop(){
-      const y = window.scrollY;
-      speed += ((y - lastY) * 0.6 - speed) * 0.1;
-      lastY = y;
-      offset -= 0.6 + Math.abs(speed);
-      const half = track.scrollWidth / 2;
-      if (half && offset <= -half) offset += half;
-      track.style.transform = 'translateX(' + offset + 'px)';
-      requestAnimationFrame(loop);
-    })();
 
     // The workshop card plays its video while you look at it.
     if (card) new IntersectionObserver(es => es.forEach(e => {
@@ -726,7 +682,7 @@
 </script>
 
 <script src="i18n.js"></script>
-<script src="motion.js?v=3"></script>
+<script src="motion.js?v=4"></script>
 <script src="contact.js"></script>
 <script src="events.js"></script>
 </body>

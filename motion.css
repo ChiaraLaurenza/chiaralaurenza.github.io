@@ -1,46 +1,26 @@
-/* Motion layer shared by every page: grain, cursor, image wipes, title rise.
+/* Motion layer shared by every page: grain, image wipes, title rise.
    Everything here is decoration. If motion is reduced, it switches off. */
 
-/* ── PAPER GRAIN ── a faint canvas texture over the whole site */
+/* ── PAPER GRAIN ── a faint, still canvas texture over the whole site */
 body::after {
   content:''; position:fixed; inset:-50%; z-index:900; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  opacity:0.06; animation:grain 1.2s steps(4) infinite;
+  opacity:0.035;
 }
-@keyframes grain {
-  0%   { transform:translate(0,0); }
-  25%  { transform:translate(-3%,2%); }
-  50%  { transform:translate(2%,-3%); }
-  75%  { transform:translate(-2%,-1%); }
-  100% { transform:translate(0,0); }
-}
-
-/* ── CURSOR ── a soft ink dot that swells over links (mouse only) */
-.cursor {
-  position:fixed; top:0; left:0; z-index:1100; pointer-events:none;
-  width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%;
-  background:#fff; mix-blend-mode:difference;
-  transition:width 0.35s cubic-bezier(0.16,1,0.3,1), height 0.35s cubic-bezier(0.16,1,0.3,1), margin 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.3s;
-  opacity:0;
-}
-.cursor.on { opacity:1; }
-.cursor.big { width:64px; height:64px; margin:-32px 0 0 -32px; }
 
 /* ── PAGE TITLE ── each line rises out of a mask on load */
-.page-hero h1 { animation:titleRise 1.3s cubic-bezier(0.16,1,0.3,1) both; }
+.page-hero h1 { animation:titleRise 0.9s cubic-bezier(0.16,1,0.3,1) both; }
 @keyframes titleRise {
-  from { clip-path:inset(0 0 100% 0); transform:translateY(40px); }
+  from { clip-path:inset(0 0 100% 0); transform:translateY(24px); }
   to   { clip-path:inset(0 0 -10% 0); transform:none; }
 }
 
 /* ── IMAGE WIPE ── pictures uncover like a brush stroke from left to right */
-.wipe { clip-path:inset(0 100% 0 0); transition:clip-path 1.4s cubic-bezier(0.77,0,0.18,1); }
+.wipe { clip-path:inset(0 100% 0 0); transition:clip-path 0.9s cubic-bezier(0.77,0,0.18,1); }
 .wipe.visible { clip-path:inset(0 0 0 0); }
-.wipe img, .wipe video { transform:scale(1.15); transition:transform 1.8s cubic-bezier(0.16,1,0.3,1); }
+.wipe img, .wipe video { transform:scale(1.04); transition:transform 1.2s cubic-bezier(0.16,1,0.3,1); }
 .wipe.visible img, .wipe.visible video { transform:none; }
 
-/* ── PAGE TITLE ZOOM ── the title grows and blurs as you scroll (see motion.js) */
-.page-hero { transform-origin:50% 30%; will-change:transform, filter, opacity; }
 body { overflow-x:clip; }
 
 /* ── LINK UNDERLINE ── draws itself in on hover */
@@ -53,11 +33,10 @@ body { overflow-x:clip; }
 .nav-center a:hover::after, .nav-center a.active::after,
 .site-footer-links a:hover::after { transform:scaleX(1); transform-origin:left; }
 
-@media (hover:none), (pointer:coarse) { .cursor { display:none; } }
 @media (prefers-reduced-motion: reduce) {
-  body::after { animation:none; }
   .page-hero h1 { animation:none; }
   .wipe, .wipe img, .wipe video { clip-path:none; transform:none; transition:none; }
+  .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
 }
 
 /* Phone: footer links wrap, so the page is never wider than the screen. */
@@ -68,3 +47,6 @@ body { overflow-x:clip; }
 
 /* Phone: the language switch lives in the burger menu, so hide the desktop one. */
 @media (max-width:900px) { .nav-right { display:none !important; } }
+
+/* Headlines stay upright and black: no grey italic second word. */
+h1 em, h2 em { font-style:normal !important; color:inherit !important; }
