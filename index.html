@@ -6,10 +6,10 @@
   <link rel="icon" href="favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" href="favicon-48.png"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-  <title>Chiara Laurenza · Art Chiasma</title>
+  <title>Chiara Laurenza</title>
   <meta name="description" content="Contemporary, jazz and hip hop dancer, painter and choreographer, based in Munich."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Chiara Laurenza · Art Chiasma"/>
+  <meta property="og:title" content="Chiara Laurenza"/>
   <meta property="og:description" content="Contemporary, jazz and hip hop dancer, painter and choreographer, based in Munich."/>
   <meta property="og:url" content="https://chiaralaurenza.com/"/>
   <meta property="og:image" content="https://chiaralaurenza.com/images/portrait.jpg"/>
@@ -298,7 +298,7 @@
   .section-header-row a:hover { color:var(--red); }
 
   .work-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:start;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:16px; align-items:start;
   }
   .work-item {
     display:block; text-decoration:none; color:var(--black);
@@ -417,12 +417,12 @@
 
 <nav>
   <a href="index.html" class="nav-logo">Chiara Laurenza</a>
-  <ul class="nav-center"><li><a href="dance-art.html" class="">Art Chiasma</a></li><li><a href="art.html" class="">Paintings</a></li><li><a href="events.html" class="">Events</a></li><li><a href="about.html" class="">About</a></li></ul>
+  <ul class="nav-center"><li><a href="art.html" class="">Paintings</a></li><li><a href="events.html" class="">Events</a></li><li><a href="about.html" class="">About</a></li></ul>
   <div class="nav-right"><div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div><a href="index.html#contact">Contact</a></div>
   <button class="nav-burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="dance-art.html">Art Chiasma</a><a href="art.html">Paintings</a><a href="events.html">Events</a><a href="about.html">About</a>
+  <a href="art.html">Paintings</a><a href="events.html">Events</a><a href="about.html">About</a>
   <a href="index.html#contact">Contact</a>
   <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="it">IT</button></div>
 </div>
@@ -455,7 +455,6 @@
 <section class="intro-strip reveal">
   <p class="intro-strip-text">We dance a feeling, pause to listen, and translate what the body holds into colour on canvas.</p>
   <div class="intro-strip-ctas" hidden><!-- hidden while Art Chiasma is in progress -->
-    <a href="dance-art.html" class="btn btn-fill">See Workshops</a>
     <button class="btn btn-outline" onclick="openModal('Art Chiasma','Book a Workshop')">Book a Workshop</button>
   </div>
 </section>
@@ -476,26 +475,18 @@
   </div>
 
   <div class="work-grid">
-    <a href="dance-art.html" class="work-item wipe" style="transition-delay:0ms">
-      <div class="work-item-bg"><video src="videos/art.mp4" poster="images/workshop-poster.jpg" muted loop playsinline preload="metadata"></video></div>
-      <div class="work-item-overlay">
-        <span class="work-item-label">Workshops · 01</span>
-        <span class="work-item-title">Art Chiasma Workshops</span>
-      </div>
-      <span class="work-item-arrow">Explore &rarr;</span>
-    </a>
-    <a href="art.html" class="work-item wipe" style="transition-delay:150ms">
+    <a href="art.html" class="work-item wipe" style="transition-delay:0ms">
       <div class="work-item-bg"><img src="images/paintings/lady-in-blue.jpg" alt="" loading="lazy"></div>
       <div class="work-item-overlay">
-        <span class="work-item-label">Paintings · 02</span>
+        <span class="work-item-label">Paintings · 01</span>
         <span class="work-item-title">Originals &amp; Commissions</span>
       </div>
       <span class="work-item-arrow">Explore &rarr;</span>
     </a>
-    <a href="about.html" class="work-item wipe" style="transition-delay:300ms">
+    <a href="about.html" class="work-item wipe" style="transition-delay:150ms">
       <div class="work-item-bg"><img src="images/portrait.jpg" alt="" loading="lazy"></div>
       <div class="work-item-overlay">
-        <span class="work-item-label">About · 03</span>
+        <span class="work-item-label">About · 02</span>
         <span class="work-item-title">Showreel, CV &amp; Notes</span>
       </div>
       <span class="work-item-arrow">Read &rarr;</span>
@@ -536,7 +527,6 @@
 <footer class="site-footer reveal">
   <span class="site-footer-logo">Chiara Laurenza</span>
   <div class="site-footer-links">
-    <a href="dance-art.html">Art Chiasma</a>
     <a href="art.html">Paintings</a>
     <a href="events.html">Events</a>
     <a href="about.html">About</a>
