@@ -1,9 +1,12 @@
-// Upcoming events, read from Chiara's public Google Calendar.
-// Fill in CALENDAR_ID and API_KEY once (see README in the session notes).
+// Upcoming events from Chiara's public Google calendar "Teaching".
+// A GitHub Action (.github/workflows/events.yml) turns the calendar into events.json once a day.
 // A link in an event's description becomes its "Register" button.
 (function () {
-  var CALENDAR_ID = ''; // e.g. abc123@group.calendar.google.com
-  var API_KEY = '';     // Google Calendar API key, restricted to chiaralaurenza.com
+  // raw.githubusercontent serves the newest events.json right after the Action commits it
+  var SOURCES = [
+    'https://raw.githubusercontent.com/ChiaraLaurenza/chiaralaurenza.github.io/main/events.json',
+    'events.json'
+  ];
 
   var LOCALES = { en: 'en-GB', de: 'de-DE', it: 'it-IT' };
   var cache = null;
@@ -22,13 +25,20 @@
 
   function load() {
     if (cache) return Promise.resolve(cache);
-    if (!CALENDAR_ID || !API_KEY) return Promise.resolve([]);
-    var url = 'https://www.googleapis.com/calendar/v3/calendars/' + encodeURIComponent(CALENDAR_ID) +
-      '/events?singleEvents=true&orderBy=startTime&maxResults=20&timeMin=' +
-      encodeURIComponent(new Date().toISOString()) + '&key=' + encodeURIComponent(API_KEY);
-    return fetch(url)
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (d) { cache = d.items || []; return cache; });
+    function tryFrom(i) {
+      if (i >= SOURCES.length) return Promise.reject(new Error('no events source'));
+      return fetch(SOURCES[i] + '?t=' + Math.floor(Date.now() / 600000), { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .catch(function () { return tryFrom(i + 1); });
+    }
+    return tryFrom(0).then(function (d) {
+      var now = Date.now();
+      cache = (d.items || []).filter(function (e) {
+        var end = e.end && (e.end.dateTime || (e.end.date && e.end.date + 'T23:59:59'));
+        return !end || new Date(end).getTime() > now;
+      });
+      return cache;
+    });
   }
 
   function render(list, events) {

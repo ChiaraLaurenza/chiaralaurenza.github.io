@@ -1,0 +1,76 @@
+{
+ "items": [
+  {
+   "summary": "Contemporary Open Class",
+   "location": "Kult",
+   "description": "Open class · taught by Chiara Laurenza",
+   "start": {
+    "dateTime": "2026-10-23T18:00:00+02:00"
+   },
+   "end": {
+    "dateTime": "2026-10-23T19:00:00+02:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Open+Class&dates=20261023T160000Z%2F20261023T170000Z&location=Kult"
+  },
+  {
+   "summary": "Jazz Open Class",
+   "location": "Kult",
+   "description": "Open class · taught by Chiara Laurenza",
+   "start": {
+    "dateTime": "2026-10-24T17:00:00+02:00"
+   },
+   "end": {
+    "dateTime": "2026-10-24T18:00:00+02:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jazz+Open+Class&dates=20261024T150000Z%2F20261024T160000Z&location=Kult"
+  },
+  {
+   "summary": "Aqua Reha @ LaVida",
+   "location": "LaVida",
+   "description": "",
+   "start": {
+    "dateTime": "2026-10-26T12:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-10-26T13:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261026T111500Z%2F20261026T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua Reha @ LaVida",
+   "location": "LaVida",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-02T12:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-02T13:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261102T111500Z%2F20261102T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua Reha @ LaVida",
+   "location": "LaVida",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-09T12:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-09T13:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261109T111500Z%2F20261109T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua Reha @ LaVida",
+   "location": "LaVida",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-16T12:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-16T13:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261116T111500Z%2F20261116T120000Z&location=LaVida"
+  }
+ ]
+}
