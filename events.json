@@ -37,6 +37,30 @@
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261026T111500Z%2F20261026T120000Z&location=LaVida"
   },
   {
+   "summary": "Aqua Fit",
+   "location": "LaVida",
+   "description": "Substitute class",
+   "start": {
+    "dateTime": "2026-10-29T12:00:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-10-29T12:45:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261029T110000Z%2F20261029T114500Z&location=LaVida"
+  },
+  {
+   "summary": "HIIT Yoga",
+   "location": "",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-01T10:00:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-01T11:30:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=HIIT+Yoga&dates=20261101T090000Z%2F20261101T103000Z&location="
+  },
+  {
    "summary": "Aqua Reha @ LaVida",
    "location": "LaVida",
    "description": "",
@@ -49,6 +73,18 @@
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261102T111500Z%2F20261102T120000Z&location=LaVida"
   },
   {
+   "summary": "Aqua Fit",
+   "location": "LaVida",
+   "description": "Substitute class",
+   "start": {
+    "dateTime": "2026-11-05T12:00:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-05T12:45:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261105T110000Z%2F20261105T114500Z&location=LaVida"
+  },
+  {
    "summary": "Aqua Reha @ LaVida",
    "location": "LaVida",
    "description": "",
@@ -59,6 +95,18 @@
     "dateTime": "2026-11-09T13:00:00+01:00"
    },
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261109T111500Z%2F20261109T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua Fit",
+   "location": "LaVida",
+   "description": "Substitute class",
+   "start": {
+    "dateTime": "2026-11-12T12:00:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-12T12:45:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261112T110000Z%2F20261112T114500Z&location=LaVida"
   },
   {
    "summary": "Aqua Reha @ LaVida",
