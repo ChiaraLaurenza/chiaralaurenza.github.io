@@ -23,6 +23,12 @@
     return m ? m[0] : null;
   }
 
+  // 45 -> "45 min", 90 -> "1 h 30 min"
+  function duration(min) {
+    var h = Math.floor(min / 60), m = Math.round(min % 60);
+    return (h ? h + ' h' : '') + (h && m ? ' ' : '') + (m ? m + ' min' : '');
+  }
+
   function load() {
     if (cache) return Promise.resolve(cache);
     function tryFrom(i) {
@@ -57,8 +63,13 @@
       var start = new Date(allDay ? e.start.date + 'T00:00:00' : e.start.dateTime);
       var day = start.toLocaleDateString(loc, { day: '2-digit' });
       var month = start.toLocaleDateString(loc, { month: 'short' }).replace('.', '');
-      var when = start.toLocaleDateString(loc, { weekday: 'long' }) +
-        (allDay ? '' : ' · ' + start.toLocaleTimeString(loc, { hour: '2-digit', minute: '2-digit' }));
+      var hm = { hour: '2-digit', minute: '2-digit' };
+      var when = start.toLocaleDateString(loc, { weekday: 'long' });
+      if (!allDay) {
+        when += ' · ' + start.toLocaleTimeString(loc, hm);
+        var end = e.end && e.end.dateTime ? new Date(e.end.dateTime) : null;
+        if (end) when += '–' + end.toLocaleTimeString(loc, hm) + ' (' + duration((end - start) / 60000) + ')';
+      }
       var reg = firstLink(e.description);
       return '<div class="ev-row">' +
         '<div class="ev-date"><span class="ev-day">' + esc(day) + '</span><span class="ev-month">' + esc(month) + '</span></div>' +
