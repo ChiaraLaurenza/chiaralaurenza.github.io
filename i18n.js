@@ -219,9 +219,9 @@
     },
     'Events': { de: 'Termine', it: 'Eventi' },
     'Events · Chiara Laurenza': { de: 'Termine · Chiara Laurenza', it: 'Eventi · Chiara Laurenza' },
-    'Classes, workshops and performances: where you can move, paint and meet me next.': {
-      de: 'Kurse, Workshops und Performances: wo du als Nächstes mit mir tanzen, malen und mich treffen kannst.',
-      it: 'Corsi, workshop e performance: dove puoi muoverti, dipingere e incontrarmi la prossima volta.'
+    'Classes, workshops and performances: where you can move and meet me next.': {
+      de: 'Kurse, Workshops und Performances: wo du als Nächstes mit mir tanzen und mich treffen kannst.',
+      it: 'Corsi, workshop e performance: dove puoi muoverti e incontrarmi la prossima volta.'
     },
     'Upcoming': { de: 'Demnächst', it: 'Prossimamente' },
     'All Events →': { de: 'Alle Termine →', it: 'Tutti gli eventi →' },
