@@ -109,6 +109,18 @@
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261112T110000Z%2F20261112T114500Z&location=LaVida"
   },
   {
+   "summary": "Hip hop kids and open contemporary",
+   "location": "",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-14T06:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-14T12:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hip+hop+kids+and+open+contemporary&dates=20261114T051500Z%2F20261114T110000Z&location="
+  },
+  {
    "summary": "Aqua Reha @ LaVida",
    "location": "LaVida",
    "description": "",
