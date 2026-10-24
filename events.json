@@ -1,18 +1,6 @@
 {
  "items": [
   {
-   "summary": "Contemporary Open Class",
-   "location": "Kult",
-   "description": "Open class · taught by Chiara Laurenza",
-   "start": {
-    "dateTime": "2026-10-23T18:00:00+02:00"
-   },
-   "end": {
-    "dateTime": "2026-10-23T19:00:00+02:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Open+Class&dates=20261023T160000Z%2F20261023T170000Z&location=Kult"
-  },
-  {
    "summary": "Jazz Intermediate Class",
    "location": "Kult",
    "description": "Open class · taught by Chiara Laurenza",
@@ -109,16 +97,28 @@
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261112T110000Z%2F20261112T114500Z&location=LaVida"
   },
   {
-   "summary": "Hip hop kids and open contemporary",
-   "location": "",
+   "summary": "Hip hop kids ",
+   "location": "https://share.google/ekhTBZF8GuwP4j0P9",
    "description": "",
    "start": {
-    "dateTime": "2026-11-14T06:15:00+01:00"
+    "dateTime": "2026-11-14T08:45:00+01:00"
    },
    "end": {
-    "dateTime": "2026-11-14T12:00:00+01:00"
+    "dateTime": "2026-11-14T09:45:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hip+hop+kids+and+open+contemporary&dates=20261114T051500Z%2F20261114T110000Z&location="
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hip+hop+kids+&dates=20261114T074500Z%2F20261114T084500Z&location=https%3A%2F%2Fshare.google%2FekhTBZF8GuwP4j0P9"
+  },
+  {
+   "summary": "Contemporary Open Class",
+   "location": "https://share.google/ekhTBZF8GuwP4j0P9",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-14T09:45:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-14T10:45:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Open+Class&dates=20261114T084500Z%2F20261114T094500Z&location=https%3A%2F%2Fshare.google%2FekhTBZF8GuwP4j0P9"
   },
   {
    "summary": "Aqua Reha @ LaVida",
