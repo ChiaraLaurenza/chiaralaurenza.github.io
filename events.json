@@ -1,18 +1,6 @@
 {
  "items": [
   {
-   "summary": "Jazz Intermediate Class",
-   "location": "Kult",
-   "description": "Open class · taught by Chiara Laurenza",
-   "start": {
-    "dateTime": "2026-10-24T17:00:00+02:00"
-   },
-   "end": {
-    "dateTime": "2026-10-24T18:00:00+02:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jazz+Intermediate+Class&dates=20261024T150000Z%2F20261024T160000Z&location=Kult"
-  },
-  {
    "summary": "Aqua Reha @ LaVida",
    "location": "LaVida",
    "description": "",
@@ -23,6 +11,18 @@
     "dateTime": "2026-10-26T13:00:00+01:00"
    },
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261026T111500Z%2F20261026T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Rücken fit",
+   "location": "Lavida Sport and Fitness GmbH, Bürgerpl. 18, 85748 Garching bei München, Germany",
+   "description": "",
+   "start": {
+    "dateTime": "2026-10-26T18:00:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-10-26T18:45:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=R%C3%BCcken+fit&dates=20261026T170000Z%2F20261026T174500Z&location=Lavida+Sport+and+Fitness+GmbH%2C+B%C3%BCrgerpl.+18%2C+85748+Garching+bei+M%C3%BCnchen%2C+Germany"
   },
   {
    "summary": "Aqua Fit",
