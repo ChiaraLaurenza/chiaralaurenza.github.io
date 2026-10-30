@@ -1,16 +1,16 @@
 {
  "items": [
   {
-   "summary": "Aqua Fit",
-   "location": "LaVida",
-   "description": "Substitute class",
+   "summary": "Aqua fit",
+   "location": "",
+   "description": "",
    "start": {
-    "dateTime": "2026-10-29T12:00:00+01:00"
+    "dateTime": "2026-10-31T10:30:00+01:00"
    },
    "end": {
-    "dateTime": "2026-10-29T12:45:00+01:00"
+    "dateTime": "2026-10-31T11:15:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261029T110000Z%2F20261029T114500Z&location=LaVida"
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+fit&dates=20261031T093000Z%2F20261031T101500Z&location="
   },
   {
    "summary": "HIIT Yoga",
