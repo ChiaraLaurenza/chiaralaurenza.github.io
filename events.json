@@ -1,18 +1,6 @@
 {
  "items": [
   {
-   "summary": "Aqua fit",
-   "location": "",
-   "description": "",
-   "start": {
-    "dateTime": "2026-10-31T10:30:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-10-31T11:15:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+fit&dates=20261031T093000Z%2F20261031T101500Z&location="
-  },
-  {
    "summary": "HIIT Yoga",
    "location": "LaVida",
    "description": "",
@@ -23,6 +11,18 @@
     "dateTime": "2026-11-01T11:30:00+01:00"
    },
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=HIIT+Yoga&dates=20261101T090000Z%2F20261101T103000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua fit",
+   "location": "",
+   "description": "",
+   "start": {
+    "dateTime": "2026-11-02T10:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-11-02T11:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+fit&dates=20261102T091500Z%2F20261102T100000Z&location="
   },
   {
    "summary": "Aqua Reha @ LaVida",
