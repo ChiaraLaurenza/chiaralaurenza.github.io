@@ -201,6 +201,8 @@
     'Painting workshops': { de: 'Mal-Workshops', it: 'Workshop di pittura' },
     'Art Chiasma workshops': { de: 'Art Chiasma Workshops', it: 'Workshop Art Chiasma' },
     'New paintings': { de: 'Neue Bilder', it: 'Nuovi dipinti' },
+    'Notes from the studio': { de: 'Notizen aus dem Atelier', it: 'Appunti dallo studio' },
+    'Everything': { de: 'Alles', it: 'Tutto' },
     'Please pick at least one topic.': { de: 'Bitte wähle mindestens ein Thema.', it: 'Scegli almeno un argomento.' },
     'You are subscribed. Thank you!': { de: 'Du bist angemeldet. Danke!', it: 'Iscrizione completata. Grazie!' },
     'Blog · September 2026': { de: 'Blog · September 2026', it: 'Blog · Settembre 2026' },
