@@ -100,6 +100,7 @@
     'Acrylic': { de: 'Acryl', it: 'Acrilico' },
     'Oil on canvas': { de: 'Öl auf Leinwand', it: 'Olio su tela' },
     'Watercolour on paper': { de: 'Aquarell auf Papier', it: 'Acquerello su carta' },
+    'Watercolour and pencil': { de: 'Aquarell und Bleistift', it: 'Acquerello e matita' },
     'Mixed media on canvas': { de: 'Mischtechnik auf Leinwand', it: 'Tecnica mista su tela' },
     'Ask About Works': { de: 'Nach Werken fragen', it: 'Chiedi delle opere' },
     'Surface & Medium': { de: 'Untergrund & Material', it: 'Superficie & Materiale' },
