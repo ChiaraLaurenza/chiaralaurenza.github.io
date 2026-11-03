@@ -69,4 +69,25 @@
       setTimeout(closeModal, 3000);
     }, status);
   };
+  // Newsletter: each signup arrives as an email listing the courses the
+  // subscriber picked, so Chiara can add them to the right mailing groups.
+  window.handleNewsletter = function (e) {
+    e.preventDefault();
+    var form = e.target, status = document.getElementById('nl-ok'), btn = form.querySelector('button[type="submit"]');
+    var topics = Array.prototype.map.call(form.querySelectorAll('input[name="topic"]:checked'), function (c) { return c.value; });
+    status.style.display = 'block';
+    if (!topics.length) { status.textContent = tr('Please pick at least one topic.'); return; }
+    btn.disabled = true; status.textContent = tr('Sending…');
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'Newsletter: new subscriber', Email: document.getElementById('nl-email').value,
+        Topics: topics.join(', '), Language: document.documentElement.getAttribute('data-lang') || 'en',
+        Page: location.pathname, _template: 'table', _captcha: 'false' })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () { form.reset(); status.textContent = tr('You are subscribed. Thank you!'); })
+      .catch(function () { status.textContent = tr('Something went wrong. Please try again.'); })
+      .finally(function () { btn.disabled = false; });
+  };
 })();
