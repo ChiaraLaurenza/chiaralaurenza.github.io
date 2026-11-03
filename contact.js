@@ -69,12 +69,23 @@
       setTimeout(closeModal, 3000);
     }, status);
   };
+  // Newsletter "Everything" chip selects or clears all topics.
+  document.addEventListener('change', function (e) {
+    var box = e.target;
+    if (!box.matches || !box.matches('.nl-topics input[name="topic"]')) return;
+    var form = box.closest('form'), all = form.querySelector('input[data-all]');
+    var others = form.querySelectorAll('input[name="topic"]:not([data-all])');
+    if (box === all) others.forEach(function (c) { c.checked = all.checked; });
+    else all.checked = Array.prototype.every.call(others, function (c) { return c.checked; });
+  });
+
   // Newsletter: each signup arrives as an email listing the courses the
   // subscriber picked, so Chiara can add them to the right mailing groups.
   window.handleNewsletter = function (e) {
     e.preventDefault();
     var form = e.target, status = document.getElementById('nl-ok'), btn = form.querySelector('button[type="submit"]');
     var topics = Array.prototype.map.call(form.querySelectorAll('input[name="topic"]:checked'), function (c) { return c.value; });
+    if (form.querySelector('input[data-all]:checked')) topics = ['Everything'];
     status.style.display = 'block';
     if (!topics.length) { status.textContent = tr('Please pick at least one topic.'); return; }
     btn.disabled = true; status.textContent = tr('Sending…');
