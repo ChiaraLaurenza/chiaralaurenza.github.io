@@ -248,7 +248,7 @@
   .lb-close { color:rgba(255,255,255,0.6); }
   @media(max-width:900px){ .gallery-section { padding:60px 24px; } }
 </style>
-  <link rel="stylesheet" href="pages.css?v=3"/>
+  <link rel="stylesheet" href="pages.css?v=4"/>
 </head>
 <body>
 
@@ -278,19 +278,35 @@
   <div class="gallery">
     <button type="button" class="g-item wipe" style="transition-delay:0ms" data-full="images/paintings/oro-gioro.jpg?v=2">
       <img src="images/paintings/oro-gioro.jpg?v=2" alt="Oro Gioro" loading="lazy">
-      <span class="g-info"><span class="g-title">Oro Gioro</span></span>
+      <span class="g-info"><span class="g-title">Oro Gioro</span>
+        <!-- Medium, e.g. Acrylic on canvas / Oil on canvas / Watercolour on paper. Size, e.g. 60 × 80 cm. Empty fields are hidden. -->
+        <span class="g-meta g-medium"></span>
+        <span class="g-meta g-size"></span>
+      </span>
     </button>
     <button type="button" class="g-item wipe" style="transition-delay:80ms" data-full="images/paintings/lady-in-blue.jpg">
       <img src="images/paintings/lady-in-blue.jpg" alt="The Lady in Blue" loading="lazy">
-      <span class="g-info"><span class="g-title">The Lady in Blue</span></span>
+      <span class="g-info"><span class="g-title">The Lady in Blue</span>
+        <!-- Medium, e.g. Acrylic on canvas / Oil on canvas / Watercolour on paper. Size, e.g. 60 × 80 cm. Empty fields are hidden. -->
+        <span class="g-meta g-medium"></span>
+        <span class="g-meta g-size"></span>
+      </span>
     </button>
     <button type="button" class="g-item wipe" style="transition-delay:160ms" data-full="images/paintings/the-island.jpg">
       <img src="images/paintings/the-island.jpg" alt="The Island" loading="lazy">
-      <span class="g-info"><span class="g-title">The Island</span></span>
+      <span class="g-info"><span class="g-title">The Island</span>
+        <!-- Medium, e.g. Acrylic on canvas / Oil on canvas / Watercolour on paper. Size, e.g. 60 × 80 cm. Empty fields are hidden. -->
+        <span class="g-meta g-medium"></span>
+        <span class="g-meta g-size"></span>
+      </span>
     </button>
     <button type="button" class="g-item wipe" style="transition-delay:240ms" data-full="images/paintings/plump-lips.jpg">
       <img src="images/paintings/plump-lips.jpg" alt="Plump Lips" loading="lazy">
-      <span class="g-info"><span class="g-title">Plump Lips</span></span>
+      <span class="g-info"><span class="g-title">Plump Lips</span>
+        <!-- Medium, e.g. Acrylic on canvas / Oil on canvas / Watercolour on paper. Size, e.g. 60 × 80 cm. Empty fields are hidden. -->
+        <span class="g-meta g-medium"></span>
+        <span class="g-meta g-size"></span>
+      </span>
     </button>
   </div>
 </section>
@@ -399,7 +415,7 @@
     document.querySelectorAll('.g-item').forEach(function(b){
       b.addEventListener('click',function(){
         img.src=b.getAttribute('data-full'); img.alt=b.querySelector('img').alt;
-        cap.textContent=Array.prototype.map.call(b.querySelectorAll('.g-info > span'),function(x){return x.textContent;}).join(' · ');
+        cap.textContent=Array.prototype.map.call(b.querySelectorAll('.g-info > span'),function(x){return x.textContent.trim();}).filter(Boolean).join(' · ');
         lb.hidden=false; document.body.style.overflow='hidden';
       });
     });

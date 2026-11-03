@@ -52,6 +52,7 @@ body > .site-footer { margin-top:auto; }
 .g-info { position:static; opacity:1 !important; background:none !important; padding:14px 0 0; }
 .g-title { color:var(--black); font-size:1.05rem; }
 .g-meta { color:#666; }
+.g-meta:empty { display:none; }
 
 /* ── EVENTS ── a calmer empty state */
 .ev-empty { font-size:1.15rem; line-height:1.6; color:#333; font-weight:400; padding:56px 0; }
@@ -62,3 +63,13 @@ body > .site-footer { margin-top:auto; }
   .gallery { grid-template-columns:1fr; gap:20px; }
   .series-item { aspect-ratio:16/10; }
 }
+
+/* ── NEWSLETTER ── subscribers pick which courses they hear about */
+.nl-topics { width:100%; border:none; display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 8px; }
+.nl-topics legend { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5); margin-bottom:12px; }
+.nl-topics label { cursor:pointer; }
+.nl-topics input { position:absolute; opacity:0; width:1px; height:1px; min-width:0; padding:0; border:0; }
+.nl-topics span { display:inline-block; padding:8px 14px; border:1px solid rgba(255,255,255,0.3); border-radius:999px; font-size:0.78rem; color:rgba(255,255,255,0.75); transition:background 0.2s, color 0.2s, border-color 0.2s; }
+.nl-topics label:hover span { border-color:white; }
+.nl-topics input:checked + span { background:white; color:var(--black); border-color:white; }
+.nl-topics input:focus-visible + span { outline:2px solid white; outline-offset:2px; }

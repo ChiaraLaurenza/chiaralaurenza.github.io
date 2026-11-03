@@ -308,7 +308,7 @@
   .nl-note { width:100%; font-size:0.7rem; letter-spacing:1px; color:rgba(255,255,255,0.4); margin-top:8px; }
   @media(max-width:900px){ .newsletter { grid-template-columns:1fr; padding:60px 24px; gap:32px; } }
 </style>
-  <link rel="stylesheet" href="pages.css?v=3"/>
+  <link rel="stylesheet" href="pages.css?v=4"/>
 </head>
 <body>
 
@@ -336,7 +336,7 @@
 <section class="bio">
   <div class="bio-photo wipe"><img src="images/portrait.jpg" alt="Chiara Laurenza dancing on stage"></div>
   <div class="bio-text reveal from-right">
-    <p>I am Chiara, a contemporary, jazz and hip hop dancer, and a painter. I trained in contemporary dance, jazz and ballet at Iwanson in Munich, and I paint in acrylics.</p>
+    <p>I am Chiara, a contemporary, jazz and hip hop dancer, and a painter. I completed the Basic Year at Iwanson, the International School of Contemporary Dance in Munich, training in contemporary dance, jazz and ballet, and I paint in acrylics.</p>
     <p>In Art Chiasma, movement comes first: we dance a feeling, pause, and let the body decide the colours on the canvas.</p>
     <p>Before dance became my path, I studied bioinformatics at TUM and LMU. It taught me to look closely at what happens inside a system. Today, that system is the body.</p>
   </div>
@@ -355,7 +355,7 @@
 <section class="cv-section" id="cv">
   <div class="cv-group">
     <h3>Training &amp; Education</h3>
-      <div class="cv-row reveal"><div class="cv-when">2025 – 2026</div><div class="cv-what"><h4>Basic Year</h4><span>Iwanson, Munich</span><p>Intensive dance training in classical ballet, jazz, contemporary dance and somatic practice.</p></div></div>
+      <div class="cv-row reveal"><div class="cv-when">2025 – 2026</div><div class="cv-what"><h4>Basic Year, completed</h4><span>Iwanson International School of Contemporary Dance, Munich</span><p>Intensive dance training in classical ballet, jazz, contemporary dance and somatic practice.</p></div></div>
       <div class="cv-row reveal"><div class="cv-when">2021 – 2026</div><div class="cv-what"><h4>B.Sc. Bioinformatics</h4><span>TUM &amp; LMU Munich</span><p>Thesis at RostLab on protein language models.</p></div></div>
   </div>
   <div class="cv-group">
@@ -393,12 +393,22 @@
 <section class="newsletter" id="newsletter">
   <div class="reveal from-left">
     <h2>New post,<br/><em>straight to you.</em></h2>
-    <p>One email each time I publish something new: new paintings, workshop dates, thoughts from the studio. No spam, unsubscribe anytime.</p>
+    <p>Pick what you care about and I will only email you about that: new classes, workshop dates, new paintings. No spam, unsubscribe anytime.</p>
   </div>
-  <form class="nl-form reveal from-right" onsubmit="event.preventDefault();document.getElementById('nl-ok').style.display='block'">
+  <form class="nl-form reveal from-right" onsubmit="handleNewsletter(event)">
     <input type="email" id="nl-email" placeholder="your@email.com" required aria-label="Email address">
+    <fieldset class="nl-topics">
+      <legend>Tell me about</legend>
+      <label><input type="checkbox" name="topic" value="Commercial dance"> <span>Commercial dance</span></label>
+      <label><input type="checkbox" name="topic" value="Contemporary &amp; jazz"> <span>Contemporary &amp; jazz</span></label>
+      <label><input type="checkbox" name="topic" value="Hip hop"> <span>Hip hop</span></label>
+      <label><input type="checkbox" name="topic" value="Aqua fit"> <span>Aqua fit</span></label>
+      <label><input type="checkbox" name="topic" value="Painting workshops"> <span>Painting workshops</span></label>
+      <label><input type="checkbox" name="topic" value="Art Chiasma workshops"> <span>Art Chiasma workshops</span></label>
+      <label><input type="checkbox" name="topic" value="New paintings"> <span>New paintings</span></label>
+    </fieldset>
     <button class="btn" type="submit">Subscribe</button>
-    <p class="nl-note" id="nl-ok" style="display:none">Coming soon. The newsletter is not connected yet.</p>
+    <p class="nl-note" id="nl-ok" style="display:none" role="status"></p>
   </form>
 </section>
 
