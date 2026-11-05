@@ -1,18 +1,6 @@
 {
  "items": [
   {
-   "summary": "Aqua Fit",
-   "location": "LaVida",
-   "description": "Substitute class",
-   "start": {
-    "dateTime": "2026-11-05T12:00:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-11-05T12:45:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261105T110000Z%2F20261105T114500Z&location=LaVida"
-  },
-  {
    "summary": "Aqua fit",
    "location": "Lavida Sport and Fitness GmbH, Bürgerpl. 18, 85748 Garching bei München, Germany",
    "description": "",
