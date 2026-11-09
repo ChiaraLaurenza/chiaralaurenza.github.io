@@ -1,18 +1,6 @@
 {
  "items": [
   {
-   "summary": "Aqua Reha @ LaVida",
-   "location": "LaVida",
-   "description": "",
-   "start": {
-    "dateTime": "2026-11-09T12:15:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-11-09T13:00:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261109T111500Z%2F20261109T120000Z&location=LaVida"
-  },
-  {
    "summary": "Aqua Fit",
    "location": "LaVida",
    "description": "Substitute class",
@@ -83,6 +71,18 @@
     "dateTime": "2026-11-30T13:00:00+01:00"
    },
    "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261130T111500Z%2F20261130T120000Z&location=LaVida"
+  },
+  {
+   "summary": "Aqua Reha @ LaVida",
+   "location": "LaVida",
+   "description": "",
+   "start": {
+    "dateTime": "2026-12-07T12:15:00+01:00"
+   },
+   "end": {
+    "dateTime": "2026-12-07T13:00:00+01:00"
+   },
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261207T111500Z%2F20261207T120000Z&location=LaVida"
   }
  ]
 }
