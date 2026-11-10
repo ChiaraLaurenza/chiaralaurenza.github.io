@@ -248,6 +248,18 @@
   .post-text ol { padding-left:1.4rem; display:flex; flex-direction:column; gap:14px; }
   .post-text li { font-size:0.95rem; line-height:1.85; color:#333; font-weight:300; }
   .post-text em { font-style:italic; }
+  .post-text p { font-size:0.95rem; line-height:1.85; color:#333; font-weight:300; margin-bottom:16px; }
+  .post-text ul { padding-left:1.4rem; display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .post-text ol { margin-bottom:16px; }
+  /* newsletter topic chips (same as pages.css) */
+.nl-topics { width:100%; border:none; display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 8px; }
+.nl-topics legend { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5); margin-bottom:12px; }
+.nl-topics label { cursor:pointer; }
+.nl-topics input { position:absolute; opacity:0; width:1px; height:1px; min-width:0; padding:0; border:0; }
+.nl-topics span { display:inline-block; padding:8px 14px; border:1px solid rgba(255,255,255,0.3); border-radius:999px; font-size:0.78rem; color:rgba(255,255,255,0.75); transition:background 0.2s, color 0.2s, border-color 0.2s; }
+.nl-topics label:hover span { border-color:white; }
+.nl-topics input:checked + span { background:white; color:var(--black); border-color:white; }
+.nl-topics input:focus-visible + span { outline:2px solid white; outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -298,10 +310,22 @@
     <h2>New post,<br/><em>straight to you.</em></h2>
     <p>One email each time I publish something new: new paintings, workshop dates, thoughts from the studio. No spam, unsubscribe anytime.</p>
   </div>
-  <form class="nl-form reveal from-right" onsubmit="event.preventDefault();document.getElementById('nl-ok').style.display='block'">
+  <form class="nl-form reveal from-right" onsubmit="handleNewsletter(event)">
     <input type="email" id="nl-email" placeholder="your@email.com" required aria-label="Email address">
+    <fieldset class="nl-topics">
+      <legend>Tell me about</legend>
+      <label><input type="checkbox" name="topic" value="Commercial dance"> <span>Commercial dance</span></label>
+      <label><input type="checkbox" name="topic" value="Contemporary &amp; jazz"> <span>Contemporary &amp; jazz</span></label>
+      <label><input type="checkbox" name="topic" value="Hip hop"> <span>Hip hop</span></label>
+      <label><input type="checkbox" name="topic" value="Aqua fit"> <span>Aqua fit</span></label>
+      <label><input type="checkbox" name="topic" value="Painting workshops"> <span>Painting workshops</span></label>
+      <label><input type="checkbox" name="topic" value="Art Chiasma workshops"> <span>Art Chiasma workshops</span></label>
+      <label><input type="checkbox" name="topic" value="New paintings"> <span>New paintings</span></label>
+      <label><input type="checkbox" name="topic" value="Notes from the studio"> <span>Notes from the studio</span></label>
+      <label><input type="checkbox" name="topic" value="Everything" data-all> <span>Everything</span></label>
+    </fieldset>
     <button class="btn" type="submit">Subscribe</button>
-    <p class="nl-note" id="nl-ok" style="display:none">Coming soon. The newsletter is not connected yet.</p>
+    <p class="nl-note" id="nl-ok" style="display:none" role="status"></p>
   </form>
 </section>
 
