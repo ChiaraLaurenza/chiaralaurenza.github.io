@@ -205,6 +205,21 @@
     'Everything': { de: 'Alles', it: 'Tutto' },
     'Please pick at least one topic.': { de: 'Bitte wähle mindestens ein Thema.', it: 'Scegli almeno un argomento.' },
     'You are subscribed. Thank you!': { de: 'Du bist angemeldet. Danke!', it: 'Iscrizione completata. Grazie!' },
+    'Unsubscribe': { de: 'Abmelden', it: 'Disiscriviti' },
+    'Unsubscribe · Chiara Laurenza': { de: 'Abmelden · Chiara Laurenza', it: 'Disiscriviti · Chiara Laurenza' },
+    'Sorry to see you go. Choose what you no longer want to receive.': {
+      de: 'Schade, dass du gehst. Wähle, was du nicht mehr bekommen möchtest.',
+      it: 'Mi dispiace vederti andare. Scegli cosa non vuoi più ricevere.'
+    },
+    'Fewer emails,': { de: 'Weniger E-Mails,', it: 'Meno email,' },
+    'your choice.': { de: 'deine Wahl.', it: 'a tua scelta.' },
+    'You can stop only the notes from the studio and keep news about classes and paintings, or stop everything.': {
+      de: 'Du kannst nur die Notizen aus dem Atelier abbestellen und Neuigkeiten zu Kursen und Bildern behalten, oder alles abbestellen.',
+      it: 'Puoi smettere di ricevere solo gli appunti dallo studio e continuare a ricevere le novità su corsi e dipinti, oppure disiscriverti da tutto.'
+    },
+    'Stop sending me': { de: 'Nicht mehr senden', it: 'Non inviarmi più' },
+    'All emails': { de: 'Alle E-Mails', it: 'Tutte le email' },
+    'Done. You will not get these emails any more.': { de: 'Erledigt. Du bekommst diese E-Mails nicht mehr.', it: 'Fatto. Non riceverai più queste email.' },
     'Blog · September 2026': { de: 'Blog · September 2026', it: 'Blog · Settembre 2026' },
     'Handwritten in my journal.': { de: 'Handgeschrieben in meinem Tagebuch.', it: 'Scritto a mano nel mio diario.' },
     'Photo of page 1': { de: 'Foto von Seite 1', it: 'Foto della pagina 1' },

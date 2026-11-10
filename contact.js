@@ -101,4 +101,30 @@
       .catch(function () { status.textContent = tr('Something went wrong. Please try again.'); })
       .finally(function () { btn.disabled = false; });
   };
+
+  // Unsubscribe page: Chiara (and the studio-notes routine) get an email and
+  // remove the address from the notes list, or from every list.
+  window.handleUnsubscribe = function (e) {
+    e.preventDefault();
+    var form = e.target, status = document.getElementById('un-ok'), btn = form.querySelector('button[type="submit"]');
+    var what = form.querySelector('input[name="what"]:checked').value;
+    btn.disabled = true; status.style.display = 'block'; status.textContent = tr('Sending…');
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'Newsletter: unsubscribe', Email: document.getElementById('un-email').value,
+        Stop: what, Page: location.pathname, _template: 'table', _captcha: 'false' })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () { form.reset(); status.textContent = tr('Done. You will not get these emails any more.'); })
+      .catch(function () { status.textContent = tr('Something went wrong. Please try again.'); })
+      .finally(function () { btn.disabled = false; });
+  };
+
+  // ?email=... in the unsubscribe link fills in the address.
+  document.addEventListener('DOMContentLoaded', function () {
+    var box = document.getElementById('un-email');
+    var m = /[?&]email=([^&]+)/.exec(location.search);
+    if (box && m) box.value = decodeURIComponent(m[1]);
+  });
 })();
