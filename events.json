@@ -1,43 +1,7 @@
 {
  "items": [
   {
-   "summary": "Aqua Fit",
-   "location": "LaVida",
-   "description": "Substitute class",
-   "start": {
-    "dateTime": "2026-11-12T12:00:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-11-12T12:45:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Fit&dates=20261112T110000Z%2F20261112T114500Z&location=LaVida"
-  },
-  {
-   "summary": "Hip hop kids ",
-   "location": "https://share.google/ekhTBZF8GuwP4j0P9",
-   "description": "",
-   "start": {
-    "dateTime": "2026-11-14T08:45:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-11-14T09:45:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hip+hop+kids+&dates=20261114T074500Z%2F20261114T084500Z&location=https%3A%2F%2Fshare.google%2FekhTBZF8GuwP4j0P9"
-  },
-  {
-   "summary": "Contemporary Open Class",
-   "location": "https://share.google/ekhTBZF8GuwP4j0P9",
-   "description": "",
-   "start": {
-    "dateTime": "2026-11-14T09:45:00+01:00"
-   },
-   "end": {
-    "dateTime": "2026-11-14T10:45:00+01:00"
-   },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Open+Class&dates=20261114T084500Z%2F20261114T094500Z&location=https%3A%2F%2Fshare.google%2FekhTBZF8GuwP4j0P9"
-  },
-  {
-   "summary": "Aqua Reha @ LaVida",
+   "summary": "Aqua Reha",
    "location": "LaVida",
    "description": "",
    "start": {
@@ -46,10 +10,10 @@
    "end": {
     "dateTime": "2026-11-16T13:00:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261116T111500Z%2F20261116T120000Z&location=LaVida"
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha&dates=20261116T111500Z%2F20261116T120000Z&location=LaVida"
   },
   {
-   "summary": "Aqua Reha @ LaVida",
+   "summary": "Aqua Reha",
    "location": "LaVida",
    "description": "",
    "start": {
@@ -58,10 +22,10 @@
    "end": {
     "dateTime": "2026-11-23T13:00:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261123T111500Z%2F20261123T120000Z&location=LaVida"
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha&dates=20261123T111500Z%2F20261123T120000Z&location=LaVida"
   },
   {
-   "summary": "Aqua Reha @ LaVida",
+   "summary": "Aqua Reha",
    "location": "LaVida",
    "description": "",
    "start": {
@@ -70,10 +34,10 @@
    "end": {
     "dateTime": "2026-11-30T13:00:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261130T111500Z%2F20261130T120000Z&location=LaVida"
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha&dates=20261130T111500Z%2F20261130T120000Z&location=LaVida"
   },
   {
-   "summary": "Aqua Reha @ LaVida",
+   "summary": "Aqua Reha",
    "location": "LaVida",
    "description": "",
    "start": {
@@ -82,7 +46,7 @@
    "end": {
     "dateTime": "2026-12-07T13:00:00+01:00"
    },
-   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha+%40+LaVida&dates=20261207T111500Z%2F20261207T120000Z&location=LaVida"
+   "htmlLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aqua+Reha&dates=20261207T111500Z%2F20261207T120000Z&location=LaVida"
   }
  ]
 }
